@@ -1,4 +1,4 @@
-name: tests
+name: code formatting
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  test:
+  check-format:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -14,4 +14,4 @@ jobs:
         with:
           node-version: 14
       - run: npm ci
-      - run: npm test
+      - run: npx -c 'prettier --check .'
