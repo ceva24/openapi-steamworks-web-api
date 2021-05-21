@@ -1,0 +1,46 @@
+{
+  "name": "openapi-steamworks-web-api",
+  "version": "1.0.0",
+  "description": "An automatically generated OpenAPI spec for the Steamworks Web API",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ceva24/openapi-steamworks-web-api.git"
+  },
+  "keywords": [
+    "steam",
+    "steamworks",
+    "web",
+    "api",
+    "openapi"
+  ],
+  "author": "ceva24",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ceva24/openapi-steamworks-web-api/issues"
+  },
+  "homepage": "https://github.com/ceva24/openapi-steamworks-web-api#readme",
+  "jest": {
+    "automock": false,
+    "resetMocks": false,
+    "setupFiles": [
+      "./setup-jest.js"
+    ]
+  },
+  "scripts": {
+    "start": "node index.js",
+    "format": "prettier --write .",
+    "lint": "xo",
+    "test": "jest --passWithNoTests",
+    "check": "npm run format && npm run lint && npm run test"
+  },
+  "dependencies": {
+    "prop-types": "^15.7.2"
+  },
+  "devDependencies": {
+    "jest": "^26.6.3",
+    "jest-fetch-mock": "^3.0.3",
+    "prettier": "^2.3.0",
+    "xo": "^0.40.1"
+  }
+}
