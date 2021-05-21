@@ -1,9 +1,9 @@
 {
-  "extends": ["prettier"],
-  "overrides": [
-    {
-      "files": ["**/*.test.js"],
-      "envs": ["browser", "jest"]
-    }
-  ]
+    "extends": ["prettier"],
+    "overrides": [
+        {
+            "files": ["**/*.test.js"],
+            "envs": ["browser", "jest"]
+        }
+    ]
 }
