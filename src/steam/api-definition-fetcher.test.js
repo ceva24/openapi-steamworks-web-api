@@ -1,3 +1,4 @@
+import fetch from "node-fetch";
 import { fetchApiDefinition, STEAM_API_URL } from "./api-definition-fetcher.js";
 
 beforeEach(() => {

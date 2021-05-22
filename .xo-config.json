@@ -3,7 +3,7 @@
     "overrides": [
         {
             "files": ["**/*.test.js"],
-            "envs": ["browser", "jest"]
+            "envs": ["jest"]
         }
     ]
 }
