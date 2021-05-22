@@ -13,7 +13,8 @@
         "steamworks",
         "web",
         "api",
-        "openapi"
+        "openapi",
+        "swagger"
     ],
     "author": "ceva24",
     "license": "MIT",
