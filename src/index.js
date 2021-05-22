@@ -1,4 +1,4 @@
-import { fetchApiDefinition } from "./utils/api-definition-fetcher.js";
+import { fetchApiDefinition } from "./steam/api-definition-fetcher.js";
 
 const buildOpenApiSpec = async () => {
     const json = await fetchApiDefinition();
