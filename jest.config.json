@@ -1,0 +1,5 @@
+{
+    "automock": false,
+    "resetMocks": false,
+    "setupFiles": ["./src/setup-jest.js"]
+}

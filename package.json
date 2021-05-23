@@ -22,13 +22,6 @@
         "url": "https://github.com/ceva24/openapi-steamworks-web-api/issues"
     },
     "homepage": "https://github.com/ceva24/openapi-steamworks-web-api#readme",
-    "jest": {
-        "automock": false,
-        "resetMocks": false,
-        "setupFiles": [
-            "./setup-jest.js"
-        ]
-    },
     "scripts": {
         "start": "node src/index.js",
         "format": "prettier --write .",
