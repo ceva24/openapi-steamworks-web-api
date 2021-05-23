@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`openapi spec creator creates the openapi spec 1`] = `
+Object {
+  "info": Object {
+    "title": "Steamworks Web API",
+    "version": "1.0.0",
+  },
+  "openapi": "3.0.3",
+}
+`;
