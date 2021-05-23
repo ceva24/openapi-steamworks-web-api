@@ -5,5 +5,9 @@
             "files": ["**/*.test.js"],
             "envs": ["jest"]
         }
-    ]
+    ],
+    "rules": {
+        "import/no-unassigned-import": "off",
+        "unicorn/prefer-node-protocol": "off"
+    }
 }
