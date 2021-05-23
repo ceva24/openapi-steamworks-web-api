@@ -27,7 +27,7 @@
         "dist": "NODE_ENV=production node src/index.js",
         "format": "prettier --write .",
         "lint": "xo",
-        "test": "NODE_ENV=test jest",
+        "test": "NODE_ENV=test jest --coverage",
         "check": "npm run format && npm run lint && npm run test"
     },
     "dependencies": {
