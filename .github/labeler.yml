@@ -1,5 +1,5 @@
-readme:
-  - README.md
+documentation:
+  - any: ["README.md", "LICENCE"]
 
 test:
   - src/**/*.test.js
