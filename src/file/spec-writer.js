@@ -1,4 +1,4 @@
-import { writeFileSync, mkdir, existsSync } from "fs";
+import { writeFileSync, mkdirSync, existsSync } from "fs";
 
 const writeOpenApiSpec = (openApiSpec) => {
     createOutputDirectoryIfNotExists();
@@ -12,7 +12,7 @@ const createOutputDirectoryIfNotExists = () => {
     const outputLocation = getOutputLocation();
 
     if (!existsSync(outputLocation)) {
-        mkdir(outputLocation, errorFunction);
+        mkdirSync(outputLocation, errorFunction);
     }
 };
 
