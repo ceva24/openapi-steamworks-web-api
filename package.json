@@ -23,13 +23,14 @@
     },
     "homepage": "https://github.com/ceva24/openapi-steamworks-web-api#readme",
     "scripts": {
-        "start": "node src/index.js",
+        "start": "NODE_ENV=development node src/index.js",
         "format": "prettier --write .",
         "lint": "xo",
-        "test": "jest",
+        "test": "NODE_ENV=test jest",
         "check": "npm run format && npm run lint && npm run test"
     },
     "dependencies": {
+        "dotenv": "^10.0.0",
         "node-fetch": "^2.6.1"
     },
     "devDependencies": {

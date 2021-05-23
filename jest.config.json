@@ -1,5 +1,5 @@
 {
     "automock": false,
     "resetMocks": false,
-    "setupFiles": ["./src/setup-jest.js"]
+    "setupFiles": ["./src/setup-dotenv.js", "./src/setup-jest.js"]
 }
