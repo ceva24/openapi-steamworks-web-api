@@ -1,6 +1,3 @@
-repo:
-  - any: ["./*.json", "./*ignore", "./README.md", "./LICENCE"]
-  
 readme:
   - README.md
 
