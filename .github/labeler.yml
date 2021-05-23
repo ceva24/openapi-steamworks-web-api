@@ -1,5 +1,8 @@
 repo:
-  - ./*
+  any: ["*.json", "*ignore", "README.md", "LICENCE"]
+  
+readme:
+  - README.md
 
 test:
   - src/**/*.test.js
