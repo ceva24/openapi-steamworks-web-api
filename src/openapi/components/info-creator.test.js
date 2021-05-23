@@ -7,4 +7,10 @@ describe("info creator", () => {
 
         expect(info.title).toEqual(SPEC_INFO_TITLE);
     });
+
+    it("sets the version", () => {
+        const info = createInfo();
+
+        expect(info.version).toEqual(process.env.npm_package_version);
+    });
 });
