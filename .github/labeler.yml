@@ -1,0 +1,20 @@
+repo:
+  - ./*
+
+test:
+  - src/**/*.test.js
+
+source:
+  - src/**/*
+
+dist:
+  - dist/steamworks-web-api.json
+
+workflow:
+  - .github/**/*
+
+env:
+  - ./.env*
+
+dependencies:
+  - package-lock.json
