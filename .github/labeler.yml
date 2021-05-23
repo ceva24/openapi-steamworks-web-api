@@ -1,5 +1,5 @@
 repo:
-  - ./*
+  - *
 
 test:
   - src/**/*.test.js
@@ -14,7 +14,7 @@ workflow:
   - .github/**/*
 
 env:
-  - ./.env*
+  - .env*
 
 dependencies:
   - package-lock.json
