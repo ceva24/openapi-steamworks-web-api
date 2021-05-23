@@ -1,5 +1,6 @@
 import fetch from "node-fetch";
-import { fetchApiDefinition, STEAM_API_URL } from "./api-definition-fetcher.js";
+import { STEAM_API_URL } from "../constants/constants.js";
+import { fetchApiDefinition } from "./api-definition-fetcher.js";
 
 beforeEach(() => {
     fetch.mockResponse(JSON.stringify({}));

@@ -1,7 +1,5 @@
 import fetch from "node-fetch";
-
-const STEAM_API_URL =
-    "https://api.steampowered.com/ISteamWebAPIUtil/GetSupportedAPIList/v1/";
+import { STEAM_API_URL } from "../constants/constants.js";
 
 const fetchApiDefinition = async () => {
     const response = await fetch(STEAM_API_URL);
@@ -10,4 +8,4 @@ const fetchApiDefinition = async () => {
     return json;
 };
 
-export { fetchApiDefinition, STEAM_API_URL };
+export { fetchApiDefinition };

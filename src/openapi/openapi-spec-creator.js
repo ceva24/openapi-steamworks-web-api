@@ -1,9 +1,8 @@
+import { SPEC_VERSION } from "../constants/constants.js";
 import { createInfo } from "./components/info-creator.js";
 
-const OPENAPI_SPEC_VERSION = "3.0.3";
-
 const createOpenApiSpec = () => {
-    return { openapi: OPENAPI_SPEC_VERSION, info: createInfo() };
+    return { openapi: SPEC_VERSION, info: createInfo() };
 };
 
-export { createOpenApiSpec, OPENAPI_SPEC_VERSION };
+export { createOpenApiSpec };

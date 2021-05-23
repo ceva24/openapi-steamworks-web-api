@@ -1,7 +1,7 @@
-const API_TITLE = "Steamworks Web API";
+import { SPEC_INFO_TITLE } from "../../constants/constants.js";
 
 const createInfo = () => {
-    return { title: API_TITLE };
+    return { title: SPEC_INFO_TITLE };
 };
 
-export { createInfo, API_TITLE };
+export { createInfo };
