@@ -1,5 +1,5 @@
 repo:
-  any: ["*.json", "*ignore", "README.md", "LICENCE"]
+- any: ["*.json", "*ignore", "README.md", "LICENCE"]
   
 readme:
   - README.md
