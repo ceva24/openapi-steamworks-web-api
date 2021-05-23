@@ -17,3 +17,6 @@ jobs:
           node-version: 14
       - run: npm ci
       - run: npm test
+      - uses: coverallsapp/github-action@8cbef1dea373ebce56de0a14c68d6267baa10b44
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
