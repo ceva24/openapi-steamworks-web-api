@@ -1,4 +1,4 @@
-name: code formatting
+name: build
 
 on:
   workflow_dispatch:
@@ -8,7 +8,7 @@ on:
       - main
 
 jobs:
-  check-format:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -16,4 +16,4 @@ jobs:
         with:
           node-version: 14
       - run: npm ci
-      - run: npx -c 'prettier --check .'
+      - run: npm start
