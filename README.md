@@ -1,4 +1,5 @@
 # openapi-steamworks-web-api
+
 [![build](https://github.com/ceva24/openapi-steamworks-web-api/actions/workflows/build.yml/badge.svg)](https://github.com/ceva24/openapi-steamworks-web-api/actions/workflows/build.yml)
 [![tests](https://github.com/ceva24/openapi-steamworks-web-api/actions/workflows/test.yml/badge.svg)](https://github.com/ceva24/openapi-steamworks-web-api/actions/workflows/test.yml)
 [![Coverage Status](https://coveralls.io/repos/github/ceva24/openapi-steamworks-web-api/badge.svg?branch=main)](https://coveralls.io/github/ceva24/openapi-steamworks-web-api?branch=main)
