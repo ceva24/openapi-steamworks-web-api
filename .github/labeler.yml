@@ -11,7 +11,7 @@ source:
 dist:
   - dist/steamworks-web-api.json
 
-swagger:
+swagger-ui:
   - docs/**/*
 
 workflow:
