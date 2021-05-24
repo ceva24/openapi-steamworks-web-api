@@ -7,10 +7,10 @@ const run = async () => {
     console.log("Starting");
 
     console.log("Fetching Steamworks Web API definition...");
-    await fetchApiDefinition();
+    const apiDefinition = await fetchApiDefinition();
 
     console.log("Creating OpenAPI spec...");
-    const openApiSpec = createOpenApiSpec();
+    const openApiSpec = createOpenApiSpec(apiDefinition);
 
     console.log("Writing to output file...");
     writeOpenApiSpec(openApiSpec);

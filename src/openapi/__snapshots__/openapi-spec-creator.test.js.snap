@@ -7,6 +7,16 @@ Object {
     "version": "1.0.0",
   },
   "openapi": "3.0.3",
-  "paths": Object {},
+  "paths": Object {
+    "/IClientStats_1046930/ReportEvent/v1": Object {
+      "get": Object {
+        "responses": Object {
+          "200": Object {
+            "description": "successful",
+          },
+        },
+      },
+    },
+  },
 }
 `;
