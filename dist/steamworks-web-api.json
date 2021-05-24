@@ -4,5 +4,15 @@
         "title": "Steamworks Web API",
         "version": "1.0.0"
     },
-    "paths": {}
+    "paths": {
+        "/IClientStats_1046930/ReportEvent/v1": {
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "successful"
+                    }
+                }
+            }
+        }
+    }
 }
