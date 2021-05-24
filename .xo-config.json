@@ -9,5 +9,6 @@
     "rules": {
         "import/no-unassigned-import": "off",
         "unicorn/prefer-node-protocol": "off"
-    }
+    },
+    "ignores": ["!docs/**"]
 }
