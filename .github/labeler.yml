@@ -11,6 +11,9 @@ source:
 dist:
   - dist/steamworks-web-api.json
 
+swagger:
+  - docs/**/*
+
 workflow:
   - .github/**/*
 
