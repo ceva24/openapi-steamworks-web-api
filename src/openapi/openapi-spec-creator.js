@@ -1,6 +1,6 @@
 import { SPEC_VERSION } from "../constants/constants.js";
-import { createInfo } from "./components/info-creator.js";
-import { createPaths } from "./components/paths-creator.js";
+import { createInfo } from "./components/info/info-creator.js";
+import { createPaths } from "./components/paths/paths-creator.js";
 
 const createOpenApiSpec = (apiDefinition) => {
     return {
