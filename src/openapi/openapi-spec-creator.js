@@ -7,7 +7,7 @@ const createOpenApiSpec = async (apiDefinition) => {
     const openApiSpec = {
         openapi: SPEC_VERSION,
         info: createInfo(),
-        paths: { ...createPaths(apiDefinition) },
+        paths: createPaths(apiDefinition),
     };
 
     return SwaggerParser.validate(openApiSpec);
