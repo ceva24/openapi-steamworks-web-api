@@ -9,7 +9,7 @@ Object {
   "openapi": "3.0.3",
   "paths": Object {
     "/IClientStats_1046930/ReportEvent/v1": Object {
-      "get": Object {
+      "post": Object {
         "responses": Object {
           "200": Object {
             "description": "successful",
