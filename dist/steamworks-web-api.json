@@ -13,6 +13,420 @@
                     }
                 }
             }
+        },
+        "/IGCVersion_1046930/GetClientVersion/v1": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "successful"
+                    }
+                }
+            }
+        },
+        "/IGCVersion_1046930/GetServerVersion/v1": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "successful"
+                    }
+                }
+            }
+        },
+        "/IGCVersion_1269260/GetClientVersion/v1": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "successful"
+                    }
+                }
+            }
+        },
+        "/IGCVersion_1269260/GetServerVersion/v1": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "successful"
+                    }
+                }
+            }
+        },
+        "/IGCVersion_205790/GetClientVersion/v1": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "successful"
+                    }
+                }
+            }
+        },
+        "/IGCVersion_205790/GetServerVersion/v1": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "successful"
+                    }
+                }
+            }
+        },
+        "/IGCVersion_440/GetClientVersion/v1": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "successful"
+                    }
+                }
+            }
+        },
+        "/IGCVersion_440/GetServerVersion/v1": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "successful"
+                    }
+                }
+            }
+        },
+        "/IGCVersion_570/GetClientVersion/v1": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "successful"
+                    }
+                }
+            }
+        },
+        "/IGCVersion_570/GetServerVersion/v1": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "successful"
+                    }
+                }
+            }
+        },
+        "/IGCVersion_583950/GetClientVersion/v1": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "successful"
+                    }
+                }
+            }
+        },
+        "/IGCVersion_583950/GetServerVersion/v1": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "successful"
+                    }
+                }
+            }
+        },
+        "/IGCVersion_730/GetServerVersion/v1": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "successful"
+                    }
+                }
+            }
+        },
+        "/IPortal2Leaderboards_620/GetBucketizedData/v1": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "successful"
+                    }
+                }
+            }
+        },
+        "/ISteamApps/GetAppList/v1": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "successful"
+                    }
+                }
+            }
+        },
+        "/ISteamApps/GetAppList/v2": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "successful"
+                    }
+                }
+            }
+        },
+        "/ISteamApps/GetSDRConfig/v1": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "successful"
+                    }
+                }
+            }
+        },
+        "/ISteamApps/GetServersAtAddress/v1": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "successful"
+                    }
+                }
+            }
+        },
+        "/ISteamApps/UpToDateCheck/v1": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "successful"
+                    }
+                }
+            }
+        },
+        "/ISteamBroadcast/ViewerHeartbeat/v1": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "successful"
+                    }
+                }
+            }
+        },
+        "/ISteamDirectory/GetCMList/v1": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "successful"
+                    }
+                }
+            }
+        },
+        "/ISteamDirectory/GetCSList/v1": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "successful"
+                    }
+                }
+            }
+        },
+        "/ISteamDirectory/GetSteamPipeDomains/v1": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "successful"
+                    }
+                }
+            }
+        },
+        "/ISteamNews/GetNewsForApp/v1": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "successful"
+                    }
+                }
+            }
+        },
+        "/ISteamNews/GetNewsForApp/v2": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "successful"
+                    }
+                }
+            }
+        },
+        "/ISteamRemoteStorage/GetCollectionDetails/v1": {
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "successful"
+                    }
+                }
+            }
+        },
+        "/ISteamRemoteStorage/GetPublishedFileDetails/v1": {
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "successful"
+                    }
+                }
+            }
+        },
+        "/ISteamUserAuth/AuthenticateUser/v1": {
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "successful"
+                    }
+                }
+            }
+        },
+        "/ISteamUserOAuth/GetTokenDetails/v1": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "successful"
+                    }
+                }
+            }
+        },
+        "/ISteamUserStats/GetGlobalAchievementPercentagesForApp/v1": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "successful"
+                    }
+                }
+            }
+        },
+        "/ISteamUserStats/GetGlobalAchievementPercentagesForApp/v2": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "successful"
+                    }
+                }
+            }
+        },
+        "/ISteamUserStats/GetGlobalStatsForGame/v1": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "successful"
+                    }
+                }
+            }
+        },
+        "/ISteamUserStats/GetNumberOfCurrentPlayers/v1": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "successful"
+                    }
+                }
+            }
+        },
+        "/ISteamWebAPIUtil/GetServerInfo/v1": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "successful"
+                    }
+                }
+            }
+        },
+        "/ISteamWebAPIUtil/GetSupportedAPIList/v1": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "successful"
+                    }
+                }
+            }
+        },
+        "/ISteamWebUserPresenceOAuth/PollStatus/v1": {
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "successful"
+                    }
+                }
+            }
+        },
+        "/ITFSystem_440/GetWorldStatus/v1": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "successful"
+                    }
+                }
+            }
+        },
+        "/IBroadcastService/PostGameDataFrameRTMP/v1": {
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "successful"
+                    }
+                }
+            }
+        },
+        "/IContentServerDirectoryService/GetServersForSteamPipe/v1": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "successful"
+                    }
+                }
+            }
+        },
+        "/IContentServerDirectoryService/GetClientUpdateHosts/v1": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "successful"
+                    }
+                }
+            }
+        },
+        "/IContentServerDirectoryService/GetDepotPatchInfo/v1": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "successful"
+                    }
+                }
+            }
+        },
+        "/IPublishedFileService/GetUserVoteSummary/v1": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "successful"
+                    }
+                }
+            }
+        },
+        "/IPlayerService/RecordOfflinePlaytime/v1": {
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "successful"
+                    }
+                }
+            }
+        },
+        "/IGameNotificationsService/UserCreateSession/v1": {
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "successful"
+                    }
+                }
+            }
+        },
+        "/IGameNotificationsService/UserUpdateSession/v1": {
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "successful"
+                    }
+                }
+            }
+        },
+        "/IGameNotificationsService/UserDeleteSession/v1": {
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "successful"
+                    }
+                }
+            }
         }
     }
 }
