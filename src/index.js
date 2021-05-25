@@ -10,7 +10,7 @@ const run = async () => {
     const apiDefinition = await fetchApiDefinition();
 
     console.log("Creating OpenAPI spec...");
-    const openApiSpec = createOpenApiSpec(apiDefinition);
+    const openApiSpec = await createOpenApiSpec(apiDefinition);
 
     console.log("Writing to output file...");
     writeOpenApiSpec(openApiSpec);

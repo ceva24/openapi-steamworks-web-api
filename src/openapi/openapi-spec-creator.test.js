@@ -19,27 +19,55 @@ const apiDefinition = {
 };
 
 describe("openapi spec creator", () => {
-    it("creates the openapi spec", () => {
-        const openApiSpec = createOpenApiSpec(apiDefinition);
+    it("creates the openapi spec", async () => {
+        const openApiSpec = await createOpenApiSpec(apiDefinition);
 
         expect(openApiSpec).toMatchSnapshot();
     });
 
-    it("sets the version number", () => {
-        const openApiSpec = createOpenApiSpec(apiDefinition);
+    it("sets the version number", async () => {
+        const openApiSpec = await createOpenApiSpec(apiDefinition);
 
         expect(openApiSpec.openapi).toEqual(SPEC_VERSION);
     });
 
-    it("creates the info", () => {
-        const openApiSpec = createOpenApiSpec(apiDefinition);
+    it("creates the info", async () => {
+        const openApiSpec = await createOpenApiSpec(apiDefinition);
 
         expect(openApiSpec.info.title).toEqual(SPEC_INFO_TITLE);
     });
 
-    it("creates the paths", () => {
-        const openApiSpec = createOpenApiSpec(apiDefinition);
+    it("creates the paths", async () => {
+        const openApiSpec = await createOpenApiSpec(apiDefinition);
 
         expect(Object.keys(openApiSpec.paths).length).toEqual(1);
+    });
+
+    it("validates the openapi spec", async () => {
+        const invalidApiDefinition = {
+            apilist: {
+                interfaces: [
+                    {
+                        name: "IClientStats_1046930",
+                        methods: [
+                            {
+                                name: "ReportEvent",
+                                version: 1,
+                                httpmethod: "",
+                            },
+                        ],
+                    },
+                ],
+            },
+        };
+
+        let thrown;
+        try {
+            await createOpenApiSpec(invalidApiDefinition);
+        } catch (error) {
+            thrown = error;
+        }
+
+        expect(thrown.message).toContain("Swagger schema validation failed");
     });
 });
