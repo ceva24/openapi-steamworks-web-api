@@ -1,4 +1,4 @@
-import { DEFAULT_RESPONSES } from "../../constants/constants.js";
+import { DEFAULT_RESPONSES } from "../../../constants/constants.js";
 import { createPath } from "./path-creator.js";
 
 describe("path creator", () => {

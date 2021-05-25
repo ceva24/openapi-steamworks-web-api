@@ -1,4 +1,4 @@
-import { SPEC_INFO_TITLE } from "../../constants/constants.js";
+import { SPEC_INFO_TITLE } from "../../../constants/constants.js";
 import { createInfo } from "./info-creator.js";
 
 describe("info creator", () => {
