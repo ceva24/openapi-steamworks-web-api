@@ -10,7 +10,7 @@ const apiDefinition = {
                     {
                         name: "ReportEvent",
                         version: 1,
-                        httpmethod: "GET",
+                        httpmethod: "POST",
                     },
                 ],
             },

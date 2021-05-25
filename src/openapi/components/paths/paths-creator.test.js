@@ -11,7 +11,7 @@ describe("path creator", () => {
                             {
                                 name: "ReportEvent",
                                 version: 1,
-                                httpmethod: "GET",
+                                httpmethod: "POST",
                             },
                         ],
                     },
@@ -22,5 +22,33 @@ describe("path creator", () => {
         const paths = createPaths(apiDefinition);
 
         expect(Object.keys(paths).length).toEqual(1);
+    });
+
+    it("creates a path for one interface with multiple methods", () => {
+        const apiDefinition = {
+            apilist: {
+                interfaces: [
+                    {
+                        name: "IGCVersion_1046930",
+                        methods: [
+                            {
+                                name: "GetClientVersion",
+                                version: 1,
+                                httpmethod: "GET",
+                            },
+                            {
+                                name: "GetServerVersion",
+                                version: 1,
+                                httpmethod: "GET",
+                            },
+                        ],
+                    },
+                ],
+            },
+        };
+
+        const paths = createPaths(apiDefinition);
+
+        expect(Object.keys(paths).length).toEqual(2);
     });
 });
