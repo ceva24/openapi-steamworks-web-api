@@ -11,7 +11,8 @@
                     "200": {
                         "description": "successful"
                     }
-                }
+                },
+                "parameters": []
             }
         },
         "/IGCVersion_1046930/GetClientVersion/v1": {
@@ -20,7 +21,8 @@
                     "200": {
                         "description": "successful"
                     }
-                }
+                },
+                "parameters": []
             }
         },
         "/IGCVersion_1046930/GetServerVersion/v1": {
@@ -29,7 +31,8 @@
                     "200": {
                         "description": "successful"
                     }
-                }
+                },
+                "parameters": []
             }
         },
         "/IGCVersion_1269260/GetClientVersion/v1": {
@@ -38,7 +41,8 @@
                     "200": {
                         "description": "successful"
                     }
-                }
+                },
+                "parameters": []
             }
         },
         "/IGCVersion_1269260/GetServerVersion/v1": {
@@ -47,7 +51,8 @@
                     "200": {
                         "description": "successful"
                     }
-                }
+                },
+                "parameters": []
             }
         },
         "/IGCVersion_205790/GetClientVersion/v1": {
@@ -56,7 +61,8 @@
                     "200": {
                         "description": "successful"
                     }
-                }
+                },
+                "parameters": []
             }
         },
         "/IGCVersion_205790/GetServerVersion/v1": {
@@ -65,7 +71,8 @@
                     "200": {
                         "description": "successful"
                     }
-                }
+                },
+                "parameters": []
             }
         },
         "/IGCVersion_440/GetClientVersion/v1": {
@@ -74,7 +81,8 @@
                     "200": {
                         "description": "successful"
                     }
-                }
+                },
+                "parameters": []
             }
         },
         "/IGCVersion_440/GetServerVersion/v1": {
@@ -83,7 +91,8 @@
                     "200": {
                         "description": "successful"
                     }
-                }
+                },
+                "parameters": []
             }
         },
         "/IGCVersion_570/GetClientVersion/v1": {
@@ -92,7 +101,8 @@
                     "200": {
                         "description": "successful"
                     }
-                }
+                },
+                "parameters": []
             }
         },
         "/IGCVersion_570/GetServerVersion/v1": {
@@ -101,7 +111,8 @@
                     "200": {
                         "description": "successful"
                     }
-                }
+                },
+                "parameters": []
             }
         },
         "/IGCVersion_583950/GetClientVersion/v1": {
@@ -110,7 +121,8 @@
                     "200": {
                         "description": "successful"
                     }
-                }
+                },
+                "parameters": []
             }
         },
         "/IGCVersion_583950/GetServerVersion/v1": {
@@ -119,7 +131,8 @@
                     "200": {
                         "description": "successful"
                     }
-                }
+                },
+                "parameters": []
             }
         },
         "/IGCVersion_730/GetServerVersion/v1": {
@@ -128,7 +141,8 @@
                     "200": {
                         "description": "successful"
                     }
-                }
+                },
+                "parameters": []
             }
         },
         "/IPortal2Leaderboards_620/GetBucketizedData/v1": {
@@ -137,7 +151,18 @@
                     "200": {
                         "description": "successful"
                     }
-                }
+                },
+                "parameters": [
+                    {
+                        "name": "leaderboardName",
+                        "in": "query",
+                        "description": "The leaderboard name to fetch data for.",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ]
             }
         },
         "/ISteamApps/GetAppList/v1": {
@@ -146,7 +171,8 @@
                     "200": {
                         "description": "successful"
                     }
-                }
+                },
+                "parameters": []
             }
         },
         "/ISteamApps/GetAppList/v2": {
@@ -155,7 +181,8 @@
                     "200": {
                         "description": "successful"
                     }
-                }
+                },
+                "parameters": []
             }
         },
         "/ISteamApps/GetSDRConfig/v1": {
@@ -164,7 +191,19 @@
                     "200": {
                         "description": "successful"
                     }
-                }
+                },
+                "parameters": [
+                    {
+                        "name": "appid",
+                        "in": "query",
+                        "description": "AppID of game",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    }
+                ]
             }
         },
         "/ISteamApps/GetServersAtAddress/v1": {
@@ -173,7 +212,18 @@
                     "200": {
                         "description": "successful"
                     }
-                }
+                },
+                "parameters": [
+                    {
+                        "name": "addr",
+                        "in": "query",
+                        "description": "IP or IP:queryport to list",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ]
             }
         },
         "/ISteamApps/UpToDateCheck/v1": {
@@ -182,7 +232,29 @@
                     "200": {
                         "description": "successful"
                     }
-                }
+                },
+                "parameters": [
+                    {
+                        "name": "appid",
+                        "in": "query",
+                        "description": "AppID of game",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    },
+                    {
+                        "name": "version",
+                        "in": "query",
+                        "description": "The installed version of the game",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    }
+                ]
             }
         },
         "/ISteamBroadcast/ViewerHeartbeat/v1": {
@@ -191,7 +263,49 @@
                     "200": {
                         "description": "successful"
                     }
-                }
+                },
+                "parameters": [
+                    {
+                        "name": "steamid",
+                        "in": "query",
+                        "description": "Steam ID of the broadcaster",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    },
+                    {
+                        "name": "sessionid",
+                        "in": "query",
+                        "description": "Broadcast Session ID",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    },
+                    {
+                        "name": "token",
+                        "in": "query",
+                        "description": "Viewer token",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    },
+                    {
+                        "name": "stream",
+                        "in": "query",
+                        "description": "video stream representation watching",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    }
+                ]
             }
         },
         "/ISteamDirectory/GetCMList/v1": {
@@ -200,7 +314,29 @@
                     "200": {
                         "description": "successful"
                     }
-                }
+                },
+                "parameters": [
+                    {
+                        "name": "cellid",
+                        "in": "query",
+                        "description": "Client's Steam cell ID",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    },
+                    {
+                        "name": "maxcount",
+                        "in": "query",
+                        "description": "Max number of servers to return",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    }
+                ]
             }
         },
         "/ISteamDirectory/GetCSList/v1": {
@@ -209,7 +345,29 @@
                     "200": {
                         "description": "successful"
                     }
-                }
+                },
+                "parameters": [
+                    {
+                        "name": "cellid",
+                        "in": "query",
+                        "description": "Client's Steam cell ID",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    },
+                    {
+                        "name": "maxcount",
+                        "in": "query",
+                        "description": "Max number of servers to return",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    }
+                ]
             }
         },
         "/ISteamDirectory/GetSteamPipeDomains/v1": {
@@ -218,7 +376,8 @@
                     "200": {
                         "description": "successful"
                     }
-                }
+                },
+                "parameters": []
             }
         },
         "/ISteamNews/GetNewsForApp/v1": {
@@ -227,7 +386,58 @@
                     "200": {
                         "description": "successful"
                     }
-                }
+                },
+                "parameters": [
+                    {
+                        "name": "appid",
+                        "in": "query",
+                        "description": "AppID to retrieve news for",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    },
+                    {
+                        "name": "maxlength",
+                        "in": "query",
+                        "description": "Maximum length for the content to return, if this is 0 the full content is returned, if it's less then a blurb is generated to fit.",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    },
+                    {
+                        "name": "enddate",
+                        "in": "query",
+                        "description": "Retrieve posts earlier than this date (unix epoch timestamp)",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    },
+                    {
+                        "name": "count",
+                        "in": "query",
+                        "description": "# of posts to retrieve (default 20)",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    },
+                    {
+                        "name": "tags",
+                        "in": "query",
+                        "description": "Comma-separated list of tags to filter by (e.g. 'patchnodes')",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ]
             }
         },
         "/ISteamNews/GetNewsForApp/v2": {
@@ -236,7 +446,67 @@
                     "200": {
                         "description": "successful"
                     }
-                }
+                },
+                "parameters": [
+                    {
+                        "name": "appid",
+                        "in": "query",
+                        "description": "AppID to retrieve news for",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    },
+                    {
+                        "name": "maxlength",
+                        "in": "query",
+                        "description": "Maximum length for the content to return, if this is 0 the full content is returned, if it's less then a blurb is generated to fit.",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    },
+                    {
+                        "name": "enddate",
+                        "in": "query",
+                        "description": "Retrieve posts earlier than this date (unix epoch timestamp)",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    },
+                    {
+                        "name": "count",
+                        "in": "query",
+                        "description": "# of posts to retrieve (default 20)",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    },
+                    {
+                        "name": "feeds",
+                        "in": "query",
+                        "description": "Comma-separated list of feed names to return news for",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "tags",
+                        "in": "query",
+                        "description": "Comma-separated list of tags to filter by (e.g. 'patchnodes')",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ]
             }
         },
         "/ISteamRemoteStorage/GetCollectionDetails/v1": {
@@ -245,7 +515,8 @@
                     "200": {
                         "description": "successful"
                     }
-                }
+                },
+                "parameters": []
             }
         },
         "/ISteamRemoteStorage/GetPublishedFileDetails/v1": {
@@ -254,7 +525,8 @@
                     "200": {
                         "description": "successful"
                     }
-                }
+                },
+                "parameters": []
             }
         },
         "/ISteamUserAuth/AuthenticateUser/v1": {
@@ -263,7 +535,8 @@
                     "200": {
                         "description": "successful"
                     }
-                }
+                },
+                "parameters": []
             }
         },
         "/ISteamUserOAuth/GetTokenDetails/v1": {
@@ -272,7 +545,18 @@
                     "200": {
                         "description": "successful"
                     }
-                }
+                },
+                "parameters": [
+                    {
+                        "name": "access_token",
+                        "in": "query",
+                        "description": "OAuth2 token for which to return details",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ]
             }
         },
         "/ISteamUserStats/GetGlobalAchievementPercentagesForApp/v1": {
@@ -281,7 +565,19 @@
                     "200": {
                         "description": "successful"
                     }
-                }
+                },
+                "parameters": [
+                    {
+                        "name": "gameid",
+                        "in": "query",
+                        "description": "GameID to retrieve the achievement percentages for",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    }
+                ]
             }
         },
         "/ISteamUserStats/GetGlobalAchievementPercentagesForApp/v2": {
@@ -290,7 +586,19 @@
                     "200": {
                         "description": "successful"
                     }
-                }
+                },
+                "parameters": [
+                    {
+                        "name": "gameid",
+                        "in": "query",
+                        "description": "GameID to retrieve the achievement percentages for",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    }
+                ]
             }
         },
         "/ISteamUserStats/GetGlobalStatsForGame/v1": {
@@ -299,7 +607,58 @@
                     "200": {
                         "description": "successful"
                     }
-                }
+                },
+                "parameters": [
+                    {
+                        "name": "appid",
+                        "in": "query",
+                        "description": "AppID that we're getting global stats for",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    },
+                    {
+                        "name": "count",
+                        "in": "query",
+                        "description": "Number of stats get data for",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    },
+                    {
+                        "name": "name[0]",
+                        "in": "query",
+                        "description": "Names of stat to get data for",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "startdate",
+                        "in": "query",
+                        "description": "Start date for daily totals (unix epoch timestamp)",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    },
+                    {
+                        "name": "enddate",
+                        "in": "query",
+                        "description": "End date for daily totals (unix epoch timestamp)",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    }
+                ]
             }
         },
         "/ISteamUserStats/GetNumberOfCurrentPlayers/v1": {
@@ -308,7 +667,19 @@
                     "200": {
                         "description": "successful"
                     }
-                }
+                },
+                "parameters": [
+                    {
+                        "name": "appid",
+                        "in": "query",
+                        "description": "AppID that we're getting user count for",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    }
+                ]
             }
         },
         "/ISteamWebAPIUtil/GetServerInfo/v1": {
@@ -317,7 +688,8 @@
                     "200": {
                         "description": "successful"
                     }
-                }
+                },
+                "parameters": []
             }
         },
         "/ISteamWebAPIUtil/GetSupportedAPIList/v1": {
@@ -326,7 +698,18 @@
                     "200": {
                         "description": "successful"
                     }
-                }
+                },
+                "parameters": [
+                    {
+                        "name": "key",
+                        "in": "query",
+                        "description": "access key",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ]
             }
         },
         "/ISteamWebUserPresenceOAuth/PollStatus/v1": {
@@ -335,7 +718,8 @@
                     "200": {
                         "description": "successful"
                     }
-                }
+                },
+                "parameters": []
             }
         },
         "/ITFSystem_440/GetWorldStatus/v1": {
@@ -344,7 +728,8 @@
                     "200": {
                         "description": "successful"
                     }
-                }
+                },
+                "parameters": []
             }
         },
         "/IBroadcastService/PostGameDataFrameRTMP/v1": {
@@ -353,7 +738,8 @@
                     "200": {
                         "description": "successful"
                     }
-                }
+                },
+                "parameters": []
             }
         },
         "/IContentServerDirectoryService/GetServersForSteamPipe/v1": {
@@ -362,7 +748,8 @@
                     "200": {
                         "description": "successful"
                     }
-                }
+                },
+                "parameters": []
             }
         },
         "/IContentServerDirectoryService/GetClientUpdateHosts/v1": {
@@ -371,7 +758,8 @@
                     "200": {
                         "description": "successful"
                     }
-                }
+                },
+                "parameters": []
             }
         },
         "/IContentServerDirectoryService/GetDepotPatchInfo/v1": {
@@ -380,7 +768,8 @@
                     "200": {
                         "description": "successful"
                     }
-                }
+                },
+                "parameters": []
             }
         },
         "/IPublishedFileService/GetUserVoteSummary/v1": {
@@ -389,7 +778,8 @@
                     "200": {
                         "description": "successful"
                     }
-                }
+                },
+                "parameters": []
             }
         },
         "/IPlayerService/RecordOfflinePlaytime/v1": {
@@ -398,7 +788,8 @@
                     "200": {
                         "description": "successful"
                     }
-                }
+                },
+                "parameters": []
             }
         },
         "/IGameNotificationsService/UserCreateSession/v1": {
@@ -407,7 +798,8 @@
                     "200": {
                         "description": "successful"
                     }
-                }
+                },
+                "parameters": []
             }
         },
         "/IGameNotificationsService/UserUpdateSession/v1": {
@@ -416,7 +808,8 @@
                     "200": {
                         "description": "successful"
                     }
-                }
+                },
+                "parameters": []
             }
         },
         "/IGameNotificationsService/UserDeleteSession/v1": {
@@ -425,7 +818,8 @@
                     "200": {
                         "description": "successful"
                     }
-                }
+                },
+                "parameters": []
             }
         }
     }

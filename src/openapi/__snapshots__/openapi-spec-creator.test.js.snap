@@ -8,8 +8,59 @@ Object {
   },
   "openapi": "3.0.3",
   "paths": Object {
-    "/IClientStats_1046930/ReportEvent/v1": Object {
-      "post": Object {
+    "/IGCVersion_1046930/GetClientVersion/v1": Object {
+      "get": Object {
+        "parameters": Array [],
+        "responses": Object {
+          "200": Object {
+            "description": "successful",
+          },
+        },
+      },
+    },
+    "/IGCVersion_1046930/GetServerVersion/v1": Object {
+      "get": Object {
+        "parameters": Array [],
+        "responses": Object {
+          "200": Object {
+            "description": "successful",
+          },
+        },
+      },
+    },
+    "/IGCVersion_1269260/GetClientVersion/v1": Object {
+      "get": Object {
+        "parameters": Array [],
+        "responses": Object {
+          "200": Object {
+            "description": "successful",
+          },
+        },
+      },
+    },
+    "/IGCVersion_1269260/GetServerVersion/v1": Object {
+      "get": Object {
+        "parameters": Array [],
+        "responses": Object {
+          "200": Object {
+            "description": "successful",
+          },
+        },
+      },
+    },
+    "/IPortal2Leaderboards_620/GetBucketizedData/v1": Object {
+      "get": Object {
+        "parameters": Array [
+          Object {
+            "description": "The leaderboard name to fetch data for.",
+            "in": "query",
+            "name": "leaderboardName",
+            "required": true,
+            "schema": Object {
+              "type": "string",
+            },
+          },
+        ],
         "responses": Object {
           "200": Object {
             "description": "successful",
