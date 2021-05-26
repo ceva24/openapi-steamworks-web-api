@@ -1,4 +1,8 @@
-import { SPEC_VERSION, SPEC_INFO_TITLE } from "../constants/constants.js";
+import {
+    SPEC_VERSION,
+    SPEC_INFO_TITLE,
+    SPEC_SERVER_URL,
+} from "../constants/constants.js";
 import { createOpenApiSpec } from "./openapi-spec-creator.js";
 
 describe("openapi spec creator", () => {
@@ -69,11 +73,7 @@ describe("openapi spec creator", () => {
     });
 
     it("sets the version number", async () => {
-        const apiDefinition = {
-            apilist: {
-                interfaces: [],
-            },
-        };
+        const apiDefinition = { apilist: { interfaces: [] } };
 
         const openApiSpec = await createOpenApiSpec(apiDefinition);
 
@@ -81,11 +81,7 @@ describe("openapi spec creator", () => {
     });
 
     it("creates the info", async () => {
-        const apiDefinition = {
-            apilist: {
-                interfaces: [],
-            },
-        };
+        const apiDefinition = { apilist: { interfaces: [] } };
 
         const openApiSpec = await createOpenApiSpec(apiDefinition);
 
@@ -114,6 +110,15 @@ describe("openapi spec creator", () => {
         const openApiSpec = await createOpenApiSpec(apiDefinition);
 
         expect(Object.keys(openApiSpec.paths).length).toEqual(1);
+    });
+
+    it("creates the servers", async () => {
+        const apiDefinition = { apilist: { interfaces: [] } };
+
+        const openApiSpec = await createOpenApiSpec(apiDefinition);
+
+        expect(openApiSpec.servers.length).toEqual(1);
+        expect(openApiSpec.servers[0].url).toEqual(SPEC_SERVER_URL);
     });
 
     it("validates the openapi spec", async () => {
