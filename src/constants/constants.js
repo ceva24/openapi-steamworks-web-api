@@ -29,4 +29,7 @@ export const SPEC_PATHS_PARAMETERS_IN = "query";
 
 export const SPEC_SERVER_URL = STEAM_API_URL;
 
+export const SPEC_EXTERNAL_DOCS_URL =
+    "https://partner.steamgames.com/doc/webapi";
+
 export const DEFAULT_RESPONSES = { 200: { description: "successful" } };

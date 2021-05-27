@@ -2,6 +2,9 @@
 
 exports[`openapi spec creator creates the openapi spec 1`] = `
 Object {
+  "externalDocs": Object {
+    "url": "https://partner.steamgames.com/doc/webapi",
+  },
   "info": Object {
     "title": "Steamworks Web API",
     "version": "1.0.0",
