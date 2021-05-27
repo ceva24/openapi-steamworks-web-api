@@ -69,5 +69,10 @@ Object {
       },
     },
   },
+  "servers": Array [
+    Object {
+      "url": "https://api.steampowered.com",
+    },
+  ],
 }
 `;

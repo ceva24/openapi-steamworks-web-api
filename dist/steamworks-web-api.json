@@ -822,5 +822,10 @@
                 "parameters": []
             }
         }
-    }
+    },
+    "servers": [
+        {
+            "url": "https://api.steampowered.com"
+        }
+    ]
 }
