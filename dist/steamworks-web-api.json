@@ -4,6 +4,11 @@
         "title": "Steamworks Web API",
         "version": "1.0.0"
     },
+    "servers": [
+        {
+            "url": "https://api.steampowered.com"
+        }
+    ],
     "paths": {
         "/IClientStats_1046930/ReportEvent/v1": {
             "post": {
@@ -12,7 +17,10 @@
                         "description": "successful"
                     }
                 },
-                "parameters": []
+                "parameters": [],
+                "externalDocs": {
+                    "url": "https://partner.steamgames.com/doc/webapi/IClientStats_1046930#ReportEvent"
+                }
             }
         },
         "/IGCVersion_1046930/GetClientVersion/v1": {
@@ -22,7 +30,10 @@
                         "description": "successful"
                     }
                 },
-                "parameters": []
+                "parameters": [],
+                "externalDocs": {
+                    "url": "https://partner.steamgames.com/doc/webapi/IGCVersion_1046930#GetClientVersion"
+                }
             }
         },
         "/IGCVersion_1046930/GetServerVersion/v1": {
@@ -32,7 +43,10 @@
                         "description": "successful"
                     }
                 },
-                "parameters": []
+                "parameters": [],
+                "externalDocs": {
+                    "url": "https://partner.steamgames.com/doc/webapi/IGCVersion_1046930#GetServerVersion"
+                }
             }
         },
         "/IGCVersion_1269260/GetClientVersion/v1": {
@@ -42,7 +56,10 @@
                         "description": "successful"
                     }
                 },
-                "parameters": []
+                "parameters": [],
+                "externalDocs": {
+                    "url": "https://partner.steamgames.com/doc/webapi/IGCVersion_1269260#GetClientVersion"
+                }
             }
         },
         "/IGCVersion_1269260/GetServerVersion/v1": {
@@ -52,7 +69,10 @@
                         "description": "successful"
                     }
                 },
-                "parameters": []
+                "parameters": [],
+                "externalDocs": {
+                    "url": "https://partner.steamgames.com/doc/webapi/IGCVersion_1269260#GetServerVersion"
+                }
             }
         },
         "/IGCVersion_205790/GetClientVersion/v1": {
@@ -62,7 +82,10 @@
                         "description": "successful"
                     }
                 },
-                "parameters": []
+                "parameters": [],
+                "externalDocs": {
+                    "url": "https://partner.steamgames.com/doc/webapi/IGCVersion_205790#GetClientVersion"
+                }
             }
         },
         "/IGCVersion_205790/GetServerVersion/v1": {
@@ -72,7 +95,10 @@
                         "description": "successful"
                     }
                 },
-                "parameters": []
+                "parameters": [],
+                "externalDocs": {
+                    "url": "https://partner.steamgames.com/doc/webapi/IGCVersion_205790#GetServerVersion"
+                }
             }
         },
         "/IGCVersion_440/GetClientVersion/v1": {
@@ -82,7 +108,10 @@
                         "description": "successful"
                     }
                 },
-                "parameters": []
+                "parameters": [],
+                "externalDocs": {
+                    "url": "https://partner.steamgames.com/doc/webapi/IGCVersion_440#GetClientVersion"
+                }
             }
         },
         "/IGCVersion_440/GetServerVersion/v1": {
@@ -92,7 +121,10 @@
                         "description": "successful"
                     }
                 },
-                "parameters": []
+                "parameters": [],
+                "externalDocs": {
+                    "url": "https://partner.steamgames.com/doc/webapi/IGCVersion_440#GetServerVersion"
+                }
             }
         },
         "/IGCVersion_570/GetClientVersion/v1": {
@@ -102,7 +134,10 @@
                         "description": "successful"
                     }
                 },
-                "parameters": []
+                "parameters": [],
+                "externalDocs": {
+                    "url": "https://partner.steamgames.com/doc/webapi/IGCVersion_570#GetClientVersion"
+                }
             }
         },
         "/IGCVersion_570/GetServerVersion/v1": {
@@ -112,7 +147,10 @@
                         "description": "successful"
                     }
                 },
-                "parameters": []
+                "parameters": [],
+                "externalDocs": {
+                    "url": "https://partner.steamgames.com/doc/webapi/IGCVersion_570#GetServerVersion"
+                }
             }
         },
         "/IGCVersion_583950/GetClientVersion/v1": {
@@ -122,7 +160,10 @@
                         "description": "successful"
                     }
                 },
-                "parameters": []
+                "parameters": [],
+                "externalDocs": {
+                    "url": "https://partner.steamgames.com/doc/webapi/IGCVersion_583950#GetClientVersion"
+                }
             }
         },
         "/IGCVersion_583950/GetServerVersion/v1": {
@@ -132,7 +173,10 @@
                         "description": "successful"
                     }
                 },
-                "parameters": []
+                "parameters": [],
+                "externalDocs": {
+                    "url": "https://partner.steamgames.com/doc/webapi/IGCVersion_583950#GetServerVersion"
+                }
             }
         },
         "/IGCVersion_730/GetServerVersion/v1": {
@@ -142,7 +186,10 @@
                         "description": "successful"
                     }
                 },
-                "parameters": []
+                "parameters": [],
+                "externalDocs": {
+                    "url": "https://partner.steamgames.com/doc/webapi/IGCVersion_730#GetServerVersion"
+                }
             }
         },
         "/IPortal2Leaderboards_620/GetBucketizedData/v1": {
@@ -162,7 +209,10 @@
                             "type": "string"
                         }
                     }
-                ]
+                ],
+                "externalDocs": {
+                    "url": "https://partner.steamgames.com/doc/webapi/IPortal2Leaderboards_620#GetBucketizedData"
+                }
             }
         },
         "/ISteamApps/GetAppList/v1": {
@@ -172,7 +222,10 @@
                         "description": "successful"
                     }
                 },
-                "parameters": []
+                "parameters": [],
+                "externalDocs": {
+                    "url": "https://partner.steamgames.com/doc/webapi/ISteamApps#GetAppList"
+                }
             }
         },
         "/ISteamApps/GetAppList/v2": {
@@ -182,7 +235,10 @@
                         "description": "successful"
                     }
                 },
-                "parameters": []
+                "parameters": [],
+                "externalDocs": {
+                    "url": "https://partner.steamgames.com/doc/webapi/ISteamApps#GetAppList"
+                }
             }
         },
         "/ISteamApps/GetSDRConfig/v1": {
@@ -203,7 +259,10 @@
                             "format": "int32"
                         }
                     }
-                ]
+                ],
+                "externalDocs": {
+                    "url": "https://partner.steamgames.com/doc/webapi/ISteamApps#GetSDRConfig"
+                }
             }
         },
         "/ISteamApps/GetServersAtAddress/v1": {
@@ -223,7 +282,10 @@
                             "type": "string"
                         }
                     }
-                ]
+                ],
+                "externalDocs": {
+                    "url": "https://partner.steamgames.com/doc/webapi/ISteamApps#GetServersAtAddress"
+                }
             }
         },
         "/ISteamApps/UpToDateCheck/v1": {
@@ -254,7 +316,10 @@
                             "format": "int32"
                         }
                     }
-                ]
+                ],
+                "externalDocs": {
+                    "url": "https://partner.steamgames.com/doc/webapi/ISteamApps#UpToDateCheck"
+                }
             }
         },
         "/ISteamBroadcast/ViewerHeartbeat/v1": {
@@ -305,7 +370,10 @@
                             "format": "int32"
                         }
                     }
-                ]
+                ],
+                "externalDocs": {
+                    "url": "https://partner.steamgames.com/doc/webapi/ISteamBroadcast#ViewerHeartbeat"
+                }
             }
         },
         "/ISteamDirectory/GetCMList/v1": {
@@ -336,7 +404,10 @@
                             "format": "int32"
                         }
                     }
-                ]
+                ],
+                "externalDocs": {
+                    "url": "https://partner.steamgames.com/doc/webapi/ISteamDirectory#GetCMList"
+                }
             }
         },
         "/ISteamDirectory/GetCSList/v1": {
@@ -367,7 +438,10 @@
                             "format": "int32"
                         }
                     }
-                ]
+                ],
+                "externalDocs": {
+                    "url": "https://partner.steamgames.com/doc/webapi/ISteamDirectory#GetCSList"
+                }
             }
         },
         "/ISteamDirectory/GetSteamPipeDomains/v1": {
@@ -377,7 +451,10 @@
                         "description": "successful"
                     }
                 },
-                "parameters": []
+                "parameters": [],
+                "externalDocs": {
+                    "url": "https://partner.steamgames.com/doc/webapi/ISteamDirectory#GetSteamPipeDomains"
+                }
             }
         },
         "/ISteamNews/GetNewsForApp/v1": {
@@ -437,7 +514,10 @@
                             "type": "string"
                         }
                     }
-                ]
+                ],
+                "externalDocs": {
+                    "url": "https://partner.steamgames.com/doc/webapi/ISteamNews#GetNewsForApp"
+                }
             }
         },
         "/ISteamNews/GetNewsForApp/v2": {
@@ -506,7 +586,10 @@
                             "type": "string"
                         }
                     }
-                ]
+                ],
+                "externalDocs": {
+                    "url": "https://partner.steamgames.com/doc/webapi/ISteamNews#GetNewsForApp"
+                }
             }
         },
         "/ISteamRemoteStorage/GetCollectionDetails/v1": {
@@ -516,7 +599,10 @@
                         "description": "successful"
                     }
                 },
-                "parameters": []
+                "parameters": [],
+                "externalDocs": {
+                    "url": "https://partner.steamgames.com/doc/webapi/ISteamRemoteStorage#GetCollectionDetails"
+                }
             }
         },
         "/ISteamRemoteStorage/GetPublishedFileDetails/v1": {
@@ -526,7 +612,10 @@
                         "description": "successful"
                     }
                 },
-                "parameters": []
+                "parameters": [],
+                "externalDocs": {
+                    "url": "https://partner.steamgames.com/doc/webapi/ISteamRemoteStorage#GetPublishedFileDetails"
+                }
             }
         },
         "/ISteamUserAuth/AuthenticateUser/v1": {
@@ -536,7 +625,10 @@
                         "description": "successful"
                     }
                 },
-                "parameters": []
+                "parameters": [],
+                "externalDocs": {
+                    "url": "https://partner.steamgames.com/doc/webapi/ISteamUserAuth#AuthenticateUser"
+                }
             }
         },
         "/ISteamUserOAuth/GetTokenDetails/v1": {
@@ -556,7 +648,10 @@
                             "type": "string"
                         }
                     }
-                ]
+                ],
+                "externalDocs": {
+                    "url": "https://partner.steamgames.com/doc/webapi/ISteamUserOAuth#GetTokenDetails"
+                }
             }
         },
         "/ISteamUserStats/GetGlobalAchievementPercentagesForApp/v1": {
@@ -577,7 +672,10 @@
                             "format": "int64"
                         }
                     }
-                ]
+                ],
+                "externalDocs": {
+                    "url": "https://partner.steamgames.com/doc/webapi/ISteamUserStats#GetGlobalAchievementPercentagesForApp"
+                }
             }
         },
         "/ISteamUserStats/GetGlobalAchievementPercentagesForApp/v2": {
@@ -598,7 +696,10 @@
                             "format": "int64"
                         }
                     }
-                ]
+                ],
+                "externalDocs": {
+                    "url": "https://partner.steamgames.com/doc/webapi/ISteamUserStats#GetGlobalAchievementPercentagesForApp"
+                }
             }
         },
         "/ISteamUserStats/GetGlobalStatsForGame/v1": {
@@ -658,7 +759,10 @@
                             "format": "int32"
                         }
                     }
-                ]
+                ],
+                "externalDocs": {
+                    "url": "https://partner.steamgames.com/doc/webapi/ISteamUserStats#GetGlobalStatsForGame"
+                }
             }
         },
         "/ISteamUserStats/GetNumberOfCurrentPlayers/v1": {
@@ -679,7 +783,10 @@
                             "format": "int32"
                         }
                     }
-                ]
+                ],
+                "externalDocs": {
+                    "url": "https://partner.steamgames.com/doc/webapi/ISteamUserStats#GetNumberOfCurrentPlayers"
+                }
             }
         },
         "/ISteamWebAPIUtil/GetServerInfo/v1": {
@@ -689,7 +796,10 @@
                         "description": "successful"
                     }
                 },
-                "parameters": []
+                "parameters": [],
+                "externalDocs": {
+                    "url": "https://partner.steamgames.com/doc/webapi/ISteamWebAPIUtil#GetServerInfo"
+                }
             }
         },
         "/ISteamWebAPIUtil/GetSupportedAPIList/v1": {
@@ -709,7 +819,10 @@
                             "type": "string"
                         }
                     }
-                ]
+                ],
+                "externalDocs": {
+                    "url": "https://partner.steamgames.com/doc/webapi/ISteamWebAPIUtil#GetSupportedAPIList"
+                }
             }
         },
         "/ISteamWebUserPresenceOAuth/PollStatus/v1": {
@@ -719,7 +832,10 @@
                         "description": "successful"
                     }
                 },
-                "parameters": []
+                "parameters": [],
+                "externalDocs": {
+                    "url": "https://partner.steamgames.com/doc/webapi/ISteamWebUserPresenceOAuth#PollStatus"
+                }
             }
         },
         "/ITFSystem_440/GetWorldStatus/v1": {
@@ -729,7 +845,10 @@
                         "description": "successful"
                     }
                 },
-                "parameters": []
+                "parameters": [],
+                "externalDocs": {
+                    "url": "https://partner.steamgames.com/doc/webapi/ITFSystem_440#GetWorldStatus"
+                }
             }
         },
         "/IBroadcastService/PostGameDataFrameRTMP/v1": {
@@ -739,7 +858,10 @@
                         "description": "successful"
                     }
                 },
-                "parameters": []
+                "parameters": [],
+                "externalDocs": {
+                    "url": "https://partner.steamgames.com/doc/webapi/IBroadcastService#PostGameDataFrameRTMP"
+                }
             }
         },
         "/IContentServerDirectoryService/GetServersForSteamPipe/v1": {
@@ -749,7 +871,10 @@
                         "description": "successful"
                     }
                 },
-                "parameters": []
+                "parameters": [],
+                "externalDocs": {
+                    "url": "https://partner.steamgames.com/doc/webapi/IContentServerDirectoryService#GetServersForSteamPipe"
+                }
             }
         },
         "/IContentServerDirectoryService/GetClientUpdateHosts/v1": {
@@ -759,7 +884,10 @@
                         "description": "successful"
                     }
                 },
-                "parameters": []
+                "parameters": [],
+                "externalDocs": {
+                    "url": "https://partner.steamgames.com/doc/webapi/IContentServerDirectoryService#GetClientUpdateHosts"
+                }
             }
         },
         "/IContentServerDirectoryService/GetDepotPatchInfo/v1": {
@@ -769,7 +897,10 @@
                         "description": "successful"
                     }
                 },
-                "parameters": []
+                "parameters": [],
+                "externalDocs": {
+                    "url": "https://partner.steamgames.com/doc/webapi/IContentServerDirectoryService#GetDepotPatchInfo"
+                }
             }
         },
         "/IPublishedFileService/GetUserVoteSummary/v1": {
@@ -779,7 +910,10 @@
                         "description": "successful"
                     }
                 },
-                "parameters": []
+                "parameters": [],
+                "externalDocs": {
+                    "url": "https://partner.steamgames.com/doc/webapi/IPublishedFileService#GetUserVoteSummary"
+                }
             }
         },
         "/IPlayerService/RecordOfflinePlaytime/v1": {
@@ -789,7 +923,10 @@
                         "description": "successful"
                     }
                 },
-                "parameters": []
+                "parameters": [],
+                "externalDocs": {
+                    "url": "https://partner.steamgames.com/doc/webapi/IPlayerService#RecordOfflinePlaytime"
+                }
             }
         },
         "/IGameNotificationsService/UserCreateSession/v1": {
@@ -799,7 +936,10 @@
                         "description": "successful"
                     }
                 },
-                "parameters": []
+                "parameters": [],
+                "externalDocs": {
+                    "url": "https://partner.steamgames.com/doc/webapi/IGameNotificationsService#UserCreateSession"
+                }
             }
         },
         "/IGameNotificationsService/UserUpdateSession/v1": {
@@ -809,7 +949,10 @@
                         "description": "successful"
                     }
                 },
-                "parameters": []
+                "parameters": [],
+                "externalDocs": {
+                    "url": "https://partner.steamgames.com/doc/webapi/IGameNotificationsService#UserUpdateSession"
+                }
             }
         },
         "/IGameNotificationsService/UserDeleteSession/v1": {
@@ -819,13 +962,14 @@
                         "description": "successful"
                     }
                 },
-                "parameters": []
+                "parameters": [],
+                "externalDocs": {
+                    "url": "https://partner.steamgames.com/doc/webapi/IGameNotificationsService#UserDeleteSession"
+                }
             }
         }
     },
-    "servers": [
-        {
-            "url": "https://api.steampowered.com"
-        }
-    ]
+    "externalDocs": {
+        "url": "https://partner.steamgames.com/doc/webapi"
+    }
 }

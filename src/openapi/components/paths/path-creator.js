@@ -4,6 +4,7 @@ import {
     SPEC_PATHS_PARAMETERS_IN,
     SPEC_TYPES,
     STEAM_PARAMETER_TYPES,
+    STEAM_EXTERNAL_DOCS_URL,
 } from "../../../constants/constants.js";
 
 const createPath = (interfaceName, method) => {
@@ -19,6 +20,9 @@ const createPath = (interfaceName, method) => {
                 !interfaceName.toLowerCase().includes("service")
                     ? createParameters(method.parameters)
                     : [],
+            externalDocs: {
+                url: `${STEAM_EXTERNAL_DOCS_URL}/${interfaceName}#${method.name}`,
+            },
         },
     };
 

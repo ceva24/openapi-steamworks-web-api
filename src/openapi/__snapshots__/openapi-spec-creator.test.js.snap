@@ -13,6 +13,9 @@ Object {
   "paths": Object {
     "/IGCVersion_1046930/GetClientVersion/v1": Object {
       "get": Object {
+        "externalDocs": Object {
+          "url": "https://partner.steamgames.com/doc/webapi/IGCVersion_1046930#GetClientVersion",
+        },
         "parameters": Array [],
         "responses": Object {
           "200": Object {
@@ -23,6 +26,9 @@ Object {
     },
     "/IGCVersion_1046930/GetServerVersion/v1": Object {
       "get": Object {
+        "externalDocs": Object {
+          "url": "https://partner.steamgames.com/doc/webapi/IGCVersion_1046930#GetServerVersion",
+        },
         "parameters": Array [],
         "responses": Object {
           "200": Object {
@@ -33,6 +39,9 @@ Object {
     },
     "/IGCVersion_1269260/GetClientVersion/v1": Object {
       "get": Object {
+        "externalDocs": Object {
+          "url": "https://partner.steamgames.com/doc/webapi/IGCVersion_1269260#GetClientVersion",
+        },
         "parameters": Array [],
         "responses": Object {
           "200": Object {
@@ -43,6 +52,9 @@ Object {
     },
     "/IGCVersion_1269260/GetServerVersion/v1": Object {
       "get": Object {
+        "externalDocs": Object {
+          "url": "https://partner.steamgames.com/doc/webapi/IGCVersion_1269260#GetServerVersion",
+        },
         "parameters": Array [],
         "responses": Object {
           "200": Object {
@@ -53,6 +65,9 @@ Object {
     },
     "/IPortal2Leaderboards_620/GetBucketizedData/v1": Object {
       "get": Object {
+        "externalDocs": Object {
+          "url": "https://partner.steamgames.com/doc/webapi/IPortal2Leaderboards_620#GetBucketizedData",
+        },
         "parameters": Array [
           Object {
             "description": "The leaderboard name to fetch data for.",

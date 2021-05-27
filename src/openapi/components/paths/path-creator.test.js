@@ -4,6 +4,7 @@ import {
     SPEC_PATHS_PARAMETERS_IN,
     SPEC_TYPES,
     STEAM_PARAMETER_TYPES,
+    STEAM_EXTERNAL_DOCS_URL,
 } from "../../../constants/constants.js";
 import { createPath } from "./path-creator.js";
 
@@ -57,6 +58,24 @@ describe("path creator", () => {
 
         expect(value[Object.keys(value)[0]].responses).toEqual(
             DEFAULT_RESPONSES
+        );
+    });
+
+    it("sets the path external docs", () => {
+        const interfaceName = "IClientStats_1046930";
+        const method = {
+            name: "ReportEvent",
+            version: 1,
+            httpmethod: "GET",
+            parameters: [],
+        };
+
+        const path = createPath(interfaceName, method);
+
+        const value = path[Object.keys(path)[0]];
+
+        expect(value[Object.keys(value)[0]].externalDocs.url).toEqual(
+            `${STEAM_EXTERNAL_DOCS_URL}/IClientStats_1046930#ReportEvent`
         );
     });
 
