@@ -36,7 +36,6 @@ describe("path creator", () => {
         };
 
         const path = createPath(interfaceName, method);
-
         const value = path[Object.keys(path)[0]];
 
         expect(Object.keys(value).length).toEqual(1);
@@ -53,12 +52,9 @@ describe("path creator", () => {
         };
 
         const path = createPath(interfaceName, method);
+        const operation = getOperation(path);
 
-        const value = path[Object.keys(path)[0]];
-
-        expect(value[Object.keys(value)[0]].responses).toEqual(
-            DEFAULT_RESPONSES
-        );
+        expect(operation.responses).toEqual(DEFAULT_RESPONSES);
     });
 
     it("sets the path external docs", () => {
@@ -71,10 +67,9 @@ describe("path creator", () => {
         };
 
         const path = createPath(interfaceName, method);
+        const operation = getOperation(path);
 
-        const value = path[Object.keys(path)[0]];
-
-        expect(value[Object.keys(value)[0]].externalDocs.url).toEqual(
+        expect(operation.externalDocs.url).toEqual(
             `${STEAM_EXTERNAL_DOCS_URL}/IClientStats_1046930#ReportEvent`
         );
     });
@@ -96,12 +91,10 @@ describe("path creator", () => {
         };
 
         const path = createPath(interfaceName, method);
+        const operation = getOperation(path);
 
-        const value = path[Object.keys(path)[0]];
-        const parameters = value[Object.keys(value)[0]].parameters;
-
-        expect(parameters.length).toEqual(1);
-        expect(parameters[0].name).toEqual("leaderboardName");
+        expect(operation.parameters.length).toEqual(1);
+        expect(operation.parameters[0].name).toEqual("leaderboardName");
     });
 
     it("sets a path parameter in", () => {
@@ -121,12 +114,10 @@ describe("path creator", () => {
         };
 
         const path = createPath(interfaceName, method);
+        const operation = getOperation(path);
 
-        const value = path[Object.keys(path)[0]];
-        const parameters = value[Object.keys(value)[0]].parameters;
-
-        expect(parameters.length).toEqual(1);
-        expect(parameters[0].in).toEqual(SPEC_PATHS_PARAMETERS_IN);
+        expect(operation.parameters.length).toEqual(1);
+        expect(operation.parameters[0].in).toEqual(SPEC_PATHS_PARAMETERS_IN);
     });
 
     it("sets a path parameter description", () => {
@@ -146,12 +137,10 @@ describe("path creator", () => {
         };
 
         const path = createPath(interfaceName, method);
+        const operation = getOperation(path);
 
-        const value = path[Object.keys(path)[0]];
-        const parameters = value[Object.keys(value)[0]].parameters;
-
-        expect(parameters.length).toEqual(1);
-        expect(parameters[0].description).toEqual(
+        expect(operation.parameters.length).toEqual(1);
+        expect(operation.parameters[0].description).toEqual(
             "The leaderboard name to fetch data for."
         );
     });
@@ -179,12 +168,10 @@ describe("path creator", () => {
             };
 
             const path = createPath(interfaceName, method);
+            const operation = getOperation(path);
 
-            const value = path[Object.keys(path)[0]];
-            const parameters = value[Object.keys(value)[0]].parameters;
-
-            expect(parameters.length).toEqual(1);
-            expect(parameters[0].required).toEqual(required);
+            expect(operation.parameters.length).toEqual(1);
+            expect(operation.parameters[0].required).toEqual(required);
         }
     );
 
@@ -213,13 +200,15 @@ describe("path creator", () => {
             };
 
             const path = createPath(interfaceName, method);
+            const operation = getOperation(path);
 
-            const value = path[Object.keys(path)[0]];
-            const parameters = value[Object.keys(value)[0]].parameters;
-
-            expect(parameters.length).toEqual(1);
-            expect(parameters[0].schema.type).toEqual(openApiSpecType);
-            expect(parameters[0].schema.format).toEqual(openApiSpecFormat);
+            expect(operation.parameters.length).toEqual(1);
+            expect(operation.parameters[0].schema.type).toEqual(
+                openApiSpecType
+            );
+            expect(operation.parameters[0].schema.format).toEqual(
+                openApiSpecFormat
+            );
         }
     );
 
@@ -240,11 +229,14 @@ describe("path creator", () => {
         };
 
         const path = createPath(interfaceName, method);
+        const operation = getOperation(path);
 
-        const value = path[Object.keys(path)[0]];
-        const parameters = value[Object.keys(value)[0]].parameters;
-
-        expect(parameters.length).toEqual(1);
-        expect(parameters[0].schema.type).toEqual(SPEC_TYPES.STRING);
+        expect(operation.parameters.length).toEqual(1);
+        expect(operation.parameters[0].schema.type).toEqual(SPEC_TYPES.STRING);
     });
 });
+
+const getOperation = (path) => {
+    const value = path[Object.keys(path)[0]];
+    return value[Object.keys(value)[0]];
+};
