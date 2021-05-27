@@ -23,6 +23,7 @@ const createPath = (interfaceName, method) => {
             externalDocs: {
                 url: `${STEAM_EXTERNAL_DOCS_URL}/${interfaceName}#${method.name}`,
             },
+            tags: [interfaceName.split("_")[0]],
         },
     };
 

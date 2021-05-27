@@ -22,6 +22,9 @@ Object {
             "description": "successful",
           },
         },
+        "tags": Array [
+          "IGCVersion",
+        ],
       },
     },
     "/IGCVersion_1046930/GetServerVersion/v1": Object {
@@ -35,6 +38,9 @@ Object {
             "description": "successful",
           },
         },
+        "tags": Array [
+          "IGCVersion",
+        ],
       },
     },
     "/IGCVersion_1269260/GetClientVersion/v1": Object {
@@ -48,6 +54,9 @@ Object {
             "description": "successful",
           },
         },
+        "tags": Array [
+          "IGCVersion",
+        ],
       },
     },
     "/IGCVersion_1269260/GetServerVersion/v1": Object {
@@ -61,6 +70,9 @@ Object {
             "description": "successful",
           },
         },
+        "tags": Array [
+          "IGCVersion",
+        ],
       },
     },
     "/IPortal2Leaderboards_620/GetBucketizedData/v1": Object {
@@ -84,6 +96,9 @@ Object {
             "description": "successful",
           },
         },
+        "tags": Array [
+          "IPortal2Leaderboards",
+        ],
       },
     },
   },
