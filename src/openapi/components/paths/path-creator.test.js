@@ -234,6 +234,28 @@ describe("path creator", () => {
         expect(operation.parameters.length).toEqual(1);
         expect(operation.parameters[0].schema.type).toEqual(SPEC_TYPES.STRING);
     });
+
+    test.each`
+        interfaceName                 | tag
+        ${"ISteamApps"}               | ${"ISteamApps"}
+        ${"IPortal2Leaderboards_620"} | ${"IPortal2Leaderboards"}
+    `(
+        "sets the path tag to $tag when the interface name is $interfaceName",
+        ({ interfaceName, tag }) => {
+            const method = {
+                name: "GetAppList",
+                version: 1,
+                httpmethod: "GET",
+                parameters: [],
+            };
+
+            const path = createPath(interfaceName, method);
+            const operation = getOperation(path);
+
+            expect(operation.tags.length).toEqual(1);
+            expect(operation.tags[0]).toEqual(tag);
+        }
+    );
 });
 
 const getOperation = (path) => {
