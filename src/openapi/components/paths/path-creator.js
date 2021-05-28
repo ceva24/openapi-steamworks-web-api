@@ -9,7 +9,7 @@ const createPath = (interfaceName, method) => {
 
     const httpMethod = method.httpmethod.toLowerCase();
 
-    const value = {
+    const operation = {
         [httpMethod]: {
             responses: DEFAULT_RESPONSES,
             parameters: interfaceName.toLowerCase().includes("service")
@@ -22,7 +22,7 @@ const createPath = (interfaceName, method) => {
         },
     };
 
-    return { [key]: value };
+    return { [key]: operation };
 };
 
 export { createPath };
