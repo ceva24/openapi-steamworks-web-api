@@ -7,6 +7,7 @@ import { createPathParameters } from "./path-parameters-creator.js";
 
 describe("path parameters creator", () => {
     it("sets a path parameter name", () => {
+        const httpMethod = "get";
         const parameters = [
             {
                 name: "leaderboardName",
@@ -16,13 +17,14 @@ describe("path parameters creator", () => {
             },
         ];
 
-        const pathParameters = createPathParameters(parameters);
+        const pathParameters = createPathParameters(httpMethod, parameters);
 
         expect(pathParameters.length).toEqual(1);
         expect(pathParameters[0].name).toEqual("leaderboardName");
     });
 
     it("sets a path parameter in", () => {
+        const httpMethod = "get";
         const parameters = [
             {
                 name: "leaderboardName",
@@ -32,13 +34,14 @@ describe("path parameters creator", () => {
             },
         ];
 
-        const pathParameters = createPathParameters(parameters);
+        const pathParameters = createPathParameters(httpMethod, parameters);
 
         expect(pathParameters.length).toEqual(1);
         expect(pathParameters[0].in).toEqual(SPEC_PATHS_PARAMETERS_IN);
     });
 
     it("sets a path parameter description", () => {
+        const httpMethod = "get";
         const parameters = [
             {
                 name: "leaderboardName",
@@ -48,7 +51,7 @@ describe("path parameters creator", () => {
             },
         ];
 
-        const pathParameters = createPathParameters(parameters);
+        const pathParameters = createPathParameters(httpMethod, parameters);
 
         expect(pathParameters.length).toEqual(1);
         expect(pathParameters[0].description).toEqual(
@@ -63,6 +66,7 @@ describe("path parameters creator", () => {
     `(
         "sets a path parameter required to $required when optional is $optional",
         ({ optional, required }) => {
+            const httpMethod = "get";
             const parameters = [
                 {
                     name: "leaderboardName",
@@ -72,7 +76,7 @@ describe("path parameters creator", () => {
                 },
             ];
 
-            const pathParameters = createPathParameters(parameters);
+            const pathParameters = createPathParameters(httpMethod, parameters);
 
             expect(pathParameters.length).toEqual(1);
             expect(pathParameters[0].required).toEqual(required);
@@ -88,6 +92,7 @@ describe("path parameters creator", () => {
     `(
         "sets a path parameter schema type to $openApiSpecType and format to $openApiSpecFormat when the Steam type is $steamType",
         ({ steamType, openApiSpecType, openApiSpecFormat }) => {
+            const httpMethod = "get";
             const parameters = [
                 {
                     name: "leaderboardName",
@@ -97,7 +102,7 @@ describe("path parameters creator", () => {
                 },
             ];
 
-            const pathParameters = createPathParameters(parameters);
+            const pathParameters = createPathParameters(httpMethod, parameters);
 
             expect(pathParameters.length).toEqual(1);
             expect(pathParameters[0].schema.type).toEqual(openApiSpecType);
@@ -106,6 +111,7 @@ describe("path parameters creator", () => {
     );
 
     it("sets a path parameter schema type to string when the Steam type is string", () => {
+        const httpMethod = "get";
         const parameters = [
             {
                 name: "leaderboardName",
@@ -115,13 +121,14 @@ describe("path parameters creator", () => {
             },
         ];
 
-        const pathParameters = createPathParameters(parameters);
+        const pathParameters = createPathParameters(httpMethod, parameters);
 
         expect(pathParameters.length).toEqual(1);
         expect(pathParameters[0].schema.type).toEqual(SPEC_TYPES.STRING);
     });
 
     it("sets multiple path parameters", () => {
+        const httpMethod = "get";
         const parameters = [
             {
                 name: "steamid",
@@ -149,8 +156,24 @@ describe("path parameters creator", () => {
             },
         ];
 
-        const pathParameters = createPathParameters(parameters);
+        const pathParameters = createPathParameters(httpMethod, parameters);
 
         expect(pathParameters.length).toEqual(4);
+    });
+
+    it("does not create parameters for POST requests", () => {
+        const httpMethod = "post";
+        const parameters = [
+            {
+                name: "leaderboardName",
+                type: "string",
+                optional: false,
+                description: "The leaderboard name to fetch data for.",
+            },
+        ];
+
+        const pathParameters = createPathParameters(httpMethod, parameters);
+
+        expect(pathParameters).toHaveLength(0);
     });
 });

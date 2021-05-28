@@ -7,16 +7,14 @@ import { createPathParameters } from "./path-parameters-creator.js";
 const createPath = (interfaceName, method) => {
     const key = `/${interfaceName}/${method.name}/v${method.version}`;
 
-    const httpMethodName = method.httpmethod.toLowerCase();
+    const httpMethod = method.httpmethod.toLowerCase();
 
     const value = {
-        [httpMethodName]: {
+        [httpMethod]: {
             responses: DEFAULT_RESPONSES,
-            parameters:
-                httpMethodName === "get" &&
-                !interfaceName.toLowerCase().includes("service")
-                    ? createPathParameters(method.parameters)
-                    : [],
+            parameters: interfaceName.toLowerCase().includes("service")
+                ? []
+                : createPathParameters(httpMethod, method.parameters),
             externalDocs: {
                 url: `${STEAM_EXTERNAL_DOCS_URL}/${interfaceName}#${method.name}`,
             },

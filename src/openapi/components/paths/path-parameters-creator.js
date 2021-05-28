@@ -5,7 +5,9 @@ import {
     STEAM_PARAMETER_TYPES,
 } from "../../../constants/constants.js";
 
-const createPathParameters = (parameters) => {
+const createPathParameters = (httpMethod, parameters) => {
+    if (httpMethod !== "get") return [];
+
     return parameters.map((parameter) => {
         return {
             name: parameter.name,
