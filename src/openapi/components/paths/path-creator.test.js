@@ -1,9 +1,5 @@
 import {
     DEFAULT_RESPONSES,
-    SPEC_FORMATS,
-    SPEC_PATHS_PARAMETERS_IN,
-    SPEC_TYPES,
-    STEAM_PARAMETER_TYPES,
     STEAM_EXTERNAL_DOCS_URL,
 } from "../../../constants/constants.js";
 import { createPath } from "./path-creator.js";
@@ -74,7 +70,7 @@ describe("path creator", () => {
         );
     });
 
-    it("sets a path parameter name", () => {
+    it("sets the path parameters", () => {
         const interfaceName = "IPortal2Leaderboards_620";
         const method = {
             name: "GetBucketizedData",
@@ -94,145 +90,6 @@ describe("path creator", () => {
         const operation = getOperation(path);
 
         expect(operation.parameters.length).toEqual(1);
-        expect(operation.parameters[0].name).toEqual("leaderboardName");
-    });
-
-    it("sets a path parameter in", () => {
-        const interfaceName = "IPortal2Leaderboards_620";
-        const method = {
-            name: "GetBucketizedData",
-            version: 1,
-            httpmethod: "GET",
-            parameters: [
-                {
-                    name: "leaderboardName",
-                    type: "string",
-                    optional: false,
-                    description: "The leaderboard name to fetch data for.",
-                },
-            ],
-        };
-
-        const path = createPath(interfaceName, method);
-        const operation = getOperation(path);
-
-        expect(operation.parameters.length).toEqual(1);
-        expect(operation.parameters[0].in).toEqual(SPEC_PATHS_PARAMETERS_IN);
-    });
-
-    it("sets a path parameter description", () => {
-        const interfaceName = "IPortal2Leaderboards_620";
-        const method = {
-            name: "GetBucketizedData",
-            version: 1,
-            httpmethod: "GET",
-            parameters: [
-                {
-                    name: "leaderboardName",
-                    type: "string",
-                    optional: false,
-                    description: "The leaderboard name to fetch data for.",
-                },
-            ],
-        };
-
-        const path = createPath(interfaceName, method);
-        const operation = getOperation(path);
-
-        expect(operation.parameters.length).toEqual(1);
-        expect(operation.parameters[0].description).toEqual(
-            "The leaderboard name to fetch data for."
-        );
-    });
-
-    test.each`
-        optional | required
-        ${true}  | ${false}
-        ${false} | ${true}
-    `(
-        "sets a path parameter required to $required when optional is $optional",
-        ({ optional, required }) => {
-            const interfaceName = "IPortal2Leaderboards_620";
-            const method = {
-                name: "GetBucketizedData",
-                version: 1,
-                httpmethod: "GET",
-                parameters: [
-                    {
-                        name: "leaderboardName",
-                        type: "string",
-                        optional,
-                        description: "The leaderboard name to fetch data for.",
-                    },
-                ],
-            };
-
-            const path = createPath(interfaceName, method);
-            const operation = getOperation(path);
-
-            expect(operation.parameters.length).toEqual(1);
-            expect(operation.parameters[0].required).toEqual(required);
-        }
-    );
-
-    test.each`
-        steamType      | openApiSpecType       | openApiSpecFormat
-        ${"uint32"}    | ${SPEC_TYPES.INTEGER} | ${SPEC_FORMATS.INT32}
-        ${"int32"}     | ${SPEC_TYPES.INTEGER} | ${SPEC_FORMATS.INT32}
-        ${"uint64"}    | ${SPEC_TYPES.INTEGER} | ${SPEC_FORMATS.INT64}
-        ${"rawbinary"} | ${SPEC_TYPES.STRING}  | ${SPEC_FORMATS.BINARY}
-    `(
-        "sets a path parameter schema type to $openApiSpecType and format to $openApiSpecFormat when the Steam type is $steamType",
-        ({ steamType, openApiSpecType, openApiSpecFormat }) => {
-            const interfaceName = "IPortal2Leaderboards_620";
-            const method = {
-                name: "GetBucketizedData",
-                version: 1,
-                httpmethod: "GET",
-                parameters: [
-                    {
-                        name: "leaderboardName",
-                        type: steamType,
-                        optional: false,
-                        description: "The leaderboard name to fetch data for.",
-                    },
-                ],
-            };
-
-            const path = createPath(interfaceName, method);
-            const operation = getOperation(path);
-
-            expect(operation.parameters.length).toEqual(1);
-            expect(operation.parameters[0].schema.type).toEqual(
-                openApiSpecType
-            );
-            expect(operation.parameters[0].schema.format).toEqual(
-                openApiSpecFormat
-            );
-        }
-    );
-
-    it("sets a path parameter schema type to string when the Steam type is string", () => {
-        const interfaceName = "IPortal2Leaderboards_620";
-        const method = {
-            name: "GetBucketizedData",
-            version: 1,
-            httpmethod: "GET",
-            parameters: [
-                {
-                    name: "leaderboardName",
-                    type: STEAM_PARAMETER_TYPES.STRING,
-                    optional: false,
-                    description: "The leaderboard name to fetch data for.",
-                },
-            ],
-        };
-
-        const path = createPath(interfaceName, method);
-        const operation = getOperation(path);
-
-        expect(operation.parameters.length).toEqual(1);
-        expect(operation.parameters[0].schema.type).toEqual(SPEC_TYPES.STRING);
     });
 
     test.each`
