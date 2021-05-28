@@ -1,4 +1,5 @@
 import { SPEC_PATHS_REQUEST_BODY_CONTENT_TYPE } from "../../../constants/constants.js";
+import { createPropertySchema } from "../../utils/property-schema-creator.js";
 
 const createRequestBody = (httpMethod, parameters) => {
     if (httpMethod !== "post" || parameters.length === 0) return null;
@@ -13,7 +14,15 @@ const createRequestBody = (httpMethod, parameters) => {
 };
 
 const createSchema = (parameters) => {
-    const schema = { type: "object" };
+    const schema = {
+        type: "object",
+        properties: Object.assign(
+            {},
+            ...parameters.map((parameter) => {
+                return { [parameter.name]: createPropertySchema(parameter) };
+            })
+        ),
+    };
 
     const required = createRequired(parameters);
     if (required.length > 0) schema.required = required;
