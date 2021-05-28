@@ -29,6 +29,8 @@ export const SPEC_VERSION = "3.0.3";
 export const SPEC_INFO_TITLE = "Steamworks Web API";
 
 export const SPEC_PATHS_PARAMETERS_IN = "query";
+export const SPEC_PATHS_REQUEST_BODY_CONTENT_TYPE =
+    "application/x-www-form-urlencoded";
 
 export const SPEC_SERVER_URL = STEAM_API_URL;
 

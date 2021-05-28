@@ -113,6 +113,50 @@ describe("path creator", () => {
             expect(operation.tags[0]).toEqual(tag);
         }
     );
+
+    it("sets the request body if not null", () => {
+        const interfaceName = "IPortal2Leaderboards_620";
+        const method = {
+            name: "GetCollectionDetails",
+            version: 1,
+            httpmethod: "POST",
+            parameters: [
+                {
+                    name: "collectioncount",
+                    type: "uint32",
+                    optional: false,
+                    description: "Number of collections being requested",
+                },
+            ],
+        };
+
+        const path = createPath(interfaceName, method);
+        const operation = getOperation(path);
+
+        expect(operation).toHaveProperty("requestBody");
+    });
+
+    it("does not set the request body if null", () => {
+        const interfaceName = "IPortal2Leaderboards_620";
+        const method = {
+            name: "GetBucketizedData",
+            version: 1,
+            httpmethod: "GET",
+            parameters: [
+                {
+                    name: "leaderboardName",
+                    type: "string",
+                    optional: false,
+                    description: "The leaderboard name to fetch data for.",
+                },
+            ],
+        };
+
+        const path = createPath(interfaceName, method);
+        const operation = getOperation(path);
+
+        expect(operation).not.toHaveProperty("requestBody");
+    });
 });
 
 const getOperation = (path) => {

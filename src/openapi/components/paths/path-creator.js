@@ -3,6 +3,7 @@ import {
     STEAM_EXTERNAL_DOCS_URL,
 } from "../../../constants/constants.js";
 import { createPathParameters } from "./path-parameters-creator.js";
+import { createRequestBody } from "./path-request-body-creator.js";
 
 const createPath = (interfaceName, method) => {
     const key = `/${interfaceName}/${method.name}/v${method.version}`;
@@ -21,6 +22,10 @@ const createPath = (interfaceName, method) => {
             tags: [interfaceName.split("_")[0]],
         },
     };
+
+    const requestBody = createRequestBody(httpMethod, method.parameters);
+    if (requestBody)
+        operation[Object.keys(operation)[0]].requestBody = requestBody;
 
     return { [key]: operation };
 };
