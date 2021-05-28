@@ -3,20 +3,19 @@ import {
     STEAM_EXTERNAL_DOCS_URL,
 } from "../../../constants/constants.js";
 import { createPathParameters } from "./path-parameters-creator.js";
+import { createRequestBody } from "./path-request-body-creator.js";
 
 const createPath = (interfaceName, method) => {
     const key = `/${interfaceName}/${method.name}/v${method.version}`;
 
-    const httpMethodName = method.httpmethod.toLowerCase();
+    const httpMethod = method.httpmethod.toLowerCase();
 
-    const value = {
-        [httpMethodName]: {
+    const operation = {
+        [httpMethod]: {
             responses: DEFAULT_RESPONSES,
-            parameters:
-                httpMethodName === "get" &&
-                !interfaceName.toLowerCase().includes("service")
-                    ? createPathParameters(method.parameters)
-                    : [],
+            parameters: interfaceName.toLowerCase().includes("service")
+                ? []
+                : createPathParameters(httpMethod, method.parameters),
             externalDocs: {
                 url: `${STEAM_EXTERNAL_DOCS_URL}/${interfaceName}#${method.name}`,
             },
@@ -24,7 +23,11 @@ const createPath = (interfaceName, method) => {
         },
     };
 
-    return { [key]: value };
+    const requestBody = createRequestBody(httpMethod, method.parameters);
+    if (requestBody)
+        operation[Object.keys(operation)[0]].requestBody = requestBody;
+
+    return { [key]: operation };
 };
 
 export { createPath };
