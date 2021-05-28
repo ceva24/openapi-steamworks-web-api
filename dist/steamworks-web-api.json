@@ -683,7 +683,28 @@
                 },
                 "tags": [
                     "ISteamRemoteStorage"
-                ]
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "collectioncount": {
+                                        "type": "string"
+                                    },
+                                    "publishedfileids[0]": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "collectioncount",
+                                    "publishedfileids[0]"
+                                ]
+                            }
+                        }
+                    }
+                }
             }
         },
         "/ISteamRemoteStorage/GetPublishedFileDetails/v1": {
@@ -699,7 +720,28 @@
                 },
                 "tags": [
                     "ISteamRemoteStorage"
-                ]
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "itemcount": {
+                                        "type": "string"
+                                    },
+                                    "publishedfileids[0]": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "itemcount",
+                                    "publishedfileids[0]"
+                                ]
+                            }
+                        }
+                    }
+                }
             }
         },
         "/ISteamUserAuth/AuthenticateUser/v1": {
@@ -715,7 +757,32 @@
                 },
                 "tags": [
                     "ISteamUserAuth"
-                ]
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "steamid": {
+                                        "type": "string"
+                                    },
+                                    "sessionkey": {
+                                        "type": "string"
+                                    },
+                                    "encrypted_loginkey": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "steamid",
+                                    "sessionkey",
+                                    "encrypted_loginkey"
+                                ]
+                            }
+                        }
+                    }
+                }
             }
         },
         "/ISteamUserOAuth/GetTokenDetails/v1": {
@@ -946,7 +1013,44 @@
                 },
                 "tags": [
                     "ISteamWebUserPresenceOAuth"
-                ]
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "steamid": {
+                                        "type": "string"
+                                    },
+                                    "umqid": {
+                                        "type": "string"
+                                    },
+                                    "message": {
+                                        "type": "string"
+                                    },
+                                    "pollid": {
+                                        "type": "string"
+                                    },
+                                    "sectimeout": {
+                                        "type": "string"
+                                    },
+                                    "secidletime": {
+                                        "type": "string"
+                                    },
+                                    "use_accountids": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "steamid",
+                                    "umqid",
+                                    "message"
+                                ]
+                            }
+                        }
+                    }
+                }
             }
         },
         "/ITFSystem_440/GetWorldStatus/v1": {
@@ -978,7 +1082,36 @@
                 },
                 "tags": [
                     "IBroadcastService"
-                ]
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "appid": {
+                                        "type": "string"
+                                    },
+                                    "steamid": {
+                                        "type": "string"
+                                    },
+                                    "rtmp_token": {
+                                        "type": "string"
+                                    },
+                                    "frame_data": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "appid",
+                                    "steamid",
+                                    "rtmp_token",
+                                    "frame_data"
+                                ]
+                            }
+                        }
+                    }
+                }
             }
         },
         "/IContentServerDirectoryService/GetServersForSteamPipe/v1": {
@@ -1058,7 +1191,32 @@
                 },
                 "tags": [
                     "IPlayerService"
-                ]
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "steamid": {
+                                        "type": "string"
+                                    },
+                                    "ticket": {
+                                        "type": "string"
+                                    },
+                                    "play_sessions": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "steamid",
+                                    "ticket",
+                                    "play_sessions"
+                                ]
+                            }
+                        }
+                    }
+                }
             }
         },
         "/IGameNotificationsService/UserCreateSession/v1": {
@@ -1074,7 +1232,40 @@
                 },
                 "tags": [
                     "IGameNotificationsService"
-                ]
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "appid": {
+                                        "type": "string"
+                                    },
+                                    "context": {
+                                        "type": "string"
+                                    },
+                                    "title": {
+                                        "type": "string"
+                                    },
+                                    "users": {
+                                        "type": "string"
+                                    },
+                                    "steamid": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "appid",
+                                    "context",
+                                    "title",
+                                    "users",
+                                    "steamid"
+                                ]
+                            }
+                        }
+                    }
+                }
             }
         },
         "/IGameNotificationsService/UserUpdateSession/v1": {
@@ -1090,7 +1281,40 @@
                 },
                 "tags": [
                     "IGameNotificationsService"
-                ]
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "sessionid": {
+                                        "type": "string"
+                                    },
+                                    "appid": {
+                                        "type": "string"
+                                    },
+                                    "title": {
+                                        "type": "string"
+                                    },
+                                    "users": {
+                                        "type": "string"
+                                    },
+                                    "steamid": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "sessionid",
+                                    "appid",
+                                    "title",
+                                    "users",
+                                    "steamid"
+                                ]
+                            }
+                        }
+                    }
+                }
             }
         },
         "/IGameNotificationsService/UserDeleteSession/v1": {
@@ -1106,7 +1330,32 @@
                 },
                 "tags": [
                     "IGameNotificationsService"
-                ]
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "sessionid": {
+                                        "type": "string"
+                                    },
+                                    "appid": {
+                                        "type": "string"
+                                    },
+                                    "steamid": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "sessionid",
+                                    "appid",
+                                    "steamid"
+                                ]
+                            }
+                        }
+                    }
+                }
             }
         }
     },
