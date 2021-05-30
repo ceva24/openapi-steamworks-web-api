@@ -1,7 +1,7 @@
 import { SPEC_PATHS_PARAMETERS_IN } from "../../../constants/constants.js";
 import { createPropertySchema } from "../../utils/property-schema-creator.js";
 
-const createPathParameters = (httpMethod, parameters) => {
+const createPathParameters = (interfaceName, httpMethod, parameters) => {
     if (httpMethod !== "get") return [];
 
     return parameters.map((parameter) => {

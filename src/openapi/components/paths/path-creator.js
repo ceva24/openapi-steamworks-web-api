@@ -13,7 +13,11 @@ const createPath = (interfaceName, method) => {
     const operation = {
         [httpMethod]: {
             responses: DEFAULT_RESPONSES,
-            parameters: createPathParameters(httpMethod, method.parameters),
+            parameters: createPathParameters(
+                interfaceName,
+                httpMethod,
+                method.parameters
+            ),
             externalDocs: {
                 url: `${STEAM_EXTERNAL_DOCS_URL}/${interfaceName}#${method.name}`,
             },

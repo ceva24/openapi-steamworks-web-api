@@ -3,6 +3,7 @@ import { createPathParameters } from "./path-parameters-creator.js";
 
 describe("path parameters creator", () => {
     it("sets a path parameter name", () => {
+        const interfaceName = "IPortal2Leaderboards_620";
         const httpMethod = "get";
         const parameters = [
             {
@@ -13,13 +14,18 @@ describe("path parameters creator", () => {
             },
         ];
 
-        const pathParameters = createPathParameters(httpMethod, parameters);
+        const pathParameters = createPathParameters(
+            interfaceName,
+            httpMethod,
+            parameters
+        );
 
         expect(pathParameters.length).toEqual(1);
         expect(pathParameters[0].name).toEqual("leaderboardName");
     });
 
     it("sets a path parameter in", () => {
+        const interfaceName = "IPortal2Leaderboards_620";
         const httpMethod = "get";
         const parameters = [
             {
@@ -30,13 +36,18 @@ describe("path parameters creator", () => {
             },
         ];
 
-        const pathParameters = createPathParameters(httpMethod, parameters);
+        const pathParameters = createPathParameters(
+            interfaceName,
+            httpMethod,
+            parameters
+        );
 
         expect(pathParameters.length).toEqual(1);
         expect(pathParameters[0].in).toEqual(SPEC_PATHS_PARAMETERS_IN);
     });
 
     it("sets a path parameter description", () => {
+        const interfaceName = "IPortal2Leaderboards_620";
         const httpMethod = "get";
         const parameters = [
             {
@@ -47,7 +58,11 @@ describe("path parameters creator", () => {
             },
         ];
 
-        const pathParameters = createPathParameters(httpMethod, parameters);
+        const pathParameters = createPathParameters(
+            interfaceName,
+            httpMethod,
+            parameters
+        );
 
         expect(pathParameters.length).toEqual(1);
         expect(pathParameters[0].description).toEqual(
@@ -62,6 +77,7 @@ describe("path parameters creator", () => {
     `(
         "sets a path parameter required to $required when optional is $optional",
         ({ optional, required }) => {
+            const interfaceName = "IPortal2Leaderboards_620";
             const httpMethod = "get";
             const parameters = [
                 {
@@ -72,7 +88,11 @@ describe("path parameters creator", () => {
                 },
             ];
 
-            const pathParameters = createPathParameters(httpMethod, parameters);
+            const pathParameters = createPathParameters(
+                interfaceName,
+                httpMethod,
+                parameters
+            );
 
             expect(pathParameters.length).toEqual(1);
             expect(pathParameters[0].required).toEqual(required);
@@ -80,6 +100,7 @@ describe("path parameters creator", () => {
     );
 
     it("sets the path parameter schema type", () => {
+        const interfaceName = "IPortal2Leaderboards_620";
         const httpMethod = "get";
         const parameters = [
             {
@@ -90,12 +111,17 @@ describe("path parameters creator", () => {
             },
         ];
 
-        const pathParameters = createPathParameters(httpMethod, parameters);
+        const pathParameters = createPathParameters(
+            interfaceName,
+            httpMethod,
+            parameters
+        );
 
         expect(pathParameters[0].schema.type).toEqual("string");
     });
 
     it("sets multiple path parameters", () => {
+        const interfaceName = "ISteamBroadcast";
         const httpMethod = "get";
         const parameters = [
             {
@@ -124,28 +150,38 @@ describe("path parameters creator", () => {
             },
         ];
 
-        const pathParameters = createPathParameters(httpMethod, parameters);
+        const pathParameters = createPathParameters(
+            interfaceName,
+            httpMethod,
+            parameters
+        );
 
         expect(pathParameters.length).toEqual(4);
     });
 
     it("does not create parameters for POST requests", () => {
+        const interfaceName = "ISteamRemoteStorage";
         const httpMethod = "post";
         const parameters = [
             {
-                name: "leaderboardName",
-                type: "string",
+                name: "collectioncount",
+                type: "uint32",
                 optional: false,
-                description: "The leaderboard name to fetch data for.",
+                description: "Number of collections being requested",
             },
         ];
 
-        const pathParameters = createPathParameters(httpMethod, parameters);
+        const pathParameters = createPathParameters(
+            interfaceName,
+            httpMethod,
+            parameters
+        );
 
         expect(pathParameters).toHaveLength(0);
     });
 
     it("sets an empty description field when the parameter has no description", () => {
+        const interfaceName = "IPortal2Leaderboards_620";
         const httpMethod = "get";
         const parameters = [
             {
@@ -155,7 +191,11 @@ describe("path parameters creator", () => {
             },
         ];
 
-        const pathParameters = createPathParameters(httpMethod, parameters);
+        const pathParameters = createPathParameters(
+            interfaceName,
+            httpMethod,
+            parameters
+        );
 
         expect(pathParameters).toHaveLength(1);
         expect(pathParameters[0].description).toEqual("");
