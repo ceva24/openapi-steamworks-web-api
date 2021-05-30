@@ -1,4 +1,9 @@
-import { SPEC_PATHS_PARAMETERS_IN } from "../../../constants/constants.js";
+import {
+    SPEC_PATHS_PARAMETERS_IN,
+    SPEC_PATHS_PARAMETERS_INPUT_JSON,
+    SPEC_PATHS_PARAMETERS_INPUT_JSON_DESCRIPTION,
+    SPEC_TYPES,
+} from "../../../constants/constants.js";
 import { createPathParameters } from "./path-parameters-creator.js";
 
 describe("path parameters creator", () => {
@@ -199,5 +204,48 @@ describe("path parameters creator", () => {
 
         expect(pathParameters).toHaveLength(1);
         expect(pathParameters[0].description).toEqual("");
+    });
+
+    test.each`
+        httpMethod
+        ${"get"}
+        ${"post"}
+    `(
+        "sets the input_json parameter for $method methods in service interfaces",
+        ({ httpMethod }) => {
+            const interfaceName = "IPublishedFileService";
+            const parameters = [];
+
+            const pathParameters = createPathParameters(
+                interfaceName,
+                httpMethod,
+                parameters
+            );
+
+            expect(pathParameters).toHaveLength(1);
+            expect(pathParameters[0].name).toEqual(
+                SPEC_PATHS_PARAMETERS_INPUT_JSON
+            );
+            expect(pathParameters[0].in).toEqual(SPEC_PATHS_PARAMETERS_IN);
+            expect(pathParameters[0].required).toEqual(false);
+            expect(pathParameters[0].description).toEqual(
+                SPEC_PATHS_PARAMETERS_INPUT_JSON_DESCRIPTION
+            );
+            expect(pathParameters[0].schema.type).toEqual(SPEC_TYPES.STRING);
+        }
+    );
+
+    it("does not set the input_json parameter for non-service interfaces", () => {
+        const interfaceName = "IPortal2Leaderboards_620";
+        const httpMethod = "get";
+        const parameters = [];
+
+        const pathParameters = createPathParameters(
+            interfaceName,
+            httpMethod,
+            parameters
+        );
+
+        expect(pathParameters).toHaveLength(0);
     });
 });
