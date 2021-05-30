@@ -6,7 +6,7 @@ on:
     branches:
       - main
   schedule:
-    - cron: "0/5 * * * *" # At every 5th minute from 0 through 59
+    - cron: "0,5,10,15,20,25,30,35,40,45,50,55 * * * *" # At minute 0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, and 55
 
 jobs:
   dist:
