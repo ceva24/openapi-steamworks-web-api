@@ -144,4 +144,20 @@ describe("path parameters creator", () => {
 
         expect(pathParameters).toHaveLength(0);
     });
+
+    it("sets an empty description field when the parameter has no description", () => {
+        const httpMethod = "get";
+        const parameters = [
+            {
+                name: "leaderboardName",
+                type: "string",
+                optional: false,
+            },
+        ];
+
+        const pathParameters = createPathParameters(httpMethod, parameters);
+
+        expect(pathParameters).toHaveLength(1);
+        expect(pathParameters[0].description).toEqual("");
+    });
 });

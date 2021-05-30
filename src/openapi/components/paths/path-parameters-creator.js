@@ -8,7 +8,7 @@ const createPathParameters = (httpMethod, parameters) => {
         return {
             name: parameter.name,
             in: SPEC_PATHS_PARAMETERS_IN,
-            description: parameter.description,
+            description: parameter.description || "",
             required: !parameter.optional,
             schema: createPropertySchema(parameter.type),
         };
