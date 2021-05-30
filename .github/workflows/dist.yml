@@ -5,6 +5,8 @@ on:
   push:
     branches:
       - main
+  schedule:
+    - cron: "0/5 * * * *" # At every 5th minute from 0 through 59
 
 jobs:
   dist:
@@ -16,3 +18,16 @@ jobs:
           node-version: 14
       - run: npm ci
       - run: npm run dist
+      - uses: peter-evans/create-pull-request@9825ae65b1cb54b543b938503728b432a0176d29
+        id: cpr
+        with:
+          commit-message: Update dist
+          branch: update-dist
+          delete-branch: true
+          title: Update dist
+          body: ""
+      - uses: peter-evans/enable-pull-request-automerge@b0304d26721a2618e8d878de84ed5c8dfa9f8664
+        if: steps.cpr.outputs.pull-request-operation == 'created'
+        with:
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          pull-request-number: ${{ steps.cpr.outputs.pull-request-number }}
