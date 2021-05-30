@@ -1,12 +1,9 @@
 name: dist
 
 on:
-  workflow_dispatch:
-  push:
-    branches:
-      - main
   schedule:
-    - cron: "0,5,10,15,20,25,30,35,40,45,50,55 * * * *" # At minute 0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, and 55
+    - cron: "45 * * * *"
+  workflow_dispatch:
 
 jobs:
   dist:
