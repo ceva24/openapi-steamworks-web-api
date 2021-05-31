@@ -36,7 +36,7 @@ const createInputJsonParameter = () => {
         in: SPEC_PATHS_PARAMETERS_IN,
         description: SPEC_PATHS_PARAMETERS_INPUT_JSON_DESCRIPTION,
         required: false,
-        schema: createPropertySchema(STEAM_PARAMETER_TYPES.STRING),
+        schema: createPropertySchema(STEAM_PARAMETER_TYPES.STRING, null),
     };
 };
 

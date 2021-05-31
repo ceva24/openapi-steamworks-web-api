@@ -20,7 +20,12 @@ const createSchema = (interfaceName, parameters) => {
         properties: Object.assign(
             {},
             ...parameters.map((parameter) => {
-                return { [parameter.name]: createPropertySchema(parameter) };
+                return {
+                    [parameter.name]: createPropertySchema(
+                        parameter.type,
+                        parameter.description
+                    ),
+                };
             })
         ),
     };

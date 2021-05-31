@@ -1,4 +1,7 @@
-import { SPEC_PATHS_REQUEST_BODY_CONTENT_TYPE } from "../../../constants/constants.js";
+import {
+    SPEC_PATHS_REQUEST_BODY_CONTENT_TYPE,
+    SPEC_TYPES,
+} from "../../../constants/constants.js";
 import { createRequestBody } from "./path-request-body-creator.js";
 
 describe("path request body creator", () => {
@@ -208,7 +211,9 @@ describe("path request body creator", () => {
         const propertyKey = Object.keys(mediaType.schema.properties)[0];
 
         expect(Object.keys(mediaType.schema.properties)).toHaveLength(1);
-        expect(mediaType.schema.properties[propertyKey].type).toEqual("string");
+        expect(mediaType.schema.properties[propertyKey].type).toEqual(
+            SPEC_TYPES.INTEGER
+        );
     });
 
     it("sets multiple properties", () => {
@@ -260,5 +265,32 @@ describe("path request body creator", () => {
             requestBody.content[Object.keys(requestBody.content)[0]];
 
         expect(mediaType.schema.required).not.toBeDefined();
+    });
+
+    it("sets a property description", () => {
+        const interfaceName = "ISteamRemoteStorage";
+        const httpMethod = "post";
+        const parameters = [
+            {
+                name: "collectioncount",
+                type: "uint32",
+                optional: false,
+                description: "Number of collections being requested",
+            },
+        ];
+
+        const requestBody = createRequestBody(
+            interfaceName,
+            httpMethod,
+            parameters
+        );
+        const mediaType =
+            requestBody.content[Object.keys(requestBody.content)[0]];
+        const propertyKey = Object.keys(mediaType.schema.properties)[0];
+
+        expect(Object.keys(mediaType.schema.properties)).toHaveLength(1);
+        expect(mediaType.schema.properties[propertyKey].description).toEqual(
+            "Number of collections being requested"
+        );
     });
 });
