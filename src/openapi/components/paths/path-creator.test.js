@@ -16,7 +16,7 @@ describe("path creator", () => {
 
         const path = createPath(interfaceName, method);
 
-        expect(Object.keys(path).length).toEqual(1);
+        expect(Object.keys(path)).toHaveLength(1);
         expect(Object.keys(path)[0]).toEqual(
             "/IClientStats_1046930/ReportEvent/v1"
         );
@@ -34,7 +34,7 @@ describe("path creator", () => {
         const path = createPath(interfaceName, method);
         const value = path[Object.keys(path)[0]];
 
-        expect(Object.keys(value).length).toEqual(1);
+        expect(Object.keys(value)).toHaveLength(1);
         expect(Object.keys(value)[0]).toEqual("get");
     });
 
@@ -89,7 +89,7 @@ describe("path creator", () => {
         const path = createPath(interfaceName, method);
         const operation = getOperation(path);
 
-        expect(operation.parameters.length).toEqual(1);
+        expect(operation.parameters).toHaveLength(1);
     });
 
     test.each`
@@ -109,7 +109,7 @@ describe("path creator", () => {
             const path = createPath(interfaceName, method);
             const operation = getOperation(path);
 
-            expect(operation.tags.length).toEqual(1);
+            expect(operation.tags).toHaveLength(1);
             expect(operation.tags[0]).toEqual(tag);
         }
     );

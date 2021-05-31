@@ -13,9 +13,11 @@ const createPath = (interfaceName, method) => {
     const operation = {
         [httpMethod]: {
             responses: DEFAULT_RESPONSES,
-            parameters: interfaceName.toLowerCase().includes("service")
-                ? []
-                : createPathParameters(httpMethod, method.parameters),
+            parameters: createPathParameters(
+                interfaceName,
+                httpMethod,
+                method.parameters
+            ),
             externalDocs: {
                 url: `${STEAM_EXTERNAL_DOCS_URL}/${interfaceName}#${method.name}`,
             },
@@ -23,7 +25,11 @@ const createPath = (interfaceName, method) => {
         },
     };
 
-    const requestBody = createRequestBody(httpMethod, method.parameters);
+    const requestBody = createRequestBody(
+        interfaceName,
+        httpMethod,
+        method.parameters
+    );
     if (requestBody)
         operation[Object.keys(operation)[0]].requestBody = requestBody;
 
