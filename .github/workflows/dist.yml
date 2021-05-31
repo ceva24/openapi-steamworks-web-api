@@ -3,7 +3,7 @@ name: dist
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 0/2 * * *"
+    - cron: "0 0 * * 1" # at 00:00 on a Monday
 
 jobs:
   dist:
@@ -36,7 +36,7 @@ jobs:
           branch: update-dist
           delete-branch: true
           title: Update dist
-          body: ""
+          body: Automated pull request to update dist
 
       - uses: peter-evans/enable-pull-request-automerge@b0304d26721a2618e8d878de84ed5c8dfa9f8664
         if: steps.cpr.outputs.pull-request-operation == 'created'
