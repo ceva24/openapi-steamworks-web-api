@@ -3,26 +3,42 @@ name: dist
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 0/3 * * *"
+    - cron: "0 0/2 * * *"
 
 jobs:
   dist:
     runs-on: ubuntu-latest
     steps:
+
       - uses: actions/checkout@v2
+
+      - uses: crazy-max/ghaction-import-gpg@b0793c0060c97f4ef0efbac949d476c6499b7775
+        with:
+          gpg-private-key: ${{ secrets.GPG_PRIVATE_KEY }}
+          passphrase: ${{ secrets.GPG_PASSPHRASE }}
+          git-user-signingkey: true
+          git-commit-gpgsign: true
+
       - uses: actions/setup-node@v2
         with:
           node-version: 14
+
       - run: npm ci
+
       - run: npm run dist
+
       - uses: peter-evans/create-pull-request@9825ae65b1cb54b543b938503728b432a0176d29
         id: cpr
         with:
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          committer: ceva24-bot <85085081+ceva24-bot@users.noreply.github.com>
+          author: ceva24-bot <85085081+ceva24-bot@users.noreply.github.com>
           commit-message: Update dist
           branch: update-dist
           delete-branch: true
           title: Update dist
           body: ""
+
       - uses: peter-evans/enable-pull-request-automerge@b0304d26721a2618e8d878de84ed5c8dfa9f8664
         if: steps.cpr.outputs.pull-request-operation == 'created'
         with:
