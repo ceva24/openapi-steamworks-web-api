@@ -10,6 +10,22 @@
         }
     ],
     "paths": {
+        "/IClientStats_1046930/ReportEvent/v1": {
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "successful"
+                    }
+                },
+                "parameters": [],
+                "externalDocs": {
+                    "url": "https://partner.steamgames.com/doc/webapi/IClientStats_1046930#ReportEvent"
+                },
+                "tags": [
+                    "IClientStats"
+                ]
+            }
+        },
         "/IGCVersion_1046930/GetClientVersion/v1": {
             "get": {
                 "responses": {
