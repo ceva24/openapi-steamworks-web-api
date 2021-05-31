@@ -240,5 +240,25 @@ describe("path request body creator", () => {
         expect(Object.keys(mediaType.schema.properties)).toHaveLength(2);
     });
 
-    it("does not set fields as required in service interfaces", () => {});
+    it("does not set fields as required in service interfaces", () => {
+        const interfaceName = "IPlayerService";
+        const httpMethod = "post";
+        const parameters = [
+            {
+                name: "steamid",
+                type: "string",
+                optional: false,
+            },
+        ];
+
+        const requestBody = createRequestBody(
+            interfaceName,
+            httpMethod,
+            parameters
+        );
+        const mediaType =
+            requestBody.content[Object.keys(requestBody.content)[0]];
+
+        expect(mediaType.schema.required).not.toBeDefined();
+    });
 });
