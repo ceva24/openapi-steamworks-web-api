@@ -1,7 +1,7 @@
 import { SPEC_PATHS_REQUEST_BODY_CONTENT_TYPE } from "../../../constants/constants.js";
 import { createPropertySchema } from "../../utils/property-schema-creator.js";
 
-const createRequestBody = (httpMethod, parameters) => {
+const createRequestBody = (interfaceName, httpMethod, parameters) => {
     if (httpMethod !== "post" || parameters.length === 0) return null;
 
     return {

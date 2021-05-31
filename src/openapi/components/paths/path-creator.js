@@ -25,7 +25,11 @@ const createPath = (interfaceName, method) => {
         },
     };
 
-    const requestBody = createRequestBody(httpMethod, method.parameters);
+    const requestBody = createRequestBody(
+        interfaceName,
+        httpMethod,
+        method.parameters
+    );
     if (requestBody)
         operation[Object.keys(operation)[0]].requestBody = requestBody;
 

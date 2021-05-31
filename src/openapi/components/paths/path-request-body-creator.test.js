@@ -3,6 +3,7 @@ import { createRequestBody } from "./path-request-body-creator.js";
 
 describe("path request body creator", () => {
     it("does not create a request body for get requests", () => {
+        const interfaceName = "IPortal2Leaderboards_620";
         const httpMethod = "get";
         const parameters = [
             {
@@ -13,18 +14,27 @@ describe("path request body creator", () => {
             },
         ];
 
-        const requestBody = createRequestBody(httpMethod, parameters);
+        const requestBody = createRequestBody(
+            interfaceName,
+            httpMethod,
+            parameters
+        );
 
         expect(requestBody).toBeNull();
     });
 
     it("does not create a request body for requests with no parameters", () => {
-        const requestBody = createRequestBody("post", []);
+        const requestBody = createRequestBody(
+            "IPortal2Leaderboards_620",
+            "post",
+            []
+        );
 
         expect(requestBody).toBeNull();
     });
 
     it("sets the content key", () => {
+        const interfaceName = "ISteamRemoteStorage";
         const httpMethod = "post";
         const parameters = [
             {
@@ -35,7 +45,11 @@ describe("path request body creator", () => {
             },
         ];
 
-        const requestBody = createRequestBody(httpMethod, parameters);
+        const requestBody = createRequestBody(
+            interfaceName,
+            httpMethod,
+            parameters
+        );
 
         expect(Object.keys(requestBody.content)).toHaveLength(1);
         expect(Object.keys(requestBody.content)[0]).toEqual(
@@ -44,6 +58,7 @@ describe("path request body creator", () => {
     });
 
     it("sets the schema type", () => {
+        const interfaceName = "ISteamRemoteStorage";
         const httpMethod = "post";
         const parameters = [
             {
@@ -54,7 +69,11 @@ describe("path request body creator", () => {
             },
         ];
 
-        const requestBody = createRequestBody(httpMethod, parameters);
+        const requestBody = createRequestBody(
+            interfaceName,
+            httpMethod,
+            parameters
+        );
         const mediaType =
             requestBody.content[Object.keys(requestBody.content)[0]];
 
@@ -62,6 +81,7 @@ describe("path request body creator", () => {
     });
 
     it("sets a required property", () => {
+        const interfaceName = "ISteamRemoteStorage";
         const httpMethod = "post";
         const parameters = [
             {
@@ -72,7 +92,11 @@ describe("path request body creator", () => {
             },
         ];
 
-        const requestBody = createRequestBody(httpMethod, parameters);
+        const requestBody = createRequestBody(
+            interfaceName,
+            httpMethod,
+            parameters
+        );
         const mediaType =
             requestBody.content[Object.keys(requestBody.content)[0]];
 
@@ -81,6 +105,7 @@ describe("path request body creator", () => {
     });
 
     it("sets multiple required properties", () => {
+        const interfaceName = "ISteamRemoteStorage";
         const httpMethod = "post";
         const parameters = [
             {
@@ -97,7 +122,11 @@ describe("path request body creator", () => {
             },
         ];
 
-        const requestBody = createRequestBody(httpMethod, parameters);
+        const requestBody = createRequestBody(
+            interfaceName,
+            httpMethod,
+            parameters
+        );
         const mediaType =
             requestBody.content[Object.keys(requestBody.content)[0]];
 
@@ -105,6 +134,7 @@ describe("path request body creator", () => {
     });
 
     it("does not set required when there are no required properties", () => {
+        const interfaceName = "ISteamWebUserPresenceOAuth";
         const httpMethod = "post";
         const parameters = [
             {
@@ -115,7 +145,11 @@ describe("path request body creator", () => {
             },
         ];
 
-        const requestBody = createRequestBody(httpMethod, parameters);
+        const requestBody = createRequestBody(
+            interfaceName,
+            httpMethod,
+            parameters
+        );
         const mediaType =
             requestBody.content[Object.keys(requestBody.content)[0]];
 
@@ -123,6 +157,7 @@ describe("path request body creator", () => {
     });
 
     it("does not set optional properties as required", () => {
+        const interfaceName = "ISteamWebUserPresenceOAuth";
         const httpMethod = "post";
         const parameters = [
             {
@@ -139,7 +174,11 @@ describe("path request body creator", () => {
             },
         ];
 
-        const requestBody = createRequestBody(httpMethod, parameters);
+        const requestBody = createRequestBody(
+            interfaceName,
+            httpMethod,
+            parameters
+        );
         const mediaType =
             requestBody.content[Object.keys(requestBody.content)[0]];
 
@@ -148,6 +187,7 @@ describe("path request body creator", () => {
     });
 
     it("sets a property", () => {
+        const interfaceName = "ISteamRemoteStorage";
         const httpMethod = "post";
         const parameters = [
             {
@@ -158,7 +198,11 @@ describe("path request body creator", () => {
             },
         ];
 
-        const requestBody = createRequestBody(httpMethod, parameters);
+        const requestBody = createRequestBody(
+            interfaceName,
+            httpMethod,
+            parameters
+        );
         const mediaType =
             requestBody.content[Object.keys(requestBody.content)[0]];
         const propertyKey = Object.keys(mediaType.schema.properties)[0];
@@ -168,6 +212,7 @@ describe("path request body creator", () => {
     });
 
     it("sets multiple properties", () => {
+        const interfaceName = "ISteamWebUserPresenceOAuth";
         const httpMethod = "post";
         const parameters = [
             {
@@ -184,10 +229,16 @@ describe("path request body creator", () => {
             },
         ];
 
-        const requestBody = createRequestBody(httpMethod, parameters);
+        const requestBody = createRequestBody(
+            interfaceName,
+            httpMethod,
+            parameters
+        );
         const mediaType =
             requestBody.content[Object.keys(requestBody.content)[0]];
 
         expect(Object.keys(mediaType.schema.properties)).toHaveLength(2);
     });
+
+    it("does not set fields as required in service interfaces", () => {});
 });
