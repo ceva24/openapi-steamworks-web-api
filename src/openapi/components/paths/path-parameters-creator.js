@@ -5,6 +5,7 @@ import {
     STEAM_PARAMETER_TYPES,
 } from "../../../constants/constants.js";
 import { createPropertySchema } from "../../utils/property-schema-creator.js";
+import { isServiceInterface } from "../../utils/service-interface-checker.js";
 
 const createPathParameters = (interfaceName, httpMethod, steamParameters) => {
     const parameters = [];
@@ -27,10 +28,6 @@ const createPathParameters = (interfaceName, httpMethod, steamParameters) => {
         parameters.push(createInputJsonParameter());
 
     return parameters;
-};
-
-const isServiceInterface = (interfaceName) => {
-    return interfaceName.endsWith("Service");
 };
 
 const createInputJsonParameter = () => {
