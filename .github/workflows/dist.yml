@@ -25,7 +25,7 @@ jobs:
 
       - run: npm run dist
 
-      - uses: peter-evans/create-pull-request@9825ae65b1cb54b543b938503728b432a0176d29
+      - uses: ceva24/create-pull-request@a58ca0bbb601044374cd8cb739b12a075a122639
         id: create-pull-request
         with:
           token: ${{ steps.generate-token.outputs.token }}
