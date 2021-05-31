@@ -3,7 +3,7 @@ name: dist
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 0 * * 1"
+    - cron: "0 0 * * 1" # at 00:00 on a Monday
 
 jobs:
   dist:
@@ -11,11 +11,12 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - uses: tibdex/github-app-token@36464acb844fc53b9b8b2401da68844f6b05ebb0
-        id: generate-token
+      - uses: crazy-max/ghaction-import-gpg@b0793c0060c97f4ef0efbac949d476c6499b7775
         with:
-          app_id: ${{ secrets.APP_ID }}
-          private_key: ${{ secrets.APP_PRIVATE_KEY }}
+          gpg-private-key: ${{ secrets.GPG_PRIVATE_KEY }}
+          passphrase: ${{ secrets.GPG_PASSPHRASE }}
+          git-user-signingkey: true
+          git-commit-gpgsign: true
 
       - uses: actions/setup-node@v2
         with:
@@ -25,10 +26,12 @@ jobs:
 
       - run: npm run dist
 
-      - uses: ceva24/create-pull-request@a58ca0bbb601044374cd8cb739b12a075a122639
-        id: create-pull-request
+      - uses: peter-evans/create-pull-request@9825ae65b1cb54b543b938503728b432a0176d29
+        id: cpr
         with:
-          token: ${{ steps.generate-token.outputs.token }}
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          committer: ceva24-bot <85085081+ceva24-bot@users.noreply.github.com>
+          author: ceva24-bot <85085081+ceva24-bot@users.noreply.github.com>
           commit-message: Update dist
           branch: update-dist
           delete-branch: true
@@ -38,5 +41,5 @@ jobs:
       - uses: peter-evans/enable-pull-request-automerge@b0304d26721a2618e8d878de84ed5c8dfa9f8664
         if: steps.cpr.outputs.pull-request-operation == 'created'
         with:
-          token: ${{ steps.generate-token.outputs.token }}
-          pull-request-number: ${{ steps.create-pull-request.outputs.pull-request-number }}
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          pull-request-number: ${{ steps.cpr.outputs.pull-request-number }}
