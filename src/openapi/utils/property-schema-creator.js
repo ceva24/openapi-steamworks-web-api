@@ -23,6 +23,9 @@ const createPropertySchema = (steamType, description) => {
         case STEAM_PARAMETER_TYPES.STRING:
             schema = { type: SPEC_TYPES.STRING };
             break;
+        case STEAM_PARAMETER_TYPES.MESSAGE:
+            schema = { type: SPEC_TYPES.STRING, format: SPEC_FORMATS.MESSAGE };
+            break;
         default:
             schema = null;
     }

@@ -7,11 +7,12 @@ import { createPropertySchema } from "./property-schema-creator.js";
 
 describe("property schema creator", () => {
     test.each`
-        steamType      | openApiSpecType       | openApiSpecFormat
-        ${"uint32"}    | ${SPEC_TYPES.INTEGER} | ${SPEC_FORMATS.INT32}
-        ${"int32"}     | ${SPEC_TYPES.INTEGER} | ${SPEC_FORMATS.INT32}
-        ${"uint64"}    | ${SPEC_TYPES.INTEGER} | ${SPEC_FORMATS.INT64}
-        ${"rawbinary"} | ${SPEC_TYPES.STRING}  | ${SPEC_FORMATS.BINARY}
+        steamType                          | openApiSpecType       | openApiSpecFormat
+        ${STEAM_PARAMETER_TYPES.UINT32}    | ${SPEC_TYPES.INTEGER} | ${SPEC_FORMATS.INT32}
+        ${STEAM_PARAMETER_TYPES.INT32}     | ${SPEC_TYPES.INTEGER} | ${SPEC_FORMATS.INT32}
+        ${STEAM_PARAMETER_TYPES.UINT64}    | ${SPEC_TYPES.INTEGER} | ${SPEC_FORMATS.INT64}
+        ${STEAM_PARAMETER_TYPES.RAWBINARY} | ${SPEC_TYPES.STRING}  | ${SPEC_FORMATS.BINARY}
+        ${STEAM_PARAMETER_TYPES.MESSAGE}   | ${SPEC_TYPES.STRING}  | ${SPEC_FORMATS.MESSAGE}
     `(
         "sets the property schema type to $openApiSpecType and format to $openApiSpecFormat when the Steam type is $steamType",
         ({ steamType, openApiSpecType, openApiSpecFormat }) => {

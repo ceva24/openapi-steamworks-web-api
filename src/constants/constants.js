@@ -11,12 +11,14 @@ export const STEAM_PARAMETER_TYPES = {
     UINT32: "uint32",
     INT32: "int32",
     RAWBINARY: "rawbinary",
+    MESSAGE: "{message}",
 };
 
 export const SPEC_FORMATS = {
     INT32: "int32",
     INT64: "int64",
     BINARY: "binary",
+    MESSAGE: "{message}",
 };
 
 export const SPEC_TYPES = {
