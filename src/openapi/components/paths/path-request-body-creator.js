@@ -1,4 +1,7 @@
-import { SPEC_PATHS_REQUEST_BODY_CONTENT_TYPE } from "../../../constants/constants.js";
+import {
+    SPEC_PATHS_REQUEST_BODY_CONTENT_TYPE,
+    SPEC_PATHS_REQUEST_BODY_REQUIRED_TEXT,
+} from "../../../constants/constants.js";
 import { createPropertySchema } from "../../utils/property-schema-creator.js";
 import { isServiceInterface } from "../../utils/service-interface-checker.js";
 
@@ -20,7 +23,12 @@ const createSchema = (interfaceName, parameters) => {
         properties: Object.assign(
             {},
             ...parameters.map((parameter) => {
-                return { [parameter.name]: createPropertySchema(parameter) };
+                return {
+                    [parameter.name]: createPropertySchema(
+                        parameter.type,
+                        createParameterDescription(interfaceName, parameter)
+                    ),
+                };
             })
         ),
     };
@@ -40,6 +48,20 @@ const createSchema = (interfaceName, parameters) => {
     }
 
     return schema;
+};
+
+const createParameterDescription = (interfaceName, parameter) => {
+    /*
+     * Add a hint to the description that the parameter is required for service interfaces,
+     * as we're explicitly removing the required property due to the alternative input_json
+     * query parameter.
+     */
+    return isServiceInterface(interfaceName) &&
+        !parameter.optional &&
+        parameter.description &&
+        !parameter.description.startsWith("(Optional)")
+        ? `${SPEC_PATHS_REQUEST_BODY_REQUIRED_TEXT} ${parameter.description}`
+        : parameter.description;
 };
 
 const createRequired = (parameters) => {

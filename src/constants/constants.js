@@ -11,12 +11,14 @@ export const STEAM_PARAMETER_TYPES = {
     UINT32: "uint32",
     INT32: "int32",
     RAWBINARY: "rawbinary",
+    MESSAGE: "{message}",
 };
 
 export const SPEC_FORMATS = {
     INT32: "int32",
     INT64: "int64",
     BINARY: "binary",
+    MESSAGE: "{message}",
 };
 
 export const SPEC_TYPES = {
@@ -35,6 +37,8 @@ export const SPEC_PATHS_PARAMETERS_INPUT_JSON_DESCRIPTION =
 
 export const SPEC_PATHS_REQUEST_BODY_CONTENT_TYPE =
     "application/x-www-form-urlencoded";
+export const SPEC_PATHS_REQUEST_BODY_REQUIRED_TEXT = "(Required)";
+export const SPEC_PATHS_REQUEST_BODY_OPTIONAL_TEXT = "(Optional)";
 
 export const SPEC_SERVER_URL = STEAM_API_URL;
 

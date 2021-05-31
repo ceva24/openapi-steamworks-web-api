@@ -1,4 +1,10 @@
-import { SPEC_PATHS_REQUEST_BODY_CONTENT_TYPE } from "../../../constants/constants.js";
+import {
+    SPEC_PATHS_REQUEST_BODY_CONTENT_TYPE,
+    SPEC_PATHS_REQUEST_BODY_OPTIONAL_TEXT,
+    SPEC_PATHS_REQUEST_BODY_REQUIRED_TEXT,
+    SPEC_TYPES,
+    STEAM_PARAMETER_TYPES,
+} from "../../../constants/constants.js";
 import { createRequestBody } from "./path-request-body-creator.js";
 
 describe("path request body creator", () => {
@@ -208,7 +214,9 @@ describe("path request body creator", () => {
         const propertyKey = Object.keys(mediaType.schema.properties)[0];
 
         expect(Object.keys(mediaType.schema.properties)).toHaveLength(1);
-        expect(mediaType.schema.properties[propertyKey].type).toEqual("string");
+        expect(mediaType.schema.properties[propertyKey].type).toEqual(
+            SPEC_TYPES.INTEGER
+        );
     });
 
     it("sets multiple properties", () => {
@@ -260,5 +268,84 @@ describe("path request body creator", () => {
             requestBody.content[Object.keys(requestBody.content)[0]];
 
         expect(mediaType.schema.required).not.toBeDefined();
+    });
+
+    it("sets a property description", () => {
+        const interfaceName = "ISteamRemoteStorage";
+        const httpMethod = "post";
+        const parameters = [
+            {
+                name: "collectioncount",
+                type: "uint32",
+                optional: false,
+                description: "Number of collections being requested",
+            },
+        ];
+
+        const requestBody = createRequestBody(
+            interfaceName,
+            httpMethod,
+            parameters
+        );
+        const mediaType =
+            requestBody.content[Object.keys(requestBody.content)[0]];
+        const propertyKey = Object.keys(mediaType.schema.properties)[0];
+
+        expect(Object.keys(mediaType.schema.properties)).toHaveLength(1);
+        expect(mediaType.schema.properties[propertyKey].description).toEqual(
+            "Number of collections being requested"
+        );
+    });
+
+    it("mentions that a service interface property is required in the description when the property is required", () => {
+        const interfaceName = "IGameNotificationsService";
+        const httpMethod = "post";
+        const parameters = [
+            {
+                name: "appid",
+                type: "int32",
+                optional: false,
+                description: "The appid to create the session for.",
+            },
+        ];
+
+        const requestBody = createRequestBody(
+            interfaceName,
+            httpMethod,
+            parameters
+        );
+        const mediaType =
+            requestBody.content[Object.keys(requestBody.content)[0]];
+        const propertyKey = Object.keys(mediaType.schema.properties)[0];
+
+        expect(mediaType.schema.properties[propertyKey].description).toEqual(
+            `${SPEC_PATHS_REQUEST_BODY_REQUIRED_TEXT} The appid to create the session for.`
+        );
+    });
+
+    it("handles contradicting information by not mentioning that a required service interface property is required if the description indicates that it's optional", () => {
+        const interfaceName = "IGameNotificationsService";
+        const httpMethod = "post";
+        const parameters = [
+            {
+                name: "title",
+                type: STEAM_PARAMETER_TYPES.MESSAGE,
+                optional: false,
+                description: `${SPEC_PATHS_REQUEST_BODY_OPTIONAL_TEXT} The new title of the session.  If not specified, the title will not be changed.`,
+            },
+        ];
+
+        const requestBody = createRequestBody(
+            interfaceName,
+            httpMethod,
+            parameters
+        );
+        const mediaType =
+            requestBody.content[Object.keys(requestBody.content)[0]];
+        const propertyKey = Object.keys(mediaType.schema.properties)[0];
+
+        expect(mediaType.schema.properties[propertyKey].description).toEqual(
+            parameters[0].description
+        );
     });
 });
