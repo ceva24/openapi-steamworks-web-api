@@ -22,7 +22,7 @@ describe("path creator", () => {
 
         const paths = createPaths(apiDefinition);
 
-        expect(Object.keys(paths).length).toEqual(1);
+        expect(Object.keys(paths)).toHaveLength(1);
     });
 
     it("creates a path for one interface with multiple methods", () => {
@@ -52,7 +52,7 @@ describe("path creator", () => {
 
         const paths = createPaths(apiDefinition);
 
-        expect(Object.keys(paths).length).toEqual(2);
+        expect(Object.keys(paths)).toHaveLength(2);
     });
 
     it("creates paths for multiple interfaces with one method each", () => {
@@ -87,7 +87,7 @@ describe("path creator", () => {
 
         const paths = createPaths(apiDefinition);
 
-        expect(Object.keys(paths).length).toEqual(2);
+        expect(Object.keys(paths)).toHaveLength(2);
     });
 
     it("creates paths for multiple interfaces with multiple methods each", () => {
@@ -134,6 +134,6 @@ describe("path creator", () => {
 
         const paths = createPaths(apiDefinition);
 
-        expect(Object.keys(paths).length).toEqual(4);
+        expect(Object.keys(paths)).toHaveLength(4);
     });
 });

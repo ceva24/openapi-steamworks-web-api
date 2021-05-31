@@ -25,7 +25,7 @@ describe("path parameters creator", () => {
             parameters
         );
 
-        expect(pathParameters.length).toEqual(1);
+        expect(pathParameters).toHaveLength(1);
         expect(pathParameters[0].name).toEqual("leaderboardName");
     });
 
@@ -47,7 +47,7 @@ describe("path parameters creator", () => {
             parameters
         );
 
-        expect(pathParameters.length).toEqual(1);
+        expect(pathParameters).toHaveLength(1);
         expect(pathParameters[0].in).toEqual(SPEC_PATHS_PARAMETERS_IN);
     });
 
@@ -69,7 +69,7 @@ describe("path parameters creator", () => {
             parameters
         );
 
-        expect(pathParameters.length).toEqual(1);
+        expect(pathParameters).toHaveLength(1);
         expect(pathParameters[0].description).toEqual(
             "The leaderboard name to fetch data for."
         );
@@ -99,7 +99,7 @@ describe("path parameters creator", () => {
                 parameters
             );
 
-            expect(pathParameters.length).toEqual(1);
+            expect(pathParameters).toHaveLength(1);
             expect(pathParameters[0].required).toEqual(required);
         }
     );
@@ -161,7 +161,7 @@ describe("path parameters creator", () => {
             parameters
         );
 
-        expect(pathParameters.length).toEqual(4);
+        expect(pathParameters).toHaveLength(4);
     });
 
     it("does not create parameters for POST requests", () => {
