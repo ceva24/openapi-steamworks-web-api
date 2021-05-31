@@ -27,7 +27,7 @@ const createPropertySchema = (steamType, description) => {
             schema = { type: SPEC_TYPES.STRING, format: SPEC_FORMATS.MESSAGE };
             break;
         default:
-            schema = null;
+            throw new Error(`Unknown Steam parameter type '${steamType}'`);
     }
 
     if (description) schema.description = description;

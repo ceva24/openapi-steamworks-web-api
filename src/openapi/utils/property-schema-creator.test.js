@@ -52,4 +52,10 @@ describe("property schema creator", () => {
 
         expect(propertySchema).not.toHaveProperty("description");
     });
+
+    it("throws an error for unknown Steam parameter types", () => {
+        expect(() => createPropertySchema("unknown", null)).toThrow(
+            "Unknown Steam parameter type 'unknown'"
+        );
+    });
 });
