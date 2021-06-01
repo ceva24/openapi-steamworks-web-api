@@ -33,6 +33,7 @@
     "dependencies": {
         "@apidevtools/swagger-parser": "^10.0.2",
         "dotenv": "^10.0.0",
+        "minimist": "^1.2.5",
         "node-fetch": "^2.6.1"
     },
     "devDependencies": {

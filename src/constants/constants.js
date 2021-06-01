@@ -1,6 +1,7 @@
 const STEAM_API_URL = "https://api.steampowered.com";
 
 export const STEAM_API_LIST_URL = `${STEAM_API_URL}/ISteamWebAPIUtil/GetSupportedAPIList/v1/`;
+export const STEAM_API_KEY_PARAMETER = "key";
 
 export const STEAM_EXTERNAL_DOCS_URL =
     "https://partner.steamgames.com/doc/webapi";
