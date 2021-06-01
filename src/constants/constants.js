@@ -32,8 +32,11 @@ export const SPEC_INFO_TITLE = "Steamworks Web API";
 
 export const SPEC_PATHS_PARAMETERS_IN = "query";
 export const SPEC_PATHS_PARAMETERS_INPUT_JSON = "input_json";
-export const SPEC_PATHS_PARAMETERS_INPUT_JSON_DESCRIPTION =
-    'An alternative to the request body, pass arguments as a URL-encoded JSON blob. The "key" and "format" fields should still be passed as separate parameters';
+export const SPEC_PATHS_PARAMETERS_INPUT_JSON_GET_DESCRIPTION =
+    'An alternative to the query string parameters; pass arguments as a URL-encoded JSON blob. The "key" and "format" fields should still be passed as separate parameters';
+
+export const SPEC_PATHS_PARAMETERS_INPUT_JSON_POST_DESCRIPTION =
+    'An alternative to the request body; pass arguments as a URL-encoded JSON blob. The "key" and "format" fields should still be passed as separate parameters';
 
 export const SPEC_PATHS_REQUEST_BODY_CONTENT_TYPE =
     "application/x-www-form-urlencoded";

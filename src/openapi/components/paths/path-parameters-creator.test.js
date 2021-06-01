@@ -1,7 +1,8 @@
 import {
     SPEC_PATHS_PARAMETERS_IN,
     SPEC_PATHS_PARAMETERS_INPUT_JSON,
-    SPEC_PATHS_PARAMETERS_INPUT_JSON_DESCRIPTION,
+    SPEC_PATHS_PARAMETERS_INPUT_JSON_GET_DESCRIPTION,
+    SPEC_PATHS_PARAMETERS_INPUT_JSON_POST_DESCRIPTION,
     SPEC_TYPES,
 } from "../../../constants/constants.js";
 import { createPathParameters } from "./path-parameters-creator.js";
@@ -207,12 +208,12 @@ describe("path parameters creator", () => {
     });
 
     test.each`
-        httpMethod
-        ${"get"}
-        ${"post"}
+        httpMethod | description
+        ${"get"}   | ${SPEC_PATHS_PARAMETERS_INPUT_JSON_GET_DESCRIPTION}
+        ${"post"}  | ${SPEC_PATHS_PARAMETERS_INPUT_JSON_POST_DESCRIPTION}
     `(
         "sets the input_json parameter for $method methods in service interfaces",
-        ({ httpMethod }) => {
+        ({ httpMethod, description }) => {
             const interfaceName = "IPublishedFileService";
             const parameters = [];
 
@@ -228,9 +229,7 @@ describe("path parameters creator", () => {
             );
             expect(pathParameters[0].in).toEqual(SPEC_PATHS_PARAMETERS_IN);
             expect(pathParameters[0].required).toEqual(false);
-            expect(pathParameters[0].description).toEqual(
-                SPEC_PATHS_PARAMETERS_INPUT_JSON_DESCRIPTION
-            );
+            expect(pathParameters[0].description).toEqual(description);
             expect(pathParameters[0].schema.type).toEqual(SPEC_TYPES.STRING);
         }
     );
