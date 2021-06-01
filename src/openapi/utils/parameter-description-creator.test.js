@@ -1,6 +1,6 @@
 import {
-    SPEC_PATHS_REQUEST_BODY_OPTIONAL_TEXT,
-    SPEC_PATHS_REQUEST_BODY_REQUIRED_TEXT,
+    SPEC_PATHS_FIELD_OPTIONAL_TEXT,
+    SPEC_PATHS_FIELD_REQUIRED_TEXT,
     STEAM_PARAMETER_TYPES,
 } from "../../constants/constants.js";
 import { createParameterDescription } from "./parameter-description-creator.js";
@@ -53,7 +53,7 @@ describe("parameter description creator", () => {
         );
 
         expect(description).toEqual(
-            `${SPEC_PATHS_REQUEST_BODY_REQUIRED_TEXT} ${parameter.description}`
+            `${SPEC_PATHS_FIELD_REQUIRED_TEXT} ${parameter.description}`
         );
     });
 
@@ -70,7 +70,7 @@ describe("parameter description creator", () => {
             parameter
         );
 
-        expect(description).toEqual(SPEC_PATHS_REQUEST_BODY_REQUIRED_TEXT);
+        expect(description).toEqual(SPEC_PATHS_FIELD_REQUIRED_TEXT);
     });
 
     it("returns the description for a required parameter in a service interface that has a description that describes it as optional", () => {
@@ -79,7 +79,7 @@ describe("parameter description creator", () => {
             name: "title",
             type: STEAM_PARAMETER_TYPES.MESSAGE,
             optional: false,
-            description: `${SPEC_PATHS_REQUEST_BODY_OPTIONAL_TEXT} The new title of the session.  If not specified, the title will not be changed.`,
+            description: `${SPEC_PATHS_FIELD_OPTIONAL_TEXT} The new title of the session.  If not specified, the title will not be changed.`,
         };
 
         const description = createParameterDescription(

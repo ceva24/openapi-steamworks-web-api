@@ -40,8 +40,9 @@ export const SPEC_PATHS_PARAMETERS_INPUT_JSON_POST_DESCRIPTION =
 
 export const SPEC_PATHS_REQUEST_BODY_CONTENT_TYPE =
     "application/x-www-form-urlencoded";
-export const SPEC_PATHS_REQUEST_BODY_REQUIRED_TEXT = "(Required)";
-export const SPEC_PATHS_REQUEST_BODY_OPTIONAL_TEXT = "(Optional)";
+
+export const SPEC_PATHS_FIELD_REQUIRED_TEXT = "(Required)";
+export const SPEC_PATHS_FIELD_OPTIONAL_TEXT = "(Optional)";
 
 export const SPEC_SERVER_URL = STEAM_API_URL;
 

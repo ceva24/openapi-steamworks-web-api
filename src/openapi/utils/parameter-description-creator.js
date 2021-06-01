@@ -1,6 +1,6 @@
 import {
-    SPEC_PATHS_REQUEST_BODY_OPTIONAL_TEXT,
-    SPEC_PATHS_REQUEST_BODY_REQUIRED_TEXT,
+    SPEC_PATHS_FIELD_OPTIONAL_TEXT,
+    SPEC_PATHS_FIELD_REQUIRED_TEXT,
 } from "../../constants/constants.js";
 import { isServiceInterface } from "./service-interface-checker.js";
 
@@ -9,9 +9,7 @@ const createParameterDescription = (interfaceName, parameter) => {
         !isServiceInterface(interfaceName) ||
         parameter.optional ||
         (parameter.description &&
-            parameter.description.startsWith(
-                SPEC_PATHS_REQUEST_BODY_OPTIONAL_TEXT
-            ))
+            parameter.description.startsWith(SPEC_PATHS_FIELD_OPTIONAL_TEXT))
     )
         return parameter.description;
 
@@ -21,8 +19,8 @@ const createParameterDescription = (interfaceName, parameter) => {
      * query parameter.
      */
     return parameter.description
-        ? `${SPEC_PATHS_REQUEST_BODY_REQUIRED_TEXT} ${parameter.description}`
-        : SPEC_PATHS_REQUEST_BODY_REQUIRED_TEXT;
+        ? `${SPEC_PATHS_FIELD_REQUIRED_TEXT} ${parameter.description}`
+        : SPEC_PATHS_FIELD_REQUIRED_TEXT;
 };
 
 export { createParameterDescription };
