@@ -1,6 +1,7 @@
 const STEAM_API_URL = "https://api.steampowered.com";
 
 export const STEAM_API_LIST_URL = `${STEAM_API_URL}/ISteamWebAPIUtil/GetSupportedAPIList/v1/`;
+export const STEAM_API_KEY_PARAMETER = "key";
 
 export const STEAM_EXTERNAL_DOCS_URL =
     "https://partner.steamgames.com/doc/webapi";
@@ -11,7 +12,9 @@ export const STEAM_PARAMETER_TYPES = {
     UINT32: "uint32",
     INT32: "int32",
     RAWBINARY: "rawbinary",
+    BOOL: "bool",
     MESSAGE: "{message}",
+    ENUM: "{enum}",
 };
 
 export const SPEC_FORMATS = {
@@ -19,11 +22,13 @@ export const SPEC_FORMATS = {
     INT64: "int64",
     BINARY: "binary",
     MESSAGE: "{message}",
+    ENUM: "{enum}",
 };
 
 export const SPEC_TYPES = {
     INTEGER: "integer",
     STRING: "string",
+    BOOLEAN: "boolean",
 };
 
 export const SPEC_VERSION = "3.0.3";

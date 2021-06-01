@@ -26,6 +26,12 @@ const createPropertySchema = (steamType, description) => {
         case STEAM_PARAMETER_TYPES.MESSAGE:
             schema = { type: SPEC_TYPES.STRING, format: SPEC_FORMATS.MESSAGE };
             break;
+        case STEAM_PARAMETER_TYPES.BOOL:
+            schema = { type: SPEC_TYPES.BOOLEAN };
+            break;
+        case STEAM_PARAMETER_TYPES.ENUM:
+            schema = { type: SPEC_TYPES.STRING, format: SPEC_FORMATS.ENUM };
+            break;
         default:
             throw new Error(`Unknown Steam parameter type '${steamType}'`);
     }

@@ -24,7 +24,9 @@ jobs:
 
       - run: npm ci
 
-      - run: npm run dist
+      - run: npm run dist -- --key $STEAM_API_KEY
+        env:
+          STEAM_API_KEY: ${{ secrets.STEAM_API_KEY }}
 
       - uses: peter-evans/create-pull-request@9825ae65b1cb54b543b938503728b432a0176d29
         id: cpr

@@ -13,6 +13,7 @@ describe("property schema creator", () => {
         ${STEAM_PARAMETER_TYPES.UINT64}    | ${SPEC_TYPES.INTEGER} | ${SPEC_FORMATS.INT64}
         ${STEAM_PARAMETER_TYPES.RAWBINARY} | ${SPEC_TYPES.STRING}  | ${SPEC_FORMATS.BINARY}
         ${STEAM_PARAMETER_TYPES.MESSAGE}   | ${SPEC_TYPES.STRING}  | ${SPEC_FORMATS.MESSAGE}
+        ${STEAM_PARAMETER_TYPES.ENUM}      | ${SPEC_TYPES.STRING}  | ${SPEC_FORMATS.ENUM}
     `(
         "sets the property schema type to $openApiSpecType and format to $openApiSpecFormat when the Steam type is $steamType",
         ({ steamType, openApiSpecType, openApiSpecFormat }) => {
@@ -20,6 +21,20 @@ describe("property schema creator", () => {
 
             expect(propertySchema.type).toEqual(openApiSpecType);
             expect(propertySchema.format).toEqual(openApiSpecFormat);
+        }
+    );
+
+    test.each`
+        steamType                       | openApiSpecType
+        ${STEAM_PARAMETER_TYPES.STRING} | ${SPEC_TYPES.STRING}
+        ${STEAM_PARAMETER_TYPES.BOOL}   | ${SPEC_TYPES.BOOLEAN}
+    `(
+        "sets the property schema type to $openApiSpecType when the Steam type is $steamType",
+        ({ steamType, openApiSpecType }) => {
+            const propertySchema = createPropertySchema(steamType, null);
+
+            expect(propertySchema.type).toEqual(openApiSpecType);
+            expect(propertySchema).not.toHaveProperty("format");
         }
     );
 
