@@ -1,4 +1,5 @@
 import {
+    SPEC_PATHS_FIELD_ARRAY_PARAMETER_DESCRIPTION,
     SPEC_PATHS_FIELD_OPTIONAL_TEXT,
     SPEC_PATHS_FIELD_REQUIRED_TEXT,
     STEAM_PARAMETER_TYPES,
@@ -88,5 +89,24 @@ describe("parameter description creator", () => {
         );
 
         expect(description).toEqual(parameter.description);
+    });
+
+    it("includes the array parameter description for array parameters", () => {
+        const interfaceName = "ISteamRemoteStorage";
+        const parameter = {
+            name: "publishedfileids[0]",
+            type: "uint64",
+            optional: false,
+            description: "collection ids to get the details for",
+        };
+
+        const description = createParameterDescription(
+            interfaceName,
+            parameter
+        );
+
+        expect(description).toContain(
+            SPEC_PATHS_FIELD_ARRAY_PARAMETER_DESCRIPTION
+        );
     });
 });
