@@ -348,4 +348,29 @@ describe("path request body creator", () => {
             parameters[0].description
         );
     });
+
+    it("marks a required service interface parameter as required in the description even if there is no parameter description", () => {
+        const interfaceName = "IGameNotificationsService";
+        const httpMethod = "post";
+        const parameters = [
+            {
+                name: "appid",
+                type: "int32",
+                optional: false,
+            },
+        ];
+
+        const requestBody = createRequestBody(
+            interfaceName,
+            httpMethod,
+            parameters
+        );
+        const mediaType =
+            requestBody.content[Object.keys(requestBody.content)[0]];
+        const propertyKey = Object.keys(mediaType.schema.properties)[0];
+
+        expect(mediaType.schema.properties[propertyKey].description).toEqual(
+            SPEC_PATHS_REQUEST_BODY_REQUIRED_TEXT
+        );
+    });
 });
