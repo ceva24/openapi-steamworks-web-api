@@ -691,10 +691,14 @@
                                 "type": "object",
                                 "properties": {
                                     "collectioncount": {
-                                        "type": "string"
+                                        "type": "integer",
+                                        "format": "int32",
+                                        "description": "Number of collections being requested"
                                     },
                                     "publishedfileids[0]": {
-                                        "type": "string"
+                                        "type": "integer",
+                                        "format": "int64",
+                                        "description": "collection ids to get the details for"
                                     }
                                 },
                                 "required": [
@@ -728,10 +732,14 @@
                                 "type": "object",
                                 "properties": {
                                     "itemcount": {
-                                        "type": "string"
+                                        "type": "integer",
+                                        "format": "int32",
+                                        "description": "Number of items being requested"
                                     },
                                     "publishedfileids[0]": {
-                                        "type": "string"
+                                        "type": "integer",
+                                        "format": "int64",
+                                        "description": "published file id to look up"
                                     }
                                 },
                                 "required": [
@@ -765,13 +773,19 @@
                                 "type": "object",
                                 "properties": {
                                     "steamid": {
-                                        "type": "string"
+                                        "type": "integer",
+                                        "format": "int64",
+                                        "description": "Should be the users steamid, unencrypted."
                                     },
                                     "sessionkey": {
-                                        "type": "string"
+                                        "type": "string",
+                                        "format": "binary",
+                                        "description": "Should be a 32 byte random blob of data, which is then encrypted with RSA using the Steam system's public key.  Randomness is important here for security."
                                     },
                                     "encrypted_loginkey": {
-                                        "type": "string"
+                                        "type": "string",
+                                        "format": "binary",
+                                        "description": "Should be the users hashed loginkey, AES encrypted with the sessionkey."
                                     }
                                 },
                                 "required": [
@@ -1021,25 +1035,38 @@
                                 "type": "object",
                                 "properties": {
                                     "steamid": {
-                                        "type": "string"
+                                        "type": "string",
+                                        "description": "Steam ID of the user"
                                     },
                                     "umqid": {
-                                        "type": "string"
+                                        "type": "integer",
+                                        "format": "int64",
+                                        "description": "UMQ Session ID"
                                     },
                                     "message": {
-                                        "type": "string"
+                                        "type": "integer",
+                                        "format": "int32",
+                                        "description": "Message that was last known to the user"
                                     },
                                     "pollid": {
-                                        "type": "string"
+                                        "type": "integer",
+                                        "format": "int32",
+                                        "description": "Caller-specific poll id"
                                     },
                                     "sectimeout": {
-                                        "type": "string"
+                                        "type": "integer",
+                                        "format": "int32",
+                                        "description": "Long-poll timeout in seconds"
                                     },
                                     "secidletime": {
-                                        "type": "string"
+                                        "type": "integer",
+                                        "format": "int32",
+                                        "description": "How many seconds is client considering itself idle, e.g. screen is off"
                                     },
                                     "use_accountids": {
-                                        "type": "string"
+                                        "type": "integer",
+                                        "format": "int32",
+                                        "description": "Boolean, 0 (default): return steamid_from in output, 1: return accountid_from"
                                     }
                                 },
                                 "required": [
@@ -1076,7 +1103,17 @@
                         "description": "successful"
                     }
                 },
-                "parameters": [],
+                "parameters": [
+                    {
+                        "name": "input_json",
+                        "in": "query",
+                        "description": "An alternative to the request body; pass arguments as a URL-encoded JSON blob. The \"key\" and \"format\" fields should still be passed as separate parameters",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
                 "externalDocs": {
                     "url": "https://partner.steamgames.com/doc/webapi/IBroadcastService#PostGameDataFrameRTMP"
                 },
@@ -1090,24 +1127,24 @@
                                 "type": "object",
                                 "properties": {
                                     "appid": {
-                                        "type": "string"
+                                        "type": "integer",
+                                        "format": "int32",
+                                        "description": "(Required) AppID of the game being broadcasted"
                                     },
                                     "steamid": {
-                                        "type": "string"
+                                        "type": "integer",
+                                        "format": "int64",
+                                        "description": "(Required) Broadcasters SteamID"
                                     },
                                     "rtmp_token": {
-                                        "type": "string"
+                                        "type": "string",
+                                        "description": "(Required) Valid RTMP token for the Broadcaster"
                                     },
                                     "frame_data": {
-                                        "type": "string"
+                                        "type": "string",
+                                        "description": "(Required) game data frame expressing current state of game (string, zipped, whatever)"
                                     }
-                                },
-                                "required": [
-                                    "appid",
-                                    "steamid",
-                                    "rtmp_token",
-                                    "frame_data"
-                                ]
+                                }
                             }
                         }
                     }
@@ -1121,7 +1158,65 @@
                         "description": "successful"
                     }
                 },
-                "parameters": [],
+                "parameters": [
+                    {
+                        "name": "cell_id",
+                        "in": "query",
+                        "description": "(Required) client Cell ID",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    },
+                    {
+                        "name": "max_servers",
+                        "in": "query",
+                        "description": "max servers in response list",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    },
+                    {
+                        "name": "ip_override",
+                        "in": "query",
+                        "description": "client IP address",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "launcher_type",
+                        "in": "query",
+                        "description": "launcher type",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    },
+                    {
+                        "name": "ipv6_public",
+                        "in": "query",
+                        "description": "client public ipv6 address if it knows it",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "input_json",
+                        "in": "query",
+                        "description": "An alternative to the query string parameters; pass arguments as a URL-encoded JSON blob. The \"key\" and \"format\" fields should still be passed as separate parameters",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
                 "externalDocs": {
                     "url": "https://partner.steamgames.com/doc/webapi/IContentServerDirectoryService#GetServersForSteamPipe"
                 },
@@ -1137,7 +1232,26 @@
                         "description": "successful"
                     }
                 },
-                "parameters": [],
+                "parameters": [
+                    {
+                        "name": "cached_signature",
+                        "in": "query",
+                        "description": "(Required)",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "input_json",
+                        "in": "query",
+                        "description": "An alternative to the query string parameters; pass arguments as a URL-encoded JSON blob. The \"key\" and \"format\" fields should still be passed as separate parameters",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
                 "externalDocs": {
                     "url": "https://partner.steamgames.com/doc/webapi/IContentServerDirectoryService#GetClientUpdateHosts"
                 },
@@ -1153,7 +1267,57 @@
                         "description": "successful"
                     }
                 },
-                "parameters": [],
+                "parameters": [
+                    {
+                        "name": "appid",
+                        "in": "query",
+                        "description": "(Required)",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    },
+                    {
+                        "name": "depotid",
+                        "in": "query",
+                        "description": "(Required)",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    },
+                    {
+                        "name": "source_manifestid",
+                        "in": "query",
+                        "description": "(Required)",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    },
+                    {
+                        "name": "target_manifestid",
+                        "in": "query",
+                        "description": "(Required)",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    },
+                    {
+                        "name": "input_json",
+                        "in": "query",
+                        "description": "An alternative to the query string parameters; pass arguments as a URL-encoded JSON blob. The \"key\" and \"format\" fields should still be passed as separate parameters",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
                 "externalDocs": {
                     "url": "https://partner.steamgames.com/doc/webapi/IContentServerDirectoryService#GetDepotPatchInfo"
                 },
@@ -1169,7 +1333,27 @@
                         "description": "successful"
                     }
                 },
-                "parameters": [],
+                "parameters": [
+                    {
+                        "name": "publishedfileids",
+                        "in": "query",
+                        "description": "(Required)",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    },
+                    {
+                        "name": "input_json",
+                        "in": "query",
+                        "description": "An alternative to the query string parameters; pass arguments as a URL-encoded JSON blob. The \"key\" and \"format\" fields should still be passed as separate parameters",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
                 "externalDocs": {
                     "url": "https://partner.steamgames.com/doc/webapi/IPublishedFileService#GetUserVoteSummary"
                 },
@@ -1185,7 +1369,17 @@
                         "description": "successful"
                     }
                 },
-                "parameters": [],
+                "parameters": [
+                    {
+                        "name": "input_json",
+                        "in": "query",
+                        "description": "An alternative to the request body; pass arguments as a URL-encoded JSON blob. The \"key\" and \"format\" fields should still be passed as separate parameters",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
                 "externalDocs": {
                     "url": "https://partner.steamgames.com/doc/webapi/IPlayerService#RecordOfflinePlaytime"
                 },
@@ -1199,20 +1393,20 @@
                                 "type": "object",
                                 "properties": {
                                     "steamid": {
-                                        "type": "string"
+                                        "type": "integer",
+                                        "format": "int64",
+                                        "description": "(Required)"
                                     },
                                     "ticket": {
-                                        "type": "string"
+                                        "type": "string",
+                                        "description": "(Required)"
                                     },
                                     "play_sessions": {
-                                        "type": "string"
+                                        "type": "string",
+                                        "format": "{message}",
+                                        "description": "(Required)"
                                     }
-                                },
-                                "required": [
-                                    "steamid",
-                                    "ticket",
-                                    "play_sessions"
-                                ]
+                                }
                             }
                         }
                     }
@@ -1226,7 +1420,17 @@
                         "description": "successful"
                     }
                 },
-                "parameters": [],
+                "parameters": [
+                    {
+                        "name": "input_json",
+                        "in": "query",
+                        "description": "An alternative to the request body; pass arguments as a URL-encoded JSON blob. The \"key\" and \"format\" fields should still be passed as separate parameters",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
                 "externalDocs": {
                     "url": "https://partner.steamgames.com/doc/webapi/IGameNotificationsService#UserCreateSession"
                 },
@@ -1240,28 +1444,31 @@
                                 "type": "object",
                                 "properties": {
                                     "appid": {
-                                        "type": "string"
+                                        "type": "integer",
+                                        "format": "int32",
+                                        "description": "(Required) The appid to create the session for."
                                     },
                                     "context": {
-                                        "type": "string"
+                                        "type": "integer",
+                                        "format": "int64",
+                                        "description": "(Required) Game-specified context value the game can used to associate the session with some object on their backend."
                                     },
                                     "title": {
-                                        "type": "string"
+                                        "type": "string",
+                                        "format": "{message}",
+                                        "description": "(Required) The title of the session to be displayed within each user's list of sessions."
                                     },
                                     "users": {
-                                        "type": "string"
+                                        "type": "string",
+                                        "format": "{message}",
+                                        "description": "(Required) The initial state of all users in the session."
                                     },
                                     "steamid": {
-                                        "type": "string"
+                                        "type": "integer",
+                                        "format": "int64",
+                                        "description": "(Optional) steamid to make the request on behalf of -- if specified, the user must be in the session and all users being added to the session must be friends with the user."
                                     }
-                                },
-                                "required": [
-                                    "appid",
-                                    "context",
-                                    "title",
-                                    "users",
-                                    "steamid"
-                                ]
+                                }
                             }
                         }
                     }
@@ -1275,7 +1482,17 @@
                         "description": "successful"
                     }
                 },
-                "parameters": [],
+                "parameters": [
+                    {
+                        "name": "input_json",
+                        "in": "query",
+                        "description": "An alternative to the request body; pass arguments as a URL-encoded JSON blob. The \"key\" and \"format\" fields should still be passed as separate parameters",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
                 "externalDocs": {
                     "url": "https://partner.steamgames.com/doc/webapi/IGameNotificationsService#UserUpdateSession"
                 },
@@ -1289,28 +1506,31 @@
                                 "type": "object",
                                 "properties": {
                                     "sessionid": {
-                                        "type": "string"
+                                        "type": "integer",
+                                        "format": "int64",
+                                        "description": "(Required) The sessionid to update."
                                     },
                                     "appid": {
-                                        "type": "string"
+                                        "type": "integer",
+                                        "format": "int32",
+                                        "description": "(Required) The appid of the session to update."
                                     },
                                     "title": {
-                                        "type": "string"
+                                        "type": "string",
+                                        "format": "{message}",
+                                        "description": "(Optional) The new title of the session.  If not specified, the title will not be changed."
                                     },
                                     "users": {
-                                        "type": "string"
+                                        "type": "string",
+                                        "format": "{message}",
+                                        "description": "(Optional) A list of users whose state will be updated to reflect the given state. If the users are not already in the session, they will be added to it."
                                     },
                                     "steamid": {
-                                        "type": "string"
+                                        "type": "integer",
+                                        "format": "int64",
+                                        "description": "(Optional) steamid to make the request on behalf of -- if specified, the user must be in the session and all users being added to the session must be friends with the user."
                                     }
-                                },
-                                "required": [
-                                    "sessionid",
-                                    "appid",
-                                    "title",
-                                    "users",
-                                    "steamid"
-                                ]
+                                }
                             }
                         }
                     }
@@ -1324,7 +1544,17 @@
                         "description": "successful"
                     }
                 },
-                "parameters": [],
+                "parameters": [
+                    {
+                        "name": "input_json",
+                        "in": "query",
+                        "description": "An alternative to the request body; pass arguments as a URL-encoded JSON blob. The \"key\" and \"format\" fields should still be passed as separate parameters",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
                 "externalDocs": {
                     "url": "https://partner.steamgames.com/doc/webapi/IGameNotificationsService#UserDeleteSession"
                 },
@@ -1338,20 +1568,21 @@
                                 "type": "object",
                                 "properties": {
                                     "sessionid": {
-                                        "type": "string"
+                                        "type": "integer",
+                                        "format": "int64",
+                                        "description": "(Required) The sessionid to delete."
                                     },
                                     "appid": {
-                                        "type": "string"
+                                        "type": "integer",
+                                        "format": "int32",
+                                        "description": "(Required) The appid of the session to delete."
                                     },
                                     "steamid": {
-                                        "type": "string"
+                                        "type": "integer",
+                                        "format": "int64",
+                                        "description": "(Optional) steamid to make the request on behalf of -- if specified, the user must be in the session."
                                     }
-                                },
-                                "required": [
-                                    "sessionid",
-                                    "appid",
-                                    "steamid"
-                                ]
+                                }
                             }
                         }
                     }
