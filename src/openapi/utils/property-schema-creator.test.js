@@ -23,6 +23,20 @@ describe("property schema creator", () => {
         }
     );
 
+    test.each`
+        steamType                       | openApiSpecType
+        ${STEAM_PARAMETER_TYPES.STRING} | ${SPEC_TYPES.STRING}
+        ${STEAM_PARAMETER_TYPES.BOOL}   | ${SPEC_TYPES.BOOLEAN}
+    `(
+        "sets the property schema type to $openApiSpecType when the Steam type is $steamType",
+        ({ steamType, openApiSpecType }) => {
+            const propertySchema = createPropertySchema(steamType, null);
+
+            expect(propertySchema.type).toEqual(openApiSpecType);
+            expect(propertySchema).not.toHaveProperty("format");
+        }
+    );
+
     it("sets the property schema type to string when the Steam type is string", () => {
         const propertySchema = createPropertySchema(
             STEAM_PARAMETER_TYPES.STRING,

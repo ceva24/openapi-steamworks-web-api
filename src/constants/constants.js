@@ -13,6 +13,7 @@ export const STEAM_PARAMETER_TYPES = {
     INT32: "int32",
     RAWBINARY: "rawbinary",
     MESSAGE: "{message}",
+    BOOL: "bool",
 };
 
 export const SPEC_FORMATS = {
@@ -25,6 +26,7 @@ export const SPEC_FORMATS = {
 export const SPEC_TYPES = {
     INTEGER: "integer",
     STRING: "string",
+    BOOLEAN: "boolean",
 };
 
 export const SPEC_VERSION = "3.0.3";
