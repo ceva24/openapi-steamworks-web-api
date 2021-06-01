@@ -1,4 +1,5 @@
 import {
+    FORMAT_PARAMETER,
     SPEC_PATHS_PARAMETERS_IN,
     SPEC_PATHS_PARAMETERS_INPUT_JSON,
     SPEC_PATHS_PARAMETERS_INPUT_JSON_GET_DESCRIPTION,
@@ -32,6 +33,8 @@ const createPathParameters = (interfaceName, httpMethod, steamParameters) => {
 
     if (isServiceInterface(interfaceName))
         parameters.push(createInputJsonParameter(httpMethod));
+
+    parameters.push(FORMAT_PARAMETER);
 
     return parameters;
 };

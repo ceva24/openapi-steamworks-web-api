@@ -74,6 +74,20 @@ Object {
               "type": "string",
             },
           },
+          Object {
+            "description": "The format of the response. Defaults to json",
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "schema": Object {
+              "enum": Array [
+                "json",
+                "xml",
+                "vdf",
+              ],
+              "type": "string",
+            },
+          },
         ],
         "responses": Object {
           "200": Object {
@@ -90,7 +104,22 @@ Object {
         "externalDocs": Object {
           "url": "https://partner.steamgames.com/doc/webapi/IGCVersion_1046930#GetClientVersion",
         },
-        "parameters": Array [],
+        "parameters": Array [
+          Object {
+            "description": "The format of the response. Defaults to json",
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "schema": Object {
+              "enum": Array [
+                "json",
+                "xml",
+                "vdf",
+              ],
+              "type": "string",
+            },
+          },
+        ],
         "responses": Object {
           "200": Object {
             "description": "successful",
@@ -106,7 +135,22 @@ Object {
         "externalDocs": Object {
           "url": "https://partner.steamgames.com/doc/webapi/IGCVersion_1046930#GetServerVersion",
         },
-        "parameters": Array [],
+        "parameters": Array [
+          Object {
+            "description": "The format of the response. Defaults to json",
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "schema": Object {
+              "enum": Array [
+                "json",
+                "xml",
+                "vdf",
+              ],
+              "type": "string",
+            },
+          },
+        ],
         "responses": Object {
           "200": Object {
             "description": "successful",
@@ -122,7 +166,22 @@ Object {
         "externalDocs": Object {
           "url": "https://partner.steamgames.com/doc/webapi/IGCVersion_1269260#GetClientVersion",
         },
-        "parameters": Array [],
+        "parameters": Array [
+          Object {
+            "description": "The format of the response. Defaults to json",
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "schema": Object {
+              "enum": Array [
+                "json",
+                "xml",
+                "vdf",
+              ],
+              "type": "string",
+            },
+          },
+        ],
         "responses": Object {
           "200": Object {
             "description": "successful",
@@ -138,7 +197,22 @@ Object {
         "externalDocs": Object {
           "url": "https://partner.steamgames.com/doc/webapi/IGCVersion_1269260#GetServerVersion",
         },
-        "parameters": Array [],
+        "parameters": Array [
+          Object {
+            "description": "The format of the response. Defaults to json",
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "schema": Object {
+              "enum": Array [
+                "json",
+                "xml",
+                "vdf",
+              ],
+              "type": "string",
+            },
+          },
+        ],
         "responses": Object {
           "200": Object {
             "description": "successful",
@@ -161,6 +235,20 @@ Object {
             "name": "input_json",
             "required": false,
             "schema": Object {
+              "type": "string",
+            },
+          },
+          Object {
+            "description": "The format of the response. Defaults to json",
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "schema": Object {
+              "enum": Array [
+                "json",
+                "xml",
+                "vdf",
+              ],
               "type": "string",
             },
           },
@@ -223,6 +311,20 @@ Object {
             "name": "leaderboardName",
             "required": true,
             "schema": Object {
+              "type": "string",
+            },
+          },
+          Object {
+            "description": "The format of the response. Defaults to json",
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "schema": Object {
+              "enum": Array [
+                "json",
+                "xml",
+                "vdf",
+              ],
               "type": "string",
             },
           },
