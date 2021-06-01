@@ -1,5 +1,8 @@
 import fetch from "node-fetch";
-import { STEAM_API_LIST_URL } from "../constants/constants.js";
+import {
+    STEAM_API_KEY_PARAMETER,
+    STEAM_API_LIST_URL,
+} from "../constants/constants.js";
 import { fetchApiDefinition } from "./api-definition-fetcher.js";
 
 beforeEach(() => {
@@ -19,6 +22,8 @@ describe("api definition fetcher", () => {
         await fetchApiDefinition("123");
 
         expect(fetch.mock.calls.length).toEqual(1);
-        expect(fetch.mock.calls[0][0]).toEqual(`${STEAM_API_LIST_URL}?key=123`);
+        expect(fetch.mock.calls[0][0]).toEqual(
+            `${STEAM_API_LIST_URL}?${STEAM_API_KEY_PARAMETER}=123`
+        );
     });
 });
