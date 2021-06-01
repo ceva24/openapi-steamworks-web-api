@@ -11,6 +11,80 @@ Object {
   },
   "openapi": "3.0.3",
   "paths": Object {
+    "/IContentServerDirectoryService/GetServersForSteamPipe/v1": Object {
+      "get": Object {
+        "externalDocs": Object {
+          "url": "https://partner.steamgames.com/doc/webapi/IContentServerDirectoryService#GetServersForSteamPipe",
+        },
+        "parameters": Array [
+          Object {
+            "description": "(Required) client Cell ID",
+            "in": "query",
+            "name": "cell_id",
+            "required": false,
+            "schema": Object {
+              "format": "int32",
+              "type": "integer",
+            },
+          },
+          Object {
+            "description": "max servers in response list",
+            "in": "query",
+            "name": "max_servers",
+            "required": false,
+            "schema": Object {
+              "format": "int32",
+              "type": "integer",
+            },
+          },
+          Object {
+            "description": "client IP address",
+            "in": "query",
+            "name": "ip_override",
+            "required": false,
+            "schema": Object {
+              "type": "string",
+            },
+          },
+          Object {
+            "description": "launcher type",
+            "in": "query",
+            "name": "launcher_type",
+            "required": false,
+            "schema": Object {
+              "format": "int32",
+              "type": "integer",
+            },
+          },
+          Object {
+            "description": "client public ipv6 address if it knows it",
+            "in": "query",
+            "name": "ipv6_public",
+            "required": false,
+            "schema": Object {
+              "type": "string",
+            },
+          },
+          Object {
+            "description": "An alternative to the query string parameters; pass arguments as a URL-encoded JSON blob. The \\"key\\" and \\"format\\" fields should still be passed as separate parameters",
+            "in": "query",
+            "name": "input_json",
+            "required": false,
+            "schema": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "responses": Object {
+          "200": Object {
+            "description": "successful",
+          },
+        },
+        "tags": Array [
+          "IContentServerDirectoryService",
+        ],
+      },
+    },
     "/IGCVersion_1046930/GetClientVersion/v1": Object {
       "get": Object {
         "externalDocs": Object {
@@ -72,6 +146,68 @@ Object {
         },
         "tags": Array [
           "IGCVersion",
+        ],
+      },
+    },
+    "/IGameNotificationsService/UserCreateSession/v1": Object {
+      "post": Object {
+        "externalDocs": Object {
+          "url": "https://partner.steamgames.com/doc/webapi/IGameNotificationsService#UserCreateSession",
+        },
+        "parameters": Array [
+          Object {
+            "description": "An alternative to the request body; pass arguments as a URL-encoded JSON blob. The \\"key\\" and \\"format\\" fields should still be passed as separate parameters",
+            "in": "query",
+            "name": "input_json",
+            "required": false,
+            "schema": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "requestBody": Object {
+          "content": Object {
+            "application/x-www-form-urlencoded": Object {
+              "schema": Object {
+                "properties": Object {
+                  "appid": Object {
+                    "description": "(Required) The appid to create the session for.",
+                    "format": "int32",
+                    "type": "integer",
+                  },
+                  "context": Object {
+                    "description": "(Required) Game-specified context value the game can used to associate the session with some object on their backend.",
+                    "format": "int64",
+                    "type": "integer",
+                  },
+                  "steamid": Object {
+                    "description": "(Optional) steamid to make the request on behalf of -- if specified, the user must be in the session and all users being added to the session must be friends with the user.",
+                    "format": "int64",
+                    "type": "integer",
+                  },
+                  "title": Object {
+                    "description": "(Required) The title of the session to be displayed within each user's list of sessions.",
+                    "format": "{message}",
+                    "type": "string",
+                  },
+                  "users": Object {
+                    "description": "(Required) The initial state of all users in the session.",
+                    "format": "{message}",
+                    "type": "string",
+                  },
+                },
+                "type": "object",
+              },
+            },
+          },
+        },
+        "responses": Object {
+          "200": Object {
+            "description": "successful",
+          },
+        },
+        "tags": Array [
+          "IGameNotificationsService",
         ],
       },
     },
