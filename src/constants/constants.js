@@ -12,8 +12,9 @@ export const STEAM_PARAMETER_TYPES = {
     UINT32: "uint32",
     INT32: "int32",
     RAWBINARY: "rawbinary",
-    MESSAGE: "{message}",
     BOOL: "bool",
+    MESSAGE: "{message}",
+    ENUM: "{enum}",
 };
 
 export const SPEC_FORMATS = {
@@ -21,6 +22,7 @@ export const SPEC_FORMATS = {
     INT64: "int64",
     BINARY: "binary",
     MESSAGE: "{message}",
+    ENUM: "{enum}",
 };
 
 export const SPEC_TYPES = {

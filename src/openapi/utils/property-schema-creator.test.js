@@ -13,6 +13,7 @@ describe("property schema creator", () => {
         ${STEAM_PARAMETER_TYPES.UINT64}    | ${SPEC_TYPES.INTEGER} | ${SPEC_FORMATS.INT64}
         ${STEAM_PARAMETER_TYPES.RAWBINARY} | ${SPEC_TYPES.STRING}  | ${SPEC_FORMATS.BINARY}
         ${STEAM_PARAMETER_TYPES.MESSAGE}   | ${SPEC_TYPES.STRING}  | ${SPEC_FORMATS.MESSAGE}
+        ${STEAM_PARAMETER_TYPES.ENUM}      | ${SPEC_TYPES.STRING}  | ${SPEC_FORMATS.ENUM}
     `(
         "sets the property schema type to $openApiSpecType and format to $openApiSpecFormat when the Steam type is $steamType",
         ({ steamType, openApiSpecType, openApiSpecFormat }) => {
