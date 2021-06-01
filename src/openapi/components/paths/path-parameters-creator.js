@@ -1,4 +1,5 @@
 import {
+    FORMAT_PARAMETER,
     SPEC_PATHS_PARAMETERS_IN,
     SPEC_PATHS_PARAMETERS_INPUT_JSON,
     SPEC_PATHS_PARAMETERS_INPUT_JSON_GET_DESCRIPTION,
@@ -33,13 +34,7 @@ const createPathParameters = (interfaceName, httpMethod, steamParameters) => {
     if (isServiceInterface(interfaceName))
         parameters.push(createInputJsonParameter(httpMethod));
 
-    parameters.push({
-        name: "format",
-        in: "query",
-        description: "The format of the response. Defaults to json",
-        required: false,
-        schema: { type: "string", enum: ["json", "xml", "vdf"] },
-    });
+    parameters.push(FORMAT_PARAMETER);
 
     return parameters;
 };

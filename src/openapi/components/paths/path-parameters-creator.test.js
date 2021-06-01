@@ -1,4 +1,5 @@
 import {
+    FORMAT_PARAMETER,
     SPEC_PATHS_PARAMETERS_IN,
     SPEC_PATHS_PARAMETERS_INPUT_JSON,
     SPEC_PATHS_PARAMETERS_INPUT_JSON_GET_DESCRIPTION,
@@ -322,7 +323,7 @@ describe("path parameters creator", () => {
         );
 
         const formatParameter = pathParameters.find((parameter) => {
-            return parameter.name === "format";
+            return parameter.name === FORMAT_PARAMETER.name;
         });
 
         expect(formatParameter).toBeDefined();
