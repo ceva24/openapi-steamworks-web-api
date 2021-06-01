@@ -89,7 +89,11 @@ describe("path creator", () => {
         const path = createPath(interfaceName, method);
         const operation = getOperation(path);
 
-        expect(operation.parameters).toHaveLength(1);
+        const parameter = operation.parameters.find((parameter) => {
+            return parameter.name === method.parameters[0].name;
+        });
+
+        expect(parameter).toBeDefined();
     });
 
     test.each`

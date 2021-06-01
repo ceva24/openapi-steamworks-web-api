@@ -26,8 +26,11 @@ describe("path parameters creator", () => {
             parameters
         );
 
-        expect(pathParameters).toHaveLength(1);
-        expect(pathParameters[0].name).toEqual("leaderboardName");
+        const parameter = pathParameters.find((parameter) => {
+            return parameter.name === parameters[0].name;
+        });
+
+        expect(parameter.name).toEqual("leaderboardName");
     });
 
     it("sets a path parameter in", () => {
@@ -48,8 +51,11 @@ describe("path parameters creator", () => {
             parameters
         );
 
-        expect(pathParameters).toHaveLength(1);
-        expect(pathParameters[0].in).toEqual(SPEC_PATHS_PARAMETERS_IN);
+        const parameter = pathParameters.find((parameter) => {
+            return parameter.name === parameters[0].name;
+        });
+
+        expect(parameter.in).toEqual(SPEC_PATHS_PARAMETERS_IN);
     });
 
     it("sets a path parameter description", () => {
@@ -70,8 +76,11 @@ describe("path parameters creator", () => {
             parameters
         );
 
-        expect(pathParameters).toHaveLength(1);
-        expect(pathParameters[0].description).toEqual(
+        const parameter = pathParameters.find((parameter) => {
+            return parameter.name === parameters[0].name;
+        });
+
+        expect(parameter.description).toEqual(
             "The leaderboard name to fetch data for."
         );
     });
@@ -100,8 +109,11 @@ describe("path parameters creator", () => {
                 parameters
             );
 
-            expect(pathParameters).toHaveLength(1);
-            expect(pathParameters[0].required).toEqual(required);
+            const parameter = pathParameters.find((parameter) => {
+                return parameter.name === parameters[0].name;
+            });
+
+            expect(parameter.required).toEqual(required);
         }
     );
 
@@ -123,7 +135,11 @@ describe("path parameters creator", () => {
             parameters
         );
 
-        expect(pathParameters[0].schema.type).toEqual("string");
+        const parameter = pathParameters.find((parameter) => {
+            return parameter.name === parameters[0].name;
+        });
+
+        expect(parameter.schema.type).toEqual("string");
     });
 
     it("sets multiple path parameters", () => {
@@ -162,7 +178,14 @@ describe("path parameters creator", () => {
             parameters
         );
 
-        expect(pathParameters).toHaveLength(4);
+        const parameterNames = pathParameters.map((parameter) => {
+            return parameter.name;
+        });
+
+        expect(parameterNames).toContain("steamid");
+        expect(parameterNames).toContain("sessionid");
+        expect(parameterNames).toContain("token");
+        expect(parameterNames).toContain("stream");
     });
 
     it("does not create parameters for POST requests", () => {
@@ -183,7 +206,11 @@ describe("path parameters creator", () => {
             parameters
         );
 
-        expect(pathParameters).toHaveLength(0);
+        const parameter = pathParameters.find((parameter) => {
+            return parameter.name === parameters[0].name;
+        });
+
+        expect(parameter).not.toBeDefined();
     });
 
     it("sets an empty description field when the parameter has no description", () => {
@@ -203,8 +230,11 @@ describe("path parameters creator", () => {
             parameters
         );
 
-        expect(pathParameters).toHaveLength(1);
-        expect(pathParameters[0].description).toEqual("");
+        const parameter = pathParameters.find((parameter) => {
+            return parameter.name === parameters[0].name;
+        });
+
+        expect(parameter.description).toEqual("");
     });
 
     test.each`
@@ -223,14 +253,17 @@ describe("path parameters creator", () => {
                 parameters
             );
 
-            expect(pathParameters).toHaveLength(1);
-            expect(pathParameters[0].name).toEqual(
+            const inputJsonParameter = pathParameters.find((parameter) => {
+                return parameter.name === SPEC_PATHS_PARAMETERS_INPUT_JSON;
+            });
+
+            expect(inputJsonParameter.name).toEqual(
                 SPEC_PATHS_PARAMETERS_INPUT_JSON
             );
-            expect(pathParameters[0].in).toEqual(SPEC_PATHS_PARAMETERS_IN);
-            expect(pathParameters[0].required).toEqual(false);
-            expect(pathParameters[0].description).toEqual(description);
-            expect(pathParameters[0].schema.type).toEqual(SPEC_TYPES.STRING);
+            expect(inputJsonParameter.in).toEqual(SPEC_PATHS_PARAMETERS_IN);
+            expect(inputJsonParameter.required).toEqual(false);
+            expect(inputJsonParameter.description).toEqual(description);
+            expect(inputJsonParameter.schema.type).toEqual(SPEC_TYPES.STRING);
         }
     );
 
@@ -245,7 +278,11 @@ describe("path parameters creator", () => {
             parameters
         );
 
-        expect(pathParameters).toHaveLength(0);
+        const inputJsonParameter = pathParameters.find((parameter) => {
+            return parameter.name === SPEC_PATHS_PARAMETERS_INPUT_JSON;
+        });
+
+        expect(inputJsonParameter).not.toBeDefined();
     });
 
     it("does not set parameters as required in service interfaces", () => {
@@ -267,9 +304,27 @@ describe("path parameters creator", () => {
         );
 
         const cellIdParameter = pathParameters.find((parameter) => {
-            return parameter.name === "cellid";
+            return parameter.name === parameters[0].name;
         });
 
         expect(cellIdParameter.required).toEqual(false);
+    });
+
+    it("includes the format parameter", () => {
+        const interfaceName = "IContentServerDirectoryService";
+        const httpMethod = "get";
+        const parameters = [];
+
+        const pathParameters = createPathParameters(
+            interfaceName,
+            httpMethod,
+            parameters
+        );
+
+        const formatParameter = pathParameters.find((parameter) => {
+            return parameter.name === "format";
+        });
+
+        expect(formatParameter).toBeDefined();
     });
 });
