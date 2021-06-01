@@ -245,7 +245,7 @@ describe("path request body creator", () => {
         expect(Object.keys(mediaType.schema.properties)).toHaveLength(2);
     });
 
-    it("does not set fields as required in service interfaces", () => {
+    it("does not set properties as required in service interfaces", () => {
         const interfaceName = "IPlayerService";
         const httpMethod = "post";
         const parameters = [

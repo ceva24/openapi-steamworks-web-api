@@ -21,8 +21,10 @@ const createPathParameters = (interfaceName, httpMethod, steamParameters) => {
                     description:
                         createParameterDescription(interfaceName, parameter) ||
                         "",
-                    required: !parameter.optional,
-                    schema: createPropertySchema(parameter.type),
+                    required:
+                        !isServiceInterface(interfaceName) &&
+                        !parameter.optional,
+                    schema: createPropertySchema(parameter.type, null),
                 };
             })
         );

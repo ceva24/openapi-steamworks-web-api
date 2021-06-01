@@ -247,4 +247,29 @@ describe("path parameters creator", () => {
 
         expect(pathParameters).toHaveLength(0);
     });
+
+    it("does not set parameters as required in service interfaces", () => {
+        const interfaceName = "IContentServerDirectoryService";
+        const httpMethod = "get";
+        const parameters = [
+            {
+                name: "cellid",
+                type: "uint32",
+                optional: false,
+                description: "Client's Steam cell ID",
+            },
+        ];
+
+        const pathParameters = createPathParameters(
+            interfaceName,
+            httpMethod,
+            parameters
+        );
+
+        const cellIdParameter = pathParameters.find((parameter) => {
+            return parameter.name === "cellid";
+        });
+
+        expect(cellIdParameter.required).toEqual(false);
+    });
 });
