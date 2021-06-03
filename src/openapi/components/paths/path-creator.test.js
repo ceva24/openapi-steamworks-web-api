@@ -1,5 +1,6 @@
 import {
     DEFAULT_RESPONSES,
+    STEAM_API_KEY_PARAMETER,
     STEAM_EXTERNAL_DOCS_URL,
 } from "../../../constants/constants.js";
 import { createPath } from "./path-creator.js";
@@ -152,6 +153,54 @@ describe("path creator", () => {
                     type: "string",
                     optional: false,
                     description: "The leaderboard name to fetch data for.",
+                },
+            ],
+        };
+
+        const path = createPath(interfaceName, method);
+        const operation = getOperation(path);
+
+        expect(operation).not.toHaveProperty("requestBody");
+    });
+
+    it("does not create the key query parameter for get requests", () => {
+        const interfaceName = "ISteamWebAPIUtil";
+        const method = {
+            name: "GetSupportedAPIList",
+            version: 1,
+            httpmethod: "GET",
+            parameters: [
+                {
+                    name: "key",
+                    type: "string",
+                    optional: true,
+                    description: "access key",
+                },
+            ],
+        };
+
+        const path = createPath(interfaceName, method);
+        const operation = getOperation(path);
+
+        const keyParameter = operation.parameters.find((parameter) => {
+            return parameter.name === STEAM_API_KEY_PARAMETER;
+        });
+
+        expect(keyParameter).not.toBeDefined();
+    });
+
+    it("does not create the key property for request bodies", () => {
+        const interfaceName = "ISteamCDN";
+        const method = {
+            name: "SetClientFilters",
+            version: 1,
+            httpmethod: "POST",
+            parameters: [
+                {
+                    name: "key",
+                    type: "string",
+                    optional: false,
+                    description: "access key",
                 },
             ],
         };

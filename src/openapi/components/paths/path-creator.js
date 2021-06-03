@@ -1,5 +1,6 @@
 import {
     DEFAULT_RESPONSES,
+    STEAM_API_KEY_PARAMETER,
     STEAM_EXTERNAL_DOCS_URL,
 } from "../../../constants/constants.js";
 import { createPathParameters } from "./path-parameters-creator.js";
@@ -10,13 +11,18 @@ const createPath = (interfaceName, method) => {
 
     const httpMethod = method.httpmethod.toLowerCase();
 
+    // Exclude the key parameter as this is handled by the security scheme
+    const parametersToInclude = method.parameters.filter((parameter) => {
+        return parameter.name !== STEAM_API_KEY_PARAMETER;
+    });
+
     const operation = {
         [httpMethod]: {
             responses: DEFAULT_RESPONSES,
             parameters: createPathParameters(
                 interfaceName,
                 httpMethod,
-                method.parameters
+                parametersToInclude
             ),
             externalDocs: {
                 url: `${STEAM_EXTERNAL_DOCS_URL}/${interfaceName}#${method.name}`,
@@ -28,7 +34,7 @@ const createPath = (interfaceName, method) => {
     const requestBody = createRequestBody(
         interfaceName,
         httpMethod,
-        method.parameters
+        parametersToInclude
     );
     if (requestBody)
         operation[Object.keys(operation)[0]].requestBody = requestBody;
