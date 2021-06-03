@@ -15,6 +15,7 @@ Object {
     "url": "https://partner.steamgames.com/doc/webapi",
   },
   "info": Object {
+    "description": "This is a specification of the Steamworks Web API. For more details on how to use this tool, check out the <a href=\\"https://github.com/ceva24/openapi-steamworks-web-api/blob/main/README.md\\">README</a>.",
     "title": "Steamworks Web API",
     "version": "1.0.0",
   },

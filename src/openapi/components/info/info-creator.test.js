@@ -1,4 +1,7 @@
-import { SPEC_INFO_TITLE } from "../../../constants/constants.js";
+import {
+    SPEC_INFO_DESCRIPTION,
+    SPEC_INFO_TITLE,
+} from "../../../constants/constants.js";
 import { createInfo } from "./info-creator.js";
 
 describe("info creator", () => {
@@ -12,5 +15,11 @@ describe("info creator", () => {
         const info = createInfo();
 
         expect(info.version).toEqual(process.env.npm_package_version);
+    });
+
+    it("sets the description", async () => {
+        const info = createInfo();
+
+        expect(info.description).toEqual(SPEC_INFO_DESCRIPTION);
     });
 });
