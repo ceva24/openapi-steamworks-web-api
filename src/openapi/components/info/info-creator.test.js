@@ -1,4 +1,6 @@
 import {
+    SPEC_INFO_CONTACT_NAME,
+    SPEC_INFO_CONTACT_URL,
     SPEC_INFO_DESCRIPTION,
     SPEC_INFO_TERMS_OF_SERVICE_URL,
     SPEC_INFO_TITLE,
@@ -28,5 +30,12 @@ describe("info creator", () => {
         const info = createInfo();
 
         expect(info.termsOfService).toEqual(SPEC_INFO_TERMS_OF_SERVICE_URL);
+    });
+
+    it("sets the contact details", () => {
+        const info = createInfo();
+
+        expect(info.contact.name).toEqual(SPEC_INFO_CONTACT_NAME);
+        expect(info.contact.url).toEqual(SPEC_INFO_CONTACT_URL);
     });
 });
