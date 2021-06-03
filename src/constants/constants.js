@@ -36,6 +36,8 @@ export const SPEC_VERSION = "3.0.3";
 export const SPEC_INFO_TITLE = "Steamworks Web API";
 export const SPEC_INFO_DESCRIPTION =
     'This is a specification of the Steamworks Web API. For more details on how to use this tool, check out the <a href="https://github.com/ceva24/openapi-steamworks-web-api/blob/main/README.md">README</a>.';
+export const SPEC_INFO_TERMS_OF_SERVICE_URL =
+    "https://steamcommunity.com/dev/apiterms";
 
 export const SPEC_PATHS_PARAMETERS_IN = "query";
 export const SPEC_PATHS_PARAMETERS_INPUT_JSON = "input_json";
