@@ -5096,10 +5096,6 @@
                             "schema": {
                                 "type": "object",
                                 "properties": {
-                                    "key": {
-                                        "type": "string",
-                                        "description": "access key"
-                                    },
                                     "cdnname": {
                                         "type": "string",
                                         "description": "Steam name of CDN property"
@@ -5118,7 +5114,6 @@
                                     }
                                 },
                                 "required": [
-                                    "key",
                                     "cdnname"
                                 ]
                             }
@@ -5162,10 +5157,6 @@
                             "schema": {
                                 "type": "object",
                                 "properties": {
-                                    "key": {
-                                        "type": "string",
-                                        "description": "access key"
-                                    },
                                     "cdnname": {
                                         "type": "string",
                                         "description": "Steam name of CDN property"
@@ -5192,7 +5183,6 @@
                                     }
                                 },
                                 "required": [
-                                    "key",
                                     "cdnname"
                                 ]
                             }
@@ -5824,15 +5814,6 @@
                 },
                 "parameters": [
                     {
-                        "name": "key",
-                        "in": "query",
-                        "description": "access key",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
                         "name": "steamid",
                         "in": "query",
                         "description": "SteamID of user",
@@ -5883,15 +5864,6 @@
                 },
                 "parameters": [
                     {
-                        "name": "key",
-                        "in": "query",
-                        "description": "access key",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
                         "name": "steamids",
                         "in": "query",
                         "description": "Comma-delimited list of SteamIDs",
@@ -5931,15 +5903,6 @@
                     }
                 },
                 "parameters": [
-                    {
-                        "name": "key",
-                        "in": "query",
-                        "description": "access key",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
                     {
                         "name": "steamids",
                         "in": "query",
@@ -5981,15 +5944,6 @@
                 },
                 "parameters": [
                     {
-                        "name": "key",
-                        "in": "query",
-                        "description": "access key",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
                         "name": "steamids",
                         "in": "query",
                         "description": "Comma-delimited list of SteamIDs (max: 100)",
@@ -6029,15 +5983,6 @@
                     }
                 },
                 "parameters": [
-                    {
-                        "name": "key",
-                        "in": "query",
-                        "description": "access key",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
                     {
                         "name": "steamid",
                         "in": "query",
@@ -6079,15 +6024,6 @@
                     }
                 },
                 "parameters": [
-                    {
-                        "name": "key",
-                        "in": "query",
-                        "description": "access key",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
                     {
                         "name": "vanityurl",
                         "in": "query",
@@ -6200,15 +6136,6 @@
                     }
                 },
                 "parameters": [
-                    {
-                        "name": "key",
-                        "in": "query",
-                        "description": "access key",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
                     {
                         "name": "appid",
                         "in": "query",
@@ -6503,15 +6430,6 @@
                 },
                 "parameters": [
                     {
-                        "name": "key",
-                        "in": "query",
-                        "description": "access key",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
                         "name": "steamid",
                         "in": "query",
                         "description": "SteamID of user",
@@ -6572,15 +6490,6 @@
                 },
                 "parameters": [
                     {
-                        "name": "key",
-                        "in": "query",
-                        "description": "access key",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
                         "name": "appid",
                         "in": "query",
                         "description": "appid of game",
@@ -6630,15 +6539,6 @@
                     }
                 },
                 "parameters": [
-                    {
-                        "name": "key",
-                        "in": "query",
-                        "description": "access key",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
                     {
                         "name": "appid",
                         "in": "query",
@@ -6690,15 +6590,6 @@
                 },
                 "parameters": [
                     {
-                        "name": "key",
-                        "in": "query",
-                        "description": "access key",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
                         "name": "steamid",
                         "in": "query",
                         "description": "SteamID of user",
@@ -6749,15 +6640,6 @@
                     }
                 },
                 "parameters": [
-                    {
-                        "name": "key",
-                        "in": "query",
-                        "description": "access key",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
                     {
                         "name": "steamid",
                         "in": "query",
@@ -6840,15 +6722,6 @@
                     }
                 },
                 "parameters": [
-                    {
-                        "name": "key",
-                        "in": "query",
-                        "description": "access key",
-                        "required": false,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
                     {
                         "name": "format",
                         "in": "query",
@@ -7483,15 +7356,6 @@
                 },
                 "parameters": [
                     {
-                        "name": "key",
-                        "in": "query",
-                        "description": "(Required) Access key",
-                        "required": false,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
                         "name": "input_json",
                         "in": "query",
                         "description": "An alternative to the query string parameters; pass arguments as a URL-encoded JSON blob. The \"key\" and \"format\" fields should still be passed as separate parameters",
@@ -7567,10 +7431,6 @@
                             "schema": {
                                 "type": "object",
                                 "properties": {
-                                    "key": {
-                                        "type": "string",
-                                        "description": "(Required) Access key"
-                                    },
                                     "appid": {
                                         "type": "integer",
                                         "format": "int32",
@@ -7631,10 +7491,6 @@
                             "schema": {
                                 "type": "object",
                                 "properties": {
-                                    "key": {
-                                        "type": "string",
-                                        "description": "(Required) Access key"
-                                    },
                                     "steamid": {
                                         "type": "integer",
                                         "format": "int64",
@@ -7695,10 +7551,6 @@
                             "schema": {
                                 "type": "object",
                                 "properties": {
-                                    "key": {
-                                        "type": "string",
-                                        "description": "(Required) Access key"
-                                    },
                                     "steamid": {
                                         "type": "integer",
                                         "format": "int64",
@@ -7755,10 +7607,6 @@
                             "schema": {
                                 "type": "object",
                                 "properties": {
-                                    "key": {
-                                        "type": "string",
-                                        "description": "(Required) Access key"
-                                    },
                                     "steamid": {
                                         "type": "integer",
                                         "format": "int64",
@@ -7779,15 +7627,6 @@
                     }
                 },
                 "parameters": [
-                    {
-                        "name": "key",
-                        "in": "query",
-                        "description": "(Required) Access key",
-                        "required": false,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
                     {
                         "name": "steamid",
                         "in": "query",
@@ -7839,15 +7678,6 @@
                 },
                 "parameters": [
                     {
-                        "name": "key",
-                        "in": "query",
-                        "description": "(Required) Access key",
-                        "required": false,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
                         "name": "login_token",
                         "in": "query",
                         "description": "(Required) Login token to query",
@@ -7897,15 +7727,6 @@
                 },
                 "parameters": [
                     {
-                        "name": "key",
-                        "in": "query",
-                        "description": "(Required) Access key",
-                        "required": false,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
                         "name": "server_ips",
                         "in": "query",
                         "description": "(Required)",
@@ -7954,15 +7775,6 @@
                     }
                 },
                 "parameters": [
-                    {
-                        "name": "key",
-                        "in": "query",
-                        "description": "(Required) Access key",
-                        "required": false,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
                     {
                         "name": "server_steamids",
                         "in": "query",
@@ -8118,10 +7930,6 @@
                             "schema": {
                                 "type": "object",
                                 "properties": {
-                                    "key": {
-                                        "type": "string",
-                                        "description": "(Required) Access key"
-                                    },
                                     "cache_id": {
                                         "type": "integer",
                                         "format": "int32",
@@ -8154,15 +7962,6 @@
                     }
                 },
                 "parameters": [
-                    {
-                        "name": "key",
-                        "in": "query",
-                        "description": "(Required) Access key",
-                        "required": false,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
                     {
                         "name": "cache_id",
                         "in": "query",
@@ -8258,10 +8057,6 @@
                             "schema": {
                                 "type": "object",
                                 "properties": {
-                                    "key": {
-                                        "type": "string",
-                                        "description": "(Required) Access key"
-                                    },
                                     "cache_id": {
                                         "type": "integer",
                                         "format": "int32",
@@ -8583,15 +8378,6 @@
                     }
                 },
                 "parameters": [
-                    {
-                        "name": "key",
-                        "in": "query",
-                        "description": "(Required) Access key",
-                        "required": false,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
                     {
                         "name": "query_type",
                         "in": "query",
@@ -8962,15 +8748,6 @@
                 },
                 "parameters": [
                     {
-                        "name": "key",
-                        "in": "query",
-                        "description": "(Required) Access key",
-                        "required": false,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
                         "name": "publishedfileids",
                         "in": "query",
                         "description": "(Required) Set of published file Ids to retrieve details for.",
@@ -9150,15 +8927,6 @@
                     }
                 },
                 "parameters": [
-                    {
-                        "name": "key",
-                        "in": "query",
-                        "description": "(Required) Access key",
-                        "required": false,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
                     {
                         "name": "steamid",
                         "in": "query",
@@ -9493,15 +9261,6 @@
                 },
                 "parameters": [
                     {
-                        "name": "key",
-                        "in": "query",
-                        "description": "(Required) Access key",
-                        "required": false,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
                         "name": "max_trades",
                         "in": "query",
                         "description": "(Required) The number of trades to return information for",
@@ -9617,15 +9376,6 @@
                 },
                 "parameters": [
                     {
-                        "name": "key",
-                        "in": "query",
-                        "description": "(Required) Access key",
-                        "required": false,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
                         "name": "tradeid",
                         "in": "query",
                         "description": "(Required)",
@@ -9693,15 +9443,6 @@
                     }
                 },
                 "parameters": [
-                    {
-                        "name": "key",
-                        "in": "query",
-                        "description": "(Required) Access key",
-                        "required": false,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
                     {
                         "name": "get_sent_offers",
                         "in": "query",
@@ -9817,15 +9558,6 @@
                 },
                 "parameters": [
                     {
-                        "name": "key",
-                        "in": "query",
-                        "description": "(Required) Access key",
-                        "required": false,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
                         "name": "tradeofferid",
                         "in": "query",
                         "description": "(Required)",
@@ -9893,15 +9625,6 @@
                     }
                 },
                 "parameters": [
-                    {
-                        "name": "key",
-                        "in": "query",
-                        "description": "(Required) Access key",
-                        "required": false,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
                     {
                         "name": "time_last_visit",
                         "in": "query",
@@ -9988,10 +9711,6 @@
                             "schema": {
                                 "type": "object",
                                 "properties": {
-                                    "key": {
-                                        "type": "string",
-                                        "description": "(Required) Access key"
-                                    },
                                     "tradeofferid": {
                                         "type": "integer",
                                         "format": "int64",
@@ -10048,10 +9767,6 @@
                             "schema": {
                                 "type": "object",
                                 "properties": {
-                                    "key": {
-                                        "type": "string",
-                                        "description": "(Required) Access key"
-                                    },
                                     "tradeofferid": {
                                         "type": "integer",
                                         "format": "int64",
@@ -10072,15 +9787,6 @@
                     }
                 },
                 "parameters": [
-                    {
-                        "name": "key",
-                        "in": "query",
-                        "description": "(Required) Access key",
-                        "required": false,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
                     {
                         "name": "steamid_target",
                         "in": "query",
@@ -10206,15 +9912,6 @@
                 },
                 "parameters": [
                     {
-                        "name": "key",
-                        "in": "query",
-                        "description": "(Required) Access key",
-                        "required": false,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
                         "name": "steamid",
                         "in": "query",
                         "description": "(Required) The player we're asking about",
@@ -10274,15 +9971,6 @@
                     }
                 },
                 "parameters": [
-                    {
-                        "name": "key",
-                        "in": "query",
-                        "description": "(Required) Access key",
-                        "required": false,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
                     {
                         "name": "steamid",
                         "in": "query",
@@ -10380,15 +10068,6 @@
                 },
                 "parameters": [
                     {
-                        "name": "key",
-                        "in": "query",
-                        "description": "(Required) Access key",
-                        "required": false,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
                         "name": "steamid",
                         "in": "query",
                         "description": "(Required) The player we're asking about",
@@ -10439,15 +10118,6 @@
                 },
                 "parameters": [
                     {
-                        "name": "key",
-                        "in": "query",
-                        "description": "(Required) Access key",
-                        "required": false,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
                         "name": "steamid",
                         "in": "query",
                         "description": "(Required) The player we're asking about",
@@ -10497,15 +10167,6 @@
                     }
                 },
                 "parameters": [
-                    {
-                        "name": "key",
-                        "in": "query",
-                        "description": "(Required) Access key",
-                        "required": false,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
                     {
                         "name": "steamid",
                         "in": "query",
@@ -10566,15 +10227,6 @@
                     }
                 },
                 "parameters": [
-                    {
-                        "name": "key",
-                        "in": "query",
-                        "description": "(Required) Access key",
-                        "required": false,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
                     {
                         "name": "steamid",
                         "in": "query",
@@ -10889,10 +10541,6 @@
                             "schema": {
                                 "type": "object",
                                 "properties": {
-                                    "key": {
-                                        "type": "string",
-                                        "description": "(Required) Access key"
-                                    },
                                     "appid": {
                                         "type": "integer",
                                         "format": "int32",
@@ -10964,10 +10612,6 @@
                             "schema": {
                                 "type": "object",
                                 "properties": {
-                                    "key": {
-                                        "type": "string",
-                                        "description": "(Required) Access key"
-                                    },
                                     "appid": {
                                         "type": "integer",
                                         "format": "int32",
@@ -11008,15 +10652,6 @@
                     }
                 },
                 "parameters": [
-                    {
-                        "name": "key",
-                        "in": "query",
-                        "description": "(Required) Access key",
-                        "required": false,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
                     {
                         "name": "ecurrency",
                         "in": "query",
@@ -11067,15 +10702,6 @@
                     }
                 },
                 "parameters": [
-                    {
-                        "name": "key",
-                        "in": "query",
-                        "description": "(Required) Access key",
-                        "required": false,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
                     {
                         "name": "if_modified_since",
                         "in": "query",
@@ -11236,10 +10862,6 @@
                             "schema": {
                                 "type": "object",
                                 "properties": {
-                                    "key": {
-                                        "type": "string",
-                                        "description": "(Required) Access key"
-                                    },
                                     "steamid": {
                                         "type": "integer",
                                         "format": "int64",
@@ -11311,5 +10933,19 @@
     },
     "externalDocs": {
         "url": "https://partner.steamgames.com/doc/webapi"
+    },
+    "security": [
+        {
+            "key": []
+        }
+    ],
+    "components": {
+        "securitySchemes": {
+            "key": {
+                "type": "apiKey",
+                "name": "key",
+                "in": "query"
+            }
+        }
     }
 }
