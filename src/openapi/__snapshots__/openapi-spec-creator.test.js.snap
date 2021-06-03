@@ -2,6 +2,15 @@
 
 exports[`openapi spec creator creates the openapi spec 1`] = `
 Object {
+  "components": Object {
+    "securitySchemes": Object {
+      "key": Object {
+        "in": "query",
+        "name": "key",
+        "type": "apiKey",
+      },
+    },
+  },
   "externalDocs": Object {
     "url": "https://partner.steamgames.com/doc/webapi",
   },
@@ -340,6 +349,11 @@ Object {
       },
     },
   },
+  "security": Array [
+    Object {
+      "key": Array [],
+    },
+  ],
   "servers": Array [
     Object {
       "url": "https://api.steampowered.com",
