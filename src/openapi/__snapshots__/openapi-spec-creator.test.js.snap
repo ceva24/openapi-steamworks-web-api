@@ -12,9 +12,16 @@ Object {
     },
   },
   "externalDocs": Object {
+    "description": "Steamworks Web API Reference",
     "url": "https://partner.steamgames.com/doc/webapi",
   },
   "info": Object {
+    "contact": Object {
+      "name": "Steam Support",
+      "url": "https://help.steampowered.com/",
+    },
+    "description": "This is a specification of the Steamworks Web API. For more details on how to use this tool, check out the <a href=\\"https://github.com/ceva24/openapi-steamworks-web-api/blob/main/README.md\\">README</a>.",
+    "termsOfService": "https://steamcommunity.com/dev/apiterms",
     "title": "Steamworks Web API",
     "version": "1.0.0",
   },
@@ -100,7 +107,13 @@ Object {
         ],
         "responses": Object {
           "200": Object {
-            "description": "successful",
+            "description": "A successful request",
+          },
+          "400": Object {
+            "description": "If the user fails to supply all required fields, or supplies invalid data",
+          },
+          "403": Object {
+            "description": "If the user fails to supply a valid API key, or if the key does not allow access to this resource",
           },
         },
         "tags": Array [
@@ -131,7 +144,13 @@ Object {
         ],
         "responses": Object {
           "200": Object {
-            "description": "successful",
+            "description": "A successful request",
+          },
+          "400": Object {
+            "description": "If the user fails to supply all required fields, or supplies invalid data",
+          },
+          "403": Object {
+            "description": "If the user fails to supply a valid API key, or if the key does not allow access to this resource",
           },
         },
         "tags": Array [
@@ -162,7 +181,13 @@ Object {
         ],
         "responses": Object {
           "200": Object {
-            "description": "successful",
+            "description": "A successful request",
+          },
+          "400": Object {
+            "description": "If the user fails to supply all required fields, or supplies invalid data",
+          },
+          "403": Object {
+            "description": "If the user fails to supply a valid API key, or if the key does not allow access to this resource",
           },
         },
         "tags": Array [
@@ -193,7 +218,13 @@ Object {
         ],
         "responses": Object {
           "200": Object {
-            "description": "successful",
+            "description": "A successful request",
+          },
+          "400": Object {
+            "description": "If the user fails to supply all required fields, or supplies invalid data",
+          },
+          "403": Object {
+            "description": "If the user fails to supply a valid API key, or if the key does not allow access to this resource",
           },
         },
         "tags": Array [
@@ -224,7 +255,13 @@ Object {
         ],
         "responses": Object {
           "200": Object {
-            "description": "successful",
+            "description": "A successful request",
+          },
+          "400": Object {
+            "description": "If the user fails to supply all required fields, or supplies invalid data",
+          },
+          "403": Object {
+            "description": "If the user fails to supply a valid API key, or if the key does not allow access to this resource",
           },
         },
         "tags": Array [
@@ -300,7 +337,13 @@ Object {
         },
         "responses": Object {
           "200": Object {
-            "description": "successful",
+            "description": "A successful request",
+          },
+          "400": Object {
+            "description": "If the user fails to supply all required fields, or supplies invalid data",
+          },
+          "403": Object {
+            "description": "If the user fails to supply a valid API key, or if the key does not allow access to this resource",
           },
         },
         "tags": Array [
@@ -340,7 +383,13 @@ Object {
         ],
         "responses": Object {
           "200": Object {
-            "description": "successful",
+            "description": "A successful request",
+          },
+          "400": Object {
+            "description": "If the user fails to supply all required fields, or supplies invalid data",
+          },
+          "403": Object {
+            "description": "If the user fails to supply a valid API key, or if the key does not allow access to this resource",
           },
         },
         "tags": Array [
@@ -357,6 +406,9 @@ Object {
   "servers": Array [
     Object {
       "url": "https://api.steampowered.com",
+    },
+    Object {
+      "url": "https://partner.steam-api.com",
     },
   ],
   "tags": Array [

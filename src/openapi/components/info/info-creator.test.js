@@ -1,4 +1,10 @@
-import { SPEC_INFO_TITLE } from "../../../constants/constants.js";
+import {
+    SPEC_INFO_CONTACT_NAME,
+    SPEC_INFO_CONTACT_URL,
+    SPEC_INFO_DESCRIPTION,
+    SPEC_INFO_TERMS_OF_SERVICE_URL,
+    SPEC_INFO_TITLE,
+} from "../../../constants/constants.js";
 import { createInfo } from "./info-creator.js";
 
 describe("info creator", () => {
@@ -12,5 +18,24 @@ describe("info creator", () => {
         const info = createInfo();
 
         expect(info.version).toEqual(process.env.npm_package_version);
+    });
+
+    it("sets the description", () => {
+        const info = createInfo();
+
+        expect(info.description).toEqual(SPEC_INFO_DESCRIPTION);
+    });
+
+    it("sets the terms of service", () => {
+        const info = createInfo();
+
+        expect(info.termsOfService).toEqual(SPEC_INFO_TERMS_OF_SERVICE_URL);
+    });
+
+    it("sets the contact details", () => {
+        const info = createInfo();
+
+        expect(info.contact.name).toEqual(SPEC_INFO_CONTACT_NAME);
+        expect(info.contact.url).toEqual(SPEC_INFO_CONTACT_URL);
     });
 });
