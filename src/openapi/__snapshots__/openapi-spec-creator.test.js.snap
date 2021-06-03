@@ -358,6 +358,9 @@ Object {
     Object {
       "url": "https://api.steampowered.com",
     },
+    Object {
+      "url": "https://partner.steam-api.com",
+    },
   ],
 }
 `;

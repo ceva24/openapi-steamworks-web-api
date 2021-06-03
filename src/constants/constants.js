@@ -52,6 +52,7 @@ export const SPEC_PATHS_FIELD_ARRAY_PARAMETER_DESCRIPTION =
     "<br>Note: this is an <a href=https://partner.steamgames.com/doc/webapi_overview#2>array parameter</a>";
 
 export const SPEC_SERVER_URL = STEAM_API_URL;
+export const SPEC_PARTNER_SERVER_URL = "https://partner.steam-api.com";
 
 export const SPEC_EXTERNAL_DOCS_URL = STEAM_EXTERNAL_DOCS_URL;
 

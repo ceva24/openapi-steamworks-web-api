@@ -6,6 +6,7 @@ import {
     SPEC_SECURITY_SCHEME_NAME,
     SPEC_SECURITY_SCHEME_TYPE,
     SPEC_PATHS_PARAMETERS_IN,
+    SPEC_PARTNER_SERVER_URL,
 } from "../constants/constants.js";
 import { createOpenApiSpec } from "./openapi-spec-creator.js";
 
@@ -189,8 +190,9 @@ describe("openapi spec creator", () => {
 
         const openApiSpec = await createOpenApiSpec(apiDefinition);
 
-        expect(openApiSpec.servers.length).toEqual(1);
+        expect(openApiSpec.servers.length).toEqual(2);
         expect(openApiSpec.servers[0].url).toEqual(SPEC_SERVER_URL);
+        expect(openApiSpec.servers[1].url).toEqual(SPEC_PARTNER_SERVER_URL);
     });
 
     it("creates the paths", async () => {
