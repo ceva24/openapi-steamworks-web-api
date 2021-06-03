@@ -3,6 +3,7 @@ import {
     STEAM_API_KEY_PARAMETER,
     STEAM_EXTERNAL_DOCS_URL,
 } from "../../../constants/constants.js";
+import { createTagName } from "../../utils/tag-creator.js";
 import { createPathParameters } from "./path-parameters-creator.js";
 import { createRequestBody } from "./path-request-body-creator.js";
 
@@ -27,7 +28,7 @@ const createPath = (interfaceName, method) => {
             externalDocs: {
                 url: `${STEAM_EXTERNAL_DOCS_URL}/${interfaceName}#${method.name}`,
             },
-            tags: [interfaceName.split("_")[0]],
+            tags: [createTagName(interfaceName)],
         },
     };
 

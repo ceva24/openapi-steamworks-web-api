@@ -411,5 +411,19 @@ Object {
       "url": "https://partner.steam-api.com",
     },
   ],
+  "tags": Array [
+    Object {
+      "name": "IContentServerDirectoryService",
+    },
+    Object {
+      "name": "IGCVersion",
+    },
+    Object {
+      "name": "IGameNotificationsService",
+    },
+    Object {
+      "name": "IPortal2Leaderboards",
+    },
+  ],
 }
 `;
