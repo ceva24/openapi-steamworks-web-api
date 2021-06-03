@@ -335,7 +335,7 @@ describe("openapi spec creator", () => {
                         name: "IDOTA2Match",
                         methods: [
                             {
-                                name: "GetLeagueListing",
+                                name: "GetLiveLeagueGames",
                                 version: 1,
                                 httpmethod: "GET",
                                 parameters: [],
@@ -346,7 +346,7 @@ describe("openapi spec creator", () => {
                         name: "IDOTA2Match",
                         methods: [
                             {
-                                name: "GetLiveLeagueGames",
+                                name: "GetLeagueListing",
                                 version: 1,
                                 httpmethod: "GET",
                                 parameters: [],
@@ -360,5 +360,44 @@ describe("openapi spec creator", () => {
         const openApiSpec = await createOpenApiSpec(apiDefinition);
 
         expect(openApiSpec.tags).toHaveLength(1);
+    });
+
+    it("sorts the paths by name", async () => {
+        const apiDefinition = {
+            apilist: {
+                interfaces: [
+                    {
+                        name: "IDOTA2Match",
+                        methods: [
+                            {
+                                name: "GetLiveLeagueGames",
+                                version: 1,
+                                httpmethod: "GET",
+                                parameters: [],
+                            },
+                        ],
+                    },
+                    {
+                        name: "IDOTA2Match",
+                        methods: [
+                            {
+                                name: "GetLeagueListing",
+                                version: 1,
+                                httpmethod: "GET",
+                                parameters: [],
+                            },
+                        ],
+                    },
+                ],
+            },
+        };
+
+        const openApiSpec = await createOpenApiSpec(apiDefinition);
+
+        expect(Object.keys(openApiSpec.paths)).toHaveLength(2);
+        expect(Object.keys(openApiSpec.paths)[0]).toContain("GetLeagueListing");
+        expect(Object.keys(openApiSpec.paths)[1]).toContain(
+            "GetLiveLeagueGames"
+        );
     });
 });

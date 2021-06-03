@@ -17,7 +17,7 @@ const createOpenApiSpec = async (apiDefinition) => {
         openapi: SPEC_VERSION,
         info: createInfo(),
         servers: [{ url: SPEC_SERVER_URL }],
-        paths: createPaths(apiDefinition),
+        paths: createSortedPaths(apiDefinition),
         externalDocs: { url: SPEC_EXTERNAL_DOCS_URL },
         security: [{ [SPEC_SECURITY_SCHEME_NAME]: [] }],
         components: {
@@ -33,6 +33,17 @@ const createOpenApiSpec = async (apiDefinition) => {
     };
 
     return SwaggerParser.validate(openApiSpec);
+};
+
+const createSortedPaths = (apiDefinition) => {
+    const paths = createPaths(apiDefinition);
+
+    const sortedPaths = {};
+    for (const key of Object.keys(paths).sort()) {
+        sortedPaths[key] = paths[key];
+    }
+
+    return sortedPaths;
 };
 
 const createSortedTags = (interfaces) => {
