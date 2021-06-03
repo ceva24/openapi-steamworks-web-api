@@ -59,6 +59,7 @@ export const SPEC_SERVER_URL = STEAM_API_URL;
 export const SPEC_PARTNER_SERVER_URL = "https://partner.steam-api.com";
 
 export const SPEC_EXTERNAL_DOCS_URL = STEAM_EXTERNAL_DOCS_URL;
+export const SPEC_EXTERNAL_DOCS_DESCRIPTION = "Steamworks Web API Reference";
 
 export const SPEC_SECURITY_SCHEME_TYPE = "apiKey";
 export const SPEC_SECURITY_SCHEME_NAME = "key";

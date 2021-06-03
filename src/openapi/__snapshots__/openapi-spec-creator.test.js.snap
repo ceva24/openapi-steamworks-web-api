@@ -12,6 +12,7 @@ Object {
     },
   },
   "externalDocs": Object {
+    "description": "Steamworks Web API Reference",
     "url": "https://partner.steamgames.com/doc/webapi",
   },
   "info": Object {
