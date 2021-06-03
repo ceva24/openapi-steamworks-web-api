@@ -97,27 +97,21 @@ describe("path creator", () => {
         expect(parameter).toBeDefined();
     });
 
-    test.each`
-        interfaceName                 | tag
-        ${"ISteamApps"}               | ${"ISteamApps"}
-        ${"IPortal2Leaderboards_620"} | ${"IPortal2Leaderboards"}
-    `(
-        "sets the path tag to $tag when the interface name is $interfaceName",
-        ({ interfaceName, tag }) => {
-            const method = {
-                name: "GetAppList",
-                version: 1,
-                httpmethod: "GET",
-                parameters: [],
-            };
+    it("sets the path tag", () => {
+        const interfaceName = "ISteamWebAPIUtil";
+        const method = {
+            name: "GetSupportedAPIList",
+            version: 1,
+            httpmethod: "GET",
+            parameters: [],
+        };
 
-            const path = createPath(interfaceName, method);
-            const operation = getOperation(path);
+        const path = createPath(interfaceName, method);
+        const operation = getOperation(path);
 
-            expect(operation.tags).toHaveLength(1);
-            expect(operation.tags[0]).toEqual(tag);
-        }
-    );
+        expect(operation.tags).toHaveLength(1);
+        expect(operation.tags[0]).toEqual(interfaceName);
+    });
 
     it("sets the request body if not null", () => {
         const interfaceName = "IPortal2Leaderboards_620";

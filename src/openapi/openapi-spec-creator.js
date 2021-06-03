@@ -10,6 +10,7 @@ import {
 } from "../constants/constants.js";
 import { createInfo } from "./components/info/info-creator.js";
 import { createPaths } from "./components/paths/paths-creator.js";
+import { createTag, createTagName } from "./utils/tag-creator.js";
 
 const createOpenApiSpec = async (apiDefinition) => {
     const openApiSpec = {
@@ -28,9 +29,26 @@ const createOpenApiSpec = async (apiDefinition) => {
                 },
             },
         },
+        tags: createSortedTags(apiDefinition.apilist.interfaces),
     };
 
     return SwaggerParser.validate(openApiSpec);
+};
+
+const createSortedTags = (interfaces) => {
+    const sortedTagNames = interfaces
+        .map((apiInterface) => {
+            return createTagName(apiInterface.name);
+        })
+        .sort();
+
+    const uniqueTagNames = [...new Set(sortedTagNames)];
+
+    const uniqueTags = uniqueTagNames.map((tagName) => {
+        return createTag(tagName);
+    });
+
+    return uniqueTags;
 };
 
 export { createOpenApiSpec };

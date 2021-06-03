@@ -359,5 +359,19 @@ Object {
       "url": "https://api.steampowered.com",
     },
   ],
+  "tags": Array [
+    Object {
+      "name": "IContentServerDirectoryService",
+    },
+    Object {
+      "name": "IGCVersion",
+    },
+    Object {
+      "name": "IGameNotificationsService",
+    },
+    Object {
+      "name": "IPortal2Leaderboards",
+    },
+  ],
 }
 `;

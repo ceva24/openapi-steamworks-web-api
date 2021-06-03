@@ -287,4 +287,78 @@ describe("openapi spec creator", () => {
 
         expect(openApiSpec.security[0][securitySchemeName]).toHaveLength(0);
     });
+
+    it("sorts tags", async () => {
+        const apiDefinition = {
+            apilist: {
+                interfaces: [
+                    {
+                        name: "IDOTA2Match",
+                        methods: [
+                            {
+                                name: "GetLeagueListing",
+                                version: 1,
+                                httpmethod: "GET",
+                                parameters: [],
+                            },
+                        ],
+                    },
+                    {
+                        name: "IContentServerDirectoryService",
+                        methods: [
+                            {
+                                name: "GetServersForSteamPipe",
+                                version: 1,
+                                httpmethod: "GET",
+                                parameters: [],
+                            },
+                        ],
+                    },
+                ],
+            },
+        };
+
+        const openApiSpec = await createOpenApiSpec(apiDefinition);
+
+        expect(openApiSpec.tags).toHaveLength(2);
+        expect(openApiSpec.tags[0].name).toEqual(
+            "IContentServerDirectoryService"
+        );
+        expect(openApiSpec.tags[1].name).toEqual("IDOTA2Match");
+    });
+
+    it("creates unique tags", async () => {
+        const apiDefinition = {
+            apilist: {
+                interfaces: [
+                    {
+                        name: "IDOTA2Match",
+                        methods: [
+                            {
+                                name: "GetLeagueListing",
+                                version: 1,
+                                httpmethod: "GET",
+                                parameters: [],
+                            },
+                        ],
+                    },
+                    {
+                        name: "IDOTA2Match",
+                        methods: [
+                            {
+                                name: "GetLiveLeagueGames",
+                                version: 1,
+                                httpmethod: "GET",
+                                parameters: [],
+                            },
+                        ],
+                    },
+                ],
+            },
+        };
+
+        const openApiSpec = await createOpenApiSpec(apiDefinition);
+
+        expect(openApiSpec.tags).toHaveLength(1);
+    });
 });
