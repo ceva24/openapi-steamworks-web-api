@@ -66,7 +66,17 @@ export const SPEC_EXTERNAL_DOCS_DESCRIPTION = "Steamworks Web API Reference";
 export const SPEC_SECURITY_SCHEME_TYPE = "apiKey";
 export const SPEC_SECURITY_SCHEME_NAME = "key";
 
-export const DEFAULT_RESPONSES = { 200: { description: "successful" } };
+export const DEFAULT_RESPONSES = {
+    200: { description: "A successful request" },
+    400: {
+        description:
+            "If the user fails to supply all required fields, or supplies invalid data",
+    },
+    403: {
+        description:
+            "If the user fails to supply a valid API key, or if the key does not allow access to this resource",
+    },
+};
 
 export const FORMAT_PARAMETER = {
     name: "format",
