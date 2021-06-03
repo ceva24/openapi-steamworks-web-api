@@ -55,6 +55,9 @@ export const SPEC_SERVER_URL = STEAM_API_URL;
 
 export const SPEC_EXTERNAL_DOCS_URL = STEAM_EXTERNAL_DOCS_URL;
 
+export const SPEC_SECURITY_SCHEME_TYPE = "apiKey";
+export const SPEC_SECURITY_SCHEME_NAME = "key";
+
 export const DEFAULT_RESPONSES = { 200: { description: "successful" } };
 
 export const FORMAT_PARAMETER = {

@@ -3,6 +3,9 @@ import {
     SPEC_EXTERNAL_DOCS_URL,
     SPEC_INFO_TITLE,
     SPEC_SERVER_URL,
+    SPEC_SECURITY_SCHEME_NAME,
+    SPEC_SECURITY_SCHEME_TYPE,
+    SPEC_PATHS_PARAMETERS_IN,
 } from "../constants/constants.js";
 import { createOpenApiSpec } from "./openapi-spec-creator.js";
 
@@ -249,5 +252,39 @@ describe("openapi spec creator", () => {
         }
 
         expect(thrown.message).toContain("Swagger schema validation failed");
+    });
+
+    it("defines a security scheme", async () => {
+        const apiDefinition = { apilist: { interfaces: [] } };
+
+        const openApiSpec = await createOpenApiSpec(apiDefinition);
+
+        expect(
+            openApiSpec.components.securitySchemes[SPEC_SECURITY_SCHEME_NAME]
+                .type
+        ).toEqual(SPEC_SECURITY_SCHEME_TYPE);
+
+        expect(
+            openApiSpec.components.securitySchemes[SPEC_SECURITY_SCHEME_NAME]
+                .name
+        ).toEqual(SPEC_SECURITY_SCHEME_NAME);
+
+        expect(
+            openApiSpec.components.securitySchemes[SPEC_SECURITY_SCHEME_NAME].in
+        ).toEqual(SPEC_PATHS_PARAMETERS_IN);
+    });
+
+    it("sets the security scheme", async () => {
+        const apiDefinition = { apilist: { interfaces: [] } };
+
+        const openApiSpec = await createOpenApiSpec(apiDefinition);
+
+        expect(openApiSpec.security).toHaveLength(1);
+
+        const securitySchemeName = Object.keys(openApiSpec.security[0])[0];
+
+        expect(securitySchemeName).toEqual(SPEC_SECURITY_SCHEME_NAME);
+
+        expect(openApiSpec.security[0][securitySchemeName]).toHaveLength(0);
     });
 });
