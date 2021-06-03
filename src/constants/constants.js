@@ -34,6 +34,12 @@ export const SPEC_TYPES = {
 export const SPEC_VERSION = "3.0.3";
 
 export const SPEC_INFO_TITLE = "Steamworks Web API";
+export const SPEC_INFO_DESCRIPTION =
+    'This is a specification of the Steamworks Web API. For more details on how to use this tool, check out the <a href="https://github.com/ceva24/openapi-steamworks-web-api/blob/main/README.md">README</a>.';
+export const SPEC_INFO_TERMS_OF_SERVICE_URL =
+    "https://steamcommunity.com/dev/apiterms";
+export const SPEC_INFO_CONTACT_NAME = "Steam Support";
+export const SPEC_INFO_CONTACT_URL = "https://help.steampowered.com/";
 
 export const SPEC_PATHS_PARAMETERS_IN = "query";
 export const SPEC_PATHS_PARAMETERS_INPUT_JSON = "input_json";
@@ -52,13 +58,25 @@ export const SPEC_PATHS_FIELD_ARRAY_PARAMETER_DESCRIPTION =
     "<br>Note: this is an <a href=https://partner.steamgames.com/doc/webapi_overview#2>array parameter</a>";
 
 export const SPEC_SERVER_URL = STEAM_API_URL;
+export const SPEC_PARTNER_SERVER_URL = "https://partner.steam-api.com";
 
 export const SPEC_EXTERNAL_DOCS_URL = STEAM_EXTERNAL_DOCS_URL;
+export const SPEC_EXTERNAL_DOCS_DESCRIPTION = "Steamworks Web API Reference";
 
 export const SPEC_SECURITY_SCHEME_TYPE = "apiKey";
 export const SPEC_SECURITY_SCHEME_NAME = "key";
 
-export const DEFAULT_RESPONSES = { 200: { description: "successful" } };
+export const DEFAULT_RESPONSES = {
+    200: { description: "A successful request" },
+    400: {
+        description:
+            "If the user fails to supply all required fields, or supplies invalid data",
+    },
+    403: {
+        description:
+            "If the user fails to supply a valid API key, or if the key does not allow access to this resource",
+    },
+};
 
 export const FORMAT_PARAMETER = {
     name: "format",
