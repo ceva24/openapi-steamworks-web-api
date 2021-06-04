@@ -38,7 +38,7 @@ You can freely [browse all of the available endpoints](https://ceva24.github.io/
 
 ## ☕ Disclaimer and thanks
 
-This project is not affiliated with Valve Software or the Steam platform in any way. All of the information provided is publicly available though Valve Software's own documentation and APIs.
+This project is not affiliated with Valve Software or the Steam platform in any way. All of the information provided is publicly available through Valve Software's own documentation and APIs.
 
 Found this project useful? Feel free to let me know by buying me a coffee!
 
