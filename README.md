@@ -28,13 +28,13 @@ You can freely [browse all of the available endpoints](https://ceva24.github.io/
 
 ## ❗ Caveats
 
-- This project relies on an endpoint provided by Valve Software to generate the specification - not all API endpoints are documented in this (including many of those for `https://partner.steam-api.com`), though most of the core ones are available. If in doubt refer to the [Steamworks Web API Reference](https://partner.steamgames.com/doc/webapi).
-- Conversely this specification includes a number of endpoints that aren't included in the [Steamworks Web API Reference](https://partner.steamgames.com/doc/webapi) for whatever reason.
-- This is an opinionated specification - the API allows you to do things like pass the `key` parameter as a query string parameter or in some cases as a form field. In our case we always pass it as a query string parameter.
-- For simplicity all endpoints have been marked as requiring authentication, but some of the endpoints are public. You can determine this by consulting the relevant page in the [Steamworks Web API Reference](https://partner.steamgames.com/doc/webapi) - or just try it!
-- Most endpoints target the `https://api.steampowered.com` domain, but some are for `https://partner.steam-api.com`. You can select the server at the top of the specification, but you'll need to refer to the [Steamworks Web API Reference](https://partner.steamgames.com/doc/webapi) to find out which domain you need to target.
-- Many endpoints allow you to pass an [`input_json` parameter](https://partner.steamgames.com/doc/webapi_overview#3) - you'll need to [URL-encode this yourself](https://www.urlencoder.io/).
-- Be aware that some endpoints will respond with `HTTP 200` whilst containing an error message in the response body 🤷
+-   This project relies on an endpoint provided by Valve Software to generate the specification - not all API endpoints are documented in this (including many of those for `https://partner.steam-api.com`), though most of the core ones are available. If in doubt refer to the [Steamworks Web API Reference](https://partner.steamgames.com/doc/webapi).
+-   Conversely this specification includes a number of endpoints that aren't included in the [Steamworks Web API Reference](https://partner.steamgames.com/doc/webapi) for whatever reason.
+-   This is an opinionated specification - the API allows you to do things like pass the `key` parameter as a query string parameter or in some cases as a form field. In our case we always pass it as a query string parameter.
+-   For simplicity all endpoints have been marked as requiring authentication, but some of the endpoints are public. You can determine this by consulting the relevant page in the [Steamworks Web API Reference](https://partner.steamgames.com/doc/webapi) - or just try it!
+-   Most endpoints target the `https://api.steampowered.com` domain, but some are for `https://partner.steam-api.com`. You can select the server at the top of the specification, but you'll need to refer to the [Steamworks Web API Reference](https://partner.steamgames.com/doc/webapi) to find out which domain you need to target.
+-   Many endpoints allow you to pass an [`input_json` parameter](https://partner.steamgames.com/doc/webapi_overview#3) - you'll need to [URL-encode this yourself](https://www.urlencoder.io/).
+-   Be aware that some endpoints will respond with `HTTP 200` whilst containing an error message in the response body 🤷
 
 ## ☕ Disclaimer and thanks
 
