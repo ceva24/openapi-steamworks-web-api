@@ -3,7 +3,7 @@
     "info": {
         "title": "Steamworks Web API",
         "version": "1.0.0",
-        "description": "This is a specification of the Steamworks Web API. For more details on how to use this tool, check out the <a href=\"https://github.com/ceva24/openapi-steamworks-web-api/blob/main/README.md\">README</a>.",
+        "description": "This is an OpenAPI specification for the Steamworks Web API. For more details on how to use this tool, check out the <a href=\"https://github.com/ceva24/openapi-steamworks-web-api/blob/main/README.md\">README</a>.",
         "termsOfService": "https://steamcommunity.com/dev/apiterms",
         "contact": {
             "name": "Steam Support",
