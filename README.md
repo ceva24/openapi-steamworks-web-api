@@ -1,4 +1,4 @@
-# OpenAPI for Steamworks Web API
+# OpenAPI Specification for the Steamworks Web API
 
 [![build](https://github.com/ceva24/openapi-steamworks-web-api/actions/workflows/build.yml/badge.svg)](https://github.com/ceva24/openapi-steamworks-web-api/actions/workflows/build.yml)
 [![tests](https://github.com/ceva24/openapi-steamworks-web-api/actions/workflows/test.yml/badge.svg)](https://github.com/ceva24/openapi-steamworks-web-api/actions/workflows/test.yml)
@@ -12,7 +12,7 @@
 
 ## 👋 Introduction
 
-This is an automatically generated OpenAPI spec for the Steamworks Web API. It allows you to [explore the endpoints through the Swagger UI](https://ceva24.github.io/openapi-steamworks-web-api/) and try out some of the requests, and is intended to complement the official [Steamworks Web API Reference](https://partner.steamgames.com/doc/webapi) and [developer wiki](https://developer.valvesoftware.com/wiki/Steam_Web_API).
+This is an automatically generated OpenAPI specification for the Steamworks Web API. It allows you to [explore the endpoints through the Swagger UI](https://ceva24.github.io/openapi-steamworks-web-api/) and try out some of the requests, and is intended to complement the official [Steamworks Web API Reference](https://partner.steamgames.com/doc/webapi) and [developer wiki](https://developer.valvesoftware.com/wiki/Steam_Web_API).
 
 The specification is regenerated regularly so should be an accurate reflection of the current state of the API.
 
