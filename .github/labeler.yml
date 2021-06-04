@@ -4,6 +4,7 @@ documentation:
 
 test:
   - src/**/*.test.js
+  - src/**/*.snap
 
 source:
   - src/**/*
