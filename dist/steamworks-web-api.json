@@ -8951,6 +8951,26 @@
                         }
                     },
                     {
+                        "name": "date_range_created",
+                        "in": "query",
+                        "description": "(Optional) Filter to items created within this range.",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "format": "{message}"
+                        }
+                    },
+                    {
+                        "name": "date_range_updated",
+                        "in": "query",
+                        "description": "(Optional) Filter to items updated within this range.",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "format": "{message}"
+                        }
+                    },
+                    {
                         "name": "totalonly",
                         "in": "query",
                         "description": "(Optional) If true, only return the total number of files that satisfy this query.",
