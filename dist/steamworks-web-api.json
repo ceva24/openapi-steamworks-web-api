@@ -3391,128 +3391,6 @@
                 ]
             }
         },
-        "/IDOTA2Ticket_570/ClaimBadgeReward/v1": {
-            "get": {
-                "responses": {
-                    "200": {
-                        "description": "A successful request"
-                    },
-                    "400": {
-                        "description": "If the user fails to supply all required fields, or supplies invalid data"
-                    },
-                    "403": {
-                        "description": "If the user fails to supply a valid API key, or if the key does not allow access to this resource"
-                    }
-                },
-                "parameters": [
-                    {
-                        "name": "BadgeID",
-                        "in": "query",
-                        "description": "The Badge ID",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "ValidBadgeType1",
-                        "in": "query",
-                        "description": "Valid Badge Type 1",
-                        "required": true,
-                        "schema": {
-                            "type": "integer",
-                            "format": "int32"
-                        }
-                    },
-                    {
-                        "name": "ValidBadgeType2",
-                        "in": "query",
-                        "description": "Valid Badge Type 2",
-                        "required": true,
-                        "schema": {
-                            "type": "integer",
-                            "format": "int32"
-                        }
-                    },
-                    {
-                        "name": "ValidBadgeType3",
-                        "in": "query",
-                        "description": "Valid Badge Type 3",
-                        "required": true,
-                        "schema": {
-                            "type": "integer",
-                            "format": "int32"
-                        }
-                    },
-                    {
-                        "name": "format",
-                        "in": "query",
-                        "description": "The format of the response. Defaults to json",
-                        "required": false,
-                        "schema": {
-                            "type": "string",
-                            "enum": [
-                                "json",
-                                "xml",
-                                "vdf"
-                            ]
-                        }
-                    }
-                ],
-                "externalDocs": {
-                    "url": "https://partner.steamgames.com/doc/webapi/IDOTA2Ticket_570#ClaimBadgeReward"
-                },
-                "tags": [
-                    "IDOTA2Ticket"
-                ]
-            }
-        },
-        "/IDOTA2Ticket_570/GetSteamIDForBadgeID/v1": {
-            "get": {
-                "responses": {
-                    "200": {
-                        "description": "A successful request"
-                    },
-                    "400": {
-                        "description": "If the user fails to supply all required fields, or supplies invalid data"
-                    },
-                    "403": {
-                        "description": "If the user fails to supply a valid API key, or if the key does not allow access to this resource"
-                    }
-                },
-                "parameters": [
-                    {
-                        "name": "BadgeID",
-                        "in": "query",
-                        "description": "The badge ID",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "format",
-                        "in": "query",
-                        "description": "The format of the response. Defaults to json",
-                        "required": false,
-                        "schema": {
-                            "type": "string",
-                            "enum": [
-                                "json",
-                                "xml",
-                                "vdf"
-                            ]
-                        }
-                    }
-                ],
-                "externalDocs": {
-                    "url": "https://partner.steamgames.com/doc/webapi/IDOTA2Ticket_570#GetSteamIDForBadgeID"
-                },
-                "tags": [
-                    "IDOTA2Ticket"
-                ]
-            }
-        },
         "/IDOTA2Ticket_570/SetSteamAccountPurchased/v1": {
             "post": {
                 "responses": {
@@ -9639,7 +9517,7 @@
                 ]
             }
         },
-        "/ISteamDirectory/GetCSList/v1": {
+        "/ISteamDirectory/GetCMListForConnect/v1": {
             "get": {
                 "responses": {
                     "200": {
@@ -9656,11 +9534,29 @@
                     {
                         "name": "cellid",
                         "in": "query",
-                        "description": "Client's Steam cell ID",
-                        "required": true,
+                        "description": "Client's Steam cell ID, uses IP location if blank",
+                        "required": false,
                         "schema": {
                             "type": "integer",
                             "format": "int32"
+                        }
+                    },
+                    {
+                        "name": "cmtype",
+                        "in": "query",
+                        "description": "Optional CM type filter",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "realm",
+                        "in": "query",
+                        "description": "Optional Steam Realm filter",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
                         }
                     },
                     {
@@ -9689,7 +9585,7 @@
                     }
                 ],
                 "externalDocs": {
-                    "url": "https://partner.steamgames.com/doc/webapi/ISteamDirectory#GetCSList"
+                    "url": "https://partner.steamgames.com/doc/webapi/ISteamDirectory#GetCMListForConnect"
                 },
                 "tags": [
                     "ISteamDirectory"
