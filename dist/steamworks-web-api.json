@@ -7105,6 +7105,92 @@
                 ]
             }
         },
+        "/IGameServersService/QueryByFakeIP/v1": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "A successful request"
+                    },
+                    "400": {
+                        "description": "If the user fails to supply all required fields, or supplies invalid data"
+                    },
+                    "403": {
+                        "description": "If the user fails to supply a valid API key, or if the key does not allow access to this resource"
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "fake_ip",
+                        "in": "query",
+                        "description": "(Required) FakeIP of server to query.",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    },
+                    {
+                        "name": "fake_port",
+                        "in": "query",
+                        "description": "(Required) Fake port of server to query.",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    },
+                    {
+                        "name": "app_id",
+                        "in": "query",
+                        "description": "(Required) AppID to use.  Each AppID has its own FakeIP address.",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    },
+                    {
+                        "name": "query_type",
+                        "in": "query",
+                        "description": "(Required) What type of query?",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "format": "{enum}"
+                        }
+                    },
+                    {
+                        "name": "input_json",
+                        "in": "query",
+                        "description": "An alternative to the query string parameters; pass arguments as a URL-encoded JSON blob. The \"key\" and \"format\" fields should still be passed as separate parameters",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "description": "The format of the response. Defaults to json",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "json",
+                                "xml",
+                                "vdf"
+                            ]
+                        }
+                    }
+                ],
+                "externalDocs": {
+                    "url": "https://partner.steamgames.com/doc/webapi/IGameServersService#QueryByFakeIP"
+                },
+                "tags": [
+                    "IGameServersService"
+                ]
+            }
+        },
         "/IGameServersService/QueryLoginToken/v1": {
             "get": {
                 "responses": {
