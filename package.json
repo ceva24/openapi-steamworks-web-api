@@ -31,16 +31,16 @@
         "check": "npm run format && npm run lint && npm run test"
     },
     "dependencies": {
-        "@apidevtools/swagger-parser": "^10.0.2",
+        "@apidevtools/swagger-parser": "^10.0.3",
         "dotenv": "^10.0.0",
         "minimist": "^1.2.5",
-        "node-fetch": "^2.6.1"
+        "node-fetch": "^3.0.0"
     },
     "devDependencies": {
-        "@babel/preset-env": "^7.14.7",
-        "jest": "^27.0.6",
+        "@babel/preset-env": "^7.16.0",
+        "jest": "^27.3.1",
         "jest-fetch-mock": "^3.0.3",
-        "prettier": "^2.3.2",
-        "xo": "^0.40.3"
+        "prettier": "^2.4.1",
+        "xo": "^0.46.4"
     }
 }
