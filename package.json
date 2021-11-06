@@ -28,7 +28,8 @@
         "format": "prettier --write .",
         "lint": "xo",
         "test": "NODE_ENV=test jest --coverage",
-        "check": "npm run format && npm run lint && npm run test"
+        "check": "npm run format && npm run lint && npm run test",
+        "update": "ncu -u"
     },
     "dependencies": {
         "@apidevtools/swagger-parser": "^10.0.3",
