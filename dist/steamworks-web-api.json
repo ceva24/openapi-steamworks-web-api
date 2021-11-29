@@ -3432,7 +3432,7 @@
                             "schema": {
                                 "type": "object",
                                 "properties": {
-                                    "steamid": {
+                                    "SteamID": {
                                         "type": "integer",
                                         "format": "int64",
                                         "description": "The 64-bit Steam ID"
@@ -3444,7 +3444,7 @@
                                     }
                                 },
                                 "required": [
-                                    "steamid",
+                                    "SteamID",
                                     "BadgeType"
                                 ]
                             }
@@ -3468,7 +3468,7 @@
                 },
                 "parameters": [
                     {
-                        "name": "steamid",
+                        "name": "SteamID",
                         "in": "query",
                         "description": "The 64-bit Steam ID",
                         "required": true,
@@ -4915,7 +4915,7 @@
                 },
                 "parameters": [
                     {
-                        "name": "steamid",
+                        "name": "SteamID",
                         "in": "query",
                         "description": "The Steam ID to fetch items for",
                         "required": true,
@@ -4972,7 +4972,7 @@
                 },
                 "parameters": [
                     {
-                        "name": "steamid",
+                        "name": "SteamID",
                         "in": "query",
                         "description": "The Steam ID to fetch items for",
                         "required": true,
@@ -11842,7 +11842,7 @@
                 },
                 "parameters": [
                     {
-                        "name": "steamid",
+                        "name": "SteamID",
                         "in": "query",
                         "description": "The Steam ID to fetch items for",
                         "required": true,
@@ -11925,7 +11925,7 @@
                             "schema": {
                                 "type": "object",
                                 "properties": {
-                                    "steamid": {
+                                    "SteamID": {
                                         "type": "integer",
                                         "format": "int64",
                                         "description": "The Steam ID to fetch items for"
@@ -11937,7 +11937,7 @@
                                     }
                                 },
                                 "required": [
-                                    "steamid",
+                                    "SteamID",
                                     "promoid"
                                 ]
                             }
