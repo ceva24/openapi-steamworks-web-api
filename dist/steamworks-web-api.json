@@ -853,6 +853,43 @@
                 }
             }
         },
+        "/IClientStats_1046930/ReportEvent/v1": {
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "A successful request"
+                    },
+                    "400": {
+                        "description": "If the user fails to supply all required fields, or supplies invalid data"
+                    },
+                    "403": {
+                        "description": "If the user fails to supply a valid API key, or if the key does not allow access to this resource"
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "description": "The format of the response. Defaults to json",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "json",
+                                "xml",
+                                "vdf"
+                            ]
+                        }
+                    }
+                ],
+                "externalDocs": {
+                    "url": "https://partner.steamgames.com/doc/webapi/IClientStats_1046930#ReportEvent"
+                },
+                "tags": [
+                    "IClientStats"
+                ]
+            }
+        },
         "/IContentServerConfigService/GetSteamCacheNodeParams/v1": {
             "get": {
                 "responses": {
@@ -4163,6 +4200,110 @@
                 ]
             }
         },
+        "/IEconItems_1046930/GetPlayerItems/v1": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "A successful request"
+                    },
+                    "400": {
+                        "description": "If the user fails to supply all required fields, or supplies invalid data"
+                    },
+                    "403": {
+                        "description": "If the user fails to supply a valid API key, or if the key does not allow access to this resource"
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "steamid",
+                        "in": "query",
+                        "description": "The Steam ID to fetch items for",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "description": "The format of the response. Defaults to json",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "json",
+                                "xml",
+                                "vdf"
+                            ]
+                        }
+                    }
+                ],
+                "externalDocs": {
+                    "url": "https://partner.steamgames.com/doc/webapi/IEconItems_1046930#GetPlayerItems"
+                },
+                "tags": [
+                    "IEconItems"
+                ]
+            }
+        },
+        "/IEconItems_1269260/GetEquippedPlayerItems/v1": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "A successful request"
+                    },
+                    "400": {
+                        "description": "If the user fails to supply all required fields, or supplies invalid data"
+                    },
+                    "403": {
+                        "description": "If the user fails to supply a valid API key, or if the key does not allow access to this resource"
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "steamid",
+                        "in": "query",
+                        "description": "The Steam ID to fetch items for",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    },
+                    {
+                        "name": "class_id",
+                        "in": "query",
+                        "description": "Return items equipped for this class id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "description": "The format of the response. Defaults to json",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "json",
+                                "xml",
+                                "vdf"
+                            ]
+                        }
+                    }
+                ],
+                "externalDocs": {
+                    "url": "https://partner.steamgames.com/doc/webapi/IEconItems_1269260#GetEquippedPlayerItems"
+                },
+                "tags": [
+                    "IEconItems"
+                ]
+            }
+        },
         "/IEconItems_205790/GetEquippedPlayerItems/v1": {
             "get": {
                 "responses": {
@@ -4391,6 +4532,53 @@
                 ],
                 "externalDocs": {
                     "url": "https://partner.steamgames.com/doc/webapi/IEconItems_221540#GetPlayerItems"
+                },
+                "tags": [
+                    "IEconItems"
+                ]
+            }
+        },
+        "/IEconItems_238460/GetPlayerItems/v1": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "A successful request"
+                    },
+                    "400": {
+                        "description": "If the user fails to supply all required fields, or supplies invalid data"
+                    },
+                    "403": {
+                        "description": "If the user fails to supply a valid API key, or if the key does not allow access to this resource"
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "steamid",
+                        "in": "query",
+                        "description": "The Steam ID to fetch items for",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "description": "The format of the response. Defaults to json",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "json",
+                                "xml",
+                                "vdf"
+                            ]
+                        }
+                    }
+                ],
+                "externalDocs": {
+                    "url": "https://partner.steamgames.com/doc/webapi/IEconItems_238460#GetPlayerItems"
                 },
                 "tags": [
                     "IEconItems"
@@ -4856,6 +5044,63 @@
                 ],
                 "externalDocs": {
                     "url": "https://partner.steamgames.com/doc/webapi/IEconItems_570#GetStoreMetaData"
+                },
+                "tags": [
+                    "IEconItems"
+                ]
+            }
+        },
+        "/IEconItems_583950/GetEquippedPlayerItems/v1": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "A successful request"
+                    },
+                    "400": {
+                        "description": "If the user fails to supply all required fields, or supplies invalid data"
+                    },
+                    "403": {
+                        "description": "If the user fails to supply a valid API key, or if the key does not allow access to this resource"
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "steamid",
+                        "in": "query",
+                        "description": "The Steam ID to fetch items for",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    },
+                    {
+                        "name": "class_id",
+                        "in": "query",
+                        "description": "Return items equipped for this class id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "description": "The format of the response. Defaults to json",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "json",
+                                "xml",
+                                "vdf"
+                            ]
+                        }
+                    }
+                ],
+                "externalDocs": {
+                    "url": "https://partner.steamgames.com/doc/webapi/IEconItems_583950#GetEquippedPlayerItems"
                 },
                 "tags": [
                     "IEconItems"
@@ -5765,6 +6010,154 @@
                 ]
             }
         },
+        "/IGCVersion_1046930/GetClientVersion/v1": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "A successful request"
+                    },
+                    "400": {
+                        "description": "If the user fails to supply all required fields, or supplies invalid data"
+                    },
+                    "403": {
+                        "description": "If the user fails to supply a valid API key, or if the key does not allow access to this resource"
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "description": "The format of the response. Defaults to json",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "json",
+                                "xml",
+                                "vdf"
+                            ]
+                        }
+                    }
+                ],
+                "externalDocs": {
+                    "url": "https://partner.steamgames.com/doc/webapi/IGCVersion_1046930#GetClientVersion"
+                },
+                "tags": [
+                    "IGCVersion"
+                ]
+            }
+        },
+        "/IGCVersion_1046930/GetServerVersion/v1": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "A successful request"
+                    },
+                    "400": {
+                        "description": "If the user fails to supply all required fields, or supplies invalid data"
+                    },
+                    "403": {
+                        "description": "If the user fails to supply a valid API key, or if the key does not allow access to this resource"
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "description": "The format of the response. Defaults to json",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "json",
+                                "xml",
+                                "vdf"
+                            ]
+                        }
+                    }
+                ],
+                "externalDocs": {
+                    "url": "https://partner.steamgames.com/doc/webapi/IGCVersion_1046930#GetServerVersion"
+                },
+                "tags": [
+                    "IGCVersion"
+                ]
+            }
+        },
+        "/IGCVersion_1269260/GetClientVersion/v1": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "A successful request"
+                    },
+                    "400": {
+                        "description": "If the user fails to supply all required fields, or supplies invalid data"
+                    },
+                    "403": {
+                        "description": "If the user fails to supply a valid API key, or if the key does not allow access to this resource"
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "description": "The format of the response. Defaults to json",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "json",
+                                "xml",
+                                "vdf"
+                            ]
+                        }
+                    }
+                ],
+                "externalDocs": {
+                    "url": "https://partner.steamgames.com/doc/webapi/IGCVersion_1269260#GetClientVersion"
+                },
+                "tags": [
+                    "IGCVersion"
+                ]
+            }
+        },
+        "/IGCVersion_1269260/GetServerVersion/v1": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "A successful request"
+                    },
+                    "400": {
+                        "description": "If the user fails to supply all required fields, or supplies invalid data"
+                    },
+                    "403": {
+                        "description": "If the user fails to supply a valid API key, or if the key does not allow access to this resource"
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "description": "The format of the response. Defaults to json",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "json",
+                                "xml",
+                                "vdf"
+                            ]
+                        }
+                    }
+                ],
+                "externalDocs": {
+                    "url": "https://partner.steamgames.com/doc/webapi/IGCVersion_1269260#GetServerVersion"
+                },
+                "tags": [
+                    "IGCVersion"
+                ]
+            }
+        },
         "/IGCVersion_205790/GetClientVersion/v1": {
             "get": {
                 "responses": {
@@ -5981,6 +6374,80 @@
                 ],
                 "externalDocs": {
                     "url": "https://partner.steamgames.com/doc/webapi/IGCVersion_570#GetServerVersion"
+                },
+                "tags": [
+                    "IGCVersion"
+                ]
+            }
+        },
+        "/IGCVersion_583950/GetClientVersion/v1": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "A successful request"
+                    },
+                    "400": {
+                        "description": "If the user fails to supply all required fields, or supplies invalid data"
+                    },
+                    "403": {
+                        "description": "If the user fails to supply a valid API key, or if the key does not allow access to this resource"
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "description": "The format of the response. Defaults to json",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "json",
+                                "xml",
+                                "vdf"
+                            ]
+                        }
+                    }
+                ],
+                "externalDocs": {
+                    "url": "https://partner.steamgames.com/doc/webapi/IGCVersion_583950#GetClientVersion"
+                },
+                "tags": [
+                    "IGCVersion"
+                ]
+            }
+        },
+        "/IGCVersion_583950/GetServerVersion/v1": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "A successful request"
+                    },
+                    "400": {
+                        "description": "If the user fails to supply all required fields, or supplies invalid data"
+                    },
+                    "403": {
+                        "description": "If the user fails to supply a valid API key, or if the key does not allow access to this resource"
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "description": "The format of the response. Defaults to json",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "json",
+                                "xml",
+                                "vdf"
+                            ]
+                        }
+                    }
+                ],
+                "externalDocs": {
+                    "url": "https://partner.steamgames.com/doc/webapi/IGCVersion_583950#GetServerVersion"
                 },
                 "tags": [
                     "IGCVersion"
@@ -11513,6 +11980,9 @@
         },
         {
             "name": "ICheatReportingService"
+        },
+        {
+            "name": "IClientStats"
         },
         {
             "name": "IContentServerConfigService"
