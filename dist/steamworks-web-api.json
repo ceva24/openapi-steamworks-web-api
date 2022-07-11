@@ -8601,6 +8601,15 @@
                         }
                     },
                     {
+                        "name": "return_apps",
+                        "in": "query",
+                        "description": "(Required) Return list of apps the items belong to",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    },
+                    {
                         "name": "input_json",
                         "in": "query",
                         "description": "An alternative to the query string parameters; pass arguments as a URL-encoded JSON blob. The \"key\" and \"format\" fields should still be passed as separate parameters",
