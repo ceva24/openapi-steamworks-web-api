@@ -7771,6 +7771,15 @@
                         }
                     },
                     {
+                        "name": "language",
+                        "in": "query",
+                        "description": "(Required) Will return appinfo in this language",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
                         "name": "input_json",
                         "in": "query",
                         "description": "An alternative to the query string parameters; pass arguments as a URL-encoded JSON blob. The \"key\" and \"format\" fields should still be passed as separate parameters",
