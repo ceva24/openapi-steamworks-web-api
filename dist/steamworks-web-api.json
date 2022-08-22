@@ -7780,6 +7780,15 @@
                         }
                     },
                     {
+                        "name": "include_extended_appinfo",
+                        "in": "query",
+                        "description": "(Required) true if we want even more details (capsule, sortas, and capabilities) about each game.  include_appinfo must also be true.",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    },
+                    {
                         "name": "input_json",
                         "in": "query",
                         "description": "An alternative to the query string parameters; pass arguments as a URL-encoded JSON blob. The \"key\" and \"format\" fields should still be passed as separate parameters",
@@ -8381,6 +8390,354 @@
                 ],
                 "externalDocs": {
                     "url": "https://partner.steamgames.com/doc/webapi/IPublishedFileService#GetSubSectionData"
+                },
+                "tags": [
+                    "IPublishedFileService"
+                ]
+            }
+        },
+        "/IPublishedFileService/GetUserFileCount/v1": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "A successful request"
+                    },
+                    "400": {
+                        "description": "If the user fails to supply all required fields, or supplies invalid data"
+                    },
+                    "403": {
+                        "description": "If the user fails to supply a valid API key, or if the key does not allow access to this resource"
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "steamid",
+                        "in": "query",
+                        "description": "(Required) Steam ID of the user whose files are being requested.",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    },
+                    {
+                        "name": "appid",
+                        "in": "query",
+                        "description": "(Required) App Id of the app that the files were published to.",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "(Optional) Starting page for results.",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    },
+                    {
+                        "name": "numperpage",
+                        "in": "query",
+                        "description": "(Optional) The number of results, per page to return.",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    },
+                    {
+                        "name": "type",
+                        "in": "query",
+                        "description": "(Optional) Type of files to be returned.",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "sortmethod",
+                        "in": "query",
+                        "description": "(Optional) Sorting method to use on returned values.",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "privacy",
+                        "in": "query",
+                        "description": "(Required) (optional) Filter by privacy settings.",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    },
+                    {
+                        "name": "requiredtags",
+                        "in": "query",
+                        "description": "(Optional) Tags that must be present on a published file to satisfy the query.",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "excludedtags",
+                        "in": "query",
+                        "description": "(Optional) Tags that must NOT be present on a published file to satisfy the query.",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "required_kv_tags",
+                        "in": "query",
+                        "description": "(Required) Required key-value tags to match on.",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "format": "{message}"
+                        }
+                    },
+                    {
+                        "name": "filetype",
+                        "in": "query",
+                        "description": "(Optional) File type to match files to.",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    },
+                    {
+                        "name": "creator_appid",
+                        "in": "query",
+                        "description": "(Required) App Id of the app that published the files, only matched if specified.",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    },
+                    {
+                        "name": "match_cloud_filename",
+                        "in": "query",
+                        "description": "(Required) Match this cloud filename if specified.",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "cache_max_age_seconds",
+                        "in": "query",
+                        "description": "Allow stale data to be returned for the specified number of seconds.",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    },
+                    {
+                        "name": "language",
+                        "in": "query",
+                        "description": "Specifies the localized text to return. Defaults to English.",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    },
+                    {
+                        "name": "taggroups",
+                        "in": "query",
+                        "description": "(Optional) At least one of the tags must be present on a published file to satisfy the query.",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "format": "{message}"
+                        }
+                    },
+                    {
+                        "name": "totalonly",
+                        "in": "query",
+                        "description": "(Optional) If true, only return the total number of files that satisfy this query.",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    },
+                    {
+                        "name": "ids_only",
+                        "in": "query",
+                        "description": "(Optional) If true, only return the published file ids of files that satisfy this query.",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    },
+                    {
+                        "name": "return_vote_data",
+                        "in": "query",
+                        "description": "Return vote data",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    },
+                    {
+                        "name": "return_tags",
+                        "in": "query",
+                        "description": "(Required) Return tags in the file details",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    },
+                    {
+                        "name": "return_kv_tags",
+                        "in": "query",
+                        "description": "Return key-value tags in the file details",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    },
+                    {
+                        "name": "return_previews",
+                        "in": "query",
+                        "description": "(Required) Return preview image and video details in the file details",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    },
+                    {
+                        "name": "return_children",
+                        "in": "query",
+                        "description": "(Required) Return child item ids in the file details",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    },
+                    {
+                        "name": "return_short_description",
+                        "in": "query",
+                        "description": "Populate the short_description field instead of file_description",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    },
+                    {
+                        "name": "return_for_sale_data",
+                        "in": "query",
+                        "description": "(Required) Return pricing information, if applicable",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    },
+                    {
+                        "name": "return_metadata",
+                        "in": "query",
+                        "description": "Populate the metadata field",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    },
+                    {
+                        "name": "return_playtime_stats",
+                        "in": "query",
+                        "description": "(Required) Return playtime stats for the specified number of days before today.",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    },
+                    {
+                        "name": "strip_description_bbcode",
+                        "in": "query",
+                        "description": "(Required) Strips BBCode from descriptions.",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    },
+                    {
+                        "name": "return_reactions",
+                        "in": "query",
+                        "description": "If true, then reactions to items will be returned.",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    },
+                    {
+                        "name": "startindex_override",
+                        "in": "query",
+                        "description": "(Required) Backwards compatible for the client.",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    },
+                    {
+                        "name": "desired_revision",
+                        "in": "query",
+                        "description": "Return the data for the specified revision.",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "format": "{enum}"
+                        }
+                    },
+                    {
+                        "name": "return_apps",
+                        "in": "query",
+                        "description": "(Required) Return list of apps the items belong to",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    },
+                    {
+                        "name": "input_json",
+                        "in": "query",
+                        "description": "An alternative to the query string parameters; pass arguments as a URL-encoded JSON blob. The \"key\" and \"format\" fields should still be passed as separate parameters",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "description": "The format of the response. Defaults to json",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "json",
+                                "xml",
+                                "vdf"
+                            ]
+                        }
+                    }
+                ],
+                "externalDocs": {
+                    "url": "https://partner.steamgames.com/doc/webapi/IPublishedFileService#GetUserFileCount"
                 },
                 "tags": [
                     "IPublishedFileService"
