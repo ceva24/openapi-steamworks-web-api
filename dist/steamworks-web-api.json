@@ -3391,6 +3391,52 @@
                 ]
             }
         },
+        "/IDOTA2Ticket_570/GetSteamIDForBadgeID/v1": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "A successful request"
+                    },
+                    "400": {
+                        "description": "If the user fails to supply all required fields, or supplies invalid data"
+                    },
+                    "403": {
+                        "description": "If the user fails to supply a valid API key, or if the key does not allow access to this resource"
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "BadgeID",
+                        "in": "query",
+                        "description": "The badge ID",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "description": "The format of the response. Defaults to json",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "json",
+                                "xml",
+                                "vdf"
+                            ]
+                        }
+                    }
+                ],
+                "externalDocs": {
+                    "url": "https://partner.steamgames.com/doc/webapi/IDOTA2Ticket_570#GetSteamIDForBadgeID"
+                },
+                "tags": [
+                    "IDOTA2Ticket"
+                ]
+            }
+        },
         "/IDOTA2Ticket_570/SetSteamAccountPurchased/v1": {
             "post": {
                 "responses": {
@@ -3432,7 +3478,7 @@
                             "schema": {
                                 "type": "object",
                                 "properties": {
-                                    "SteamID": {
+                                    "steamid": {
                                         "type": "integer",
                                         "format": "int64",
                                         "description": "The 64-bit Steam ID"
@@ -3444,7 +3490,7 @@
                                     }
                                 },
                                 "required": [
-                                    "SteamID",
+                                    "steamid",
                                     "BadgeType"
                                 ]
                             }
@@ -3468,7 +3514,7 @@
                 },
                 "parameters": [
                     {
-                        "name": "SteamID",
+                        "name": "steamid",
                         "in": "query",
                         "description": "The 64-bit Steam ID",
                         "required": true,
@@ -4915,7 +4961,7 @@
                 },
                 "parameters": [
                     {
-                        "name": "SteamID",
+                        "name": "steamid",
                         "in": "query",
                         "description": "The Steam ID to fetch items for",
                         "required": true,
@@ -4972,7 +5018,7 @@
                 },
                 "parameters": [
                     {
-                        "name": "SteamID",
+                        "name": "steamid",
                         "in": "query",
                         "description": "The Steam ID to fetch items for",
                         "required": true,
