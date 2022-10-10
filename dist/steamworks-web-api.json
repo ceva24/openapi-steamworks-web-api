@@ -3554,6 +3554,16 @@
                         }
                     },
                     {
+                        "name": "ValidBadgeType4",
+                        "in": "query",
+                        "description": "Valid Badge Type 4",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    },
+                    {
                         "name": "format",
                         "in": "query",
                         "description": "The format of the response. Defaults to json",
