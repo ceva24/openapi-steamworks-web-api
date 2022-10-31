@@ -1360,187 +1360,6 @@
                 ]
             }
         },
-        "/IDOTA2Fantasy_205790/GetFantasyPlayerStats/v1": {
-            "get": {
-                "responses": {
-                    "200": {
-                        "description": "A successful request"
-                    },
-                    "400": {
-                        "description": "If the user fails to supply all required fields, or supplies invalid data"
-                    },
-                    "403": {
-                        "description": "If the user fails to supply a valid API key, or if the key does not allow access to this resource"
-                    }
-                },
-                "parameters": [
-                    {
-                        "name": "FantasyLeagueID",
-                        "in": "query",
-                        "description": "The fantasy league ID",
-                        "required": true,
-                        "schema": {
-                            "type": "integer",
-                            "format": "int32"
-                        }
-                    },
-                    {
-                        "name": "StartTime",
-                        "in": "query",
-                        "description": "An optional filter for minimum timestamp",
-                        "required": false,
-                        "schema": {
-                            "type": "integer",
-                            "format": "int32"
-                        }
-                    },
-                    {
-                        "name": "EndTime",
-                        "in": "query",
-                        "description": "An optional filter for maximum timestamp",
-                        "required": false,
-                        "schema": {
-                            "type": "integer",
-                            "format": "int32"
-                        }
-                    },
-                    {
-                        "name": "MatchID",
-                        "in": "query",
-                        "description": "An optional filter for a specific match",
-                        "required": false,
-                        "schema": {
-                            "type": "integer",
-                            "format": "int64"
-                        }
-                    },
-                    {
-                        "name": "SeriesID",
-                        "in": "query",
-                        "description": "An optional filter for a specific series",
-                        "required": false,
-                        "schema": {
-                            "type": "integer",
-                            "format": "int32"
-                        }
-                    },
-                    {
-                        "name": "PlayerAccountID",
-                        "in": "query",
-                        "description": "An optional filter for a specific player",
-                        "required": false,
-                        "schema": {
-                            "type": "integer",
-                            "format": "int32"
-                        }
-                    },
-                    {
-                        "name": "format",
-                        "in": "query",
-                        "description": "The format of the response. Defaults to json",
-                        "required": false,
-                        "schema": {
-                            "type": "string",
-                            "enum": [
-                                "json",
-                                "xml",
-                                "vdf"
-                            ]
-                        }
-                    }
-                ],
-                "externalDocs": {
-                    "url": "https://partner.steamgames.com/doc/webapi/IDOTA2Fantasy_205790#GetFantasyPlayerStats"
-                },
-                "tags": [
-                    "IDOTA2Fantasy"
-                ]
-            }
-        },
-        "/IDOTA2Fantasy_205790/GetPlayerOfficialInfo/v1": {
-            "get": {
-                "responses": {
-                    "200": {
-                        "description": "A successful request"
-                    },
-                    "400": {
-                        "description": "If the user fails to supply all required fields, or supplies invalid data"
-                    },
-                    "403": {
-                        "description": "If the user fails to supply a valid API key, or if the key does not allow access to this resource"
-                    }
-                },
-                "parameters": [
-                    {
-                        "name": "accountid",
-                        "in": "query",
-                        "description": "The account ID to look up",
-                        "required": true,
-                        "schema": {
-                            "type": "integer",
-                            "format": "int32"
-                        }
-                    },
-                    {
-                        "name": "format",
-                        "in": "query",
-                        "description": "The format of the response. Defaults to json",
-                        "required": false,
-                        "schema": {
-                            "type": "string",
-                            "enum": [
-                                "json",
-                                "xml",
-                                "vdf"
-                            ]
-                        }
-                    }
-                ],
-                "externalDocs": {
-                    "url": "https://partner.steamgames.com/doc/webapi/IDOTA2Fantasy_205790#GetPlayerOfficialInfo"
-                },
-                "tags": [
-                    "IDOTA2Fantasy"
-                ]
-            }
-        },
-        "/IDOTA2Fantasy_205790/GetProPlayerList/v1": {
-            "get": {
-                "responses": {
-                    "200": {
-                        "description": "A successful request"
-                    },
-                    "400": {
-                        "description": "If the user fails to supply all required fields, or supplies invalid data"
-                    },
-                    "403": {
-                        "description": "If the user fails to supply a valid API key, or if the key does not allow access to this resource"
-                    }
-                },
-                "parameters": [
-                    {
-                        "name": "format",
-                        "in": "query",
-                        "description": "The format of the response. Defaults to json",
-                        "required": false,
-                        "schema": {
-                            "type": "string",
-                            "enum": [
-                                "json",
-                                "xml",
-                                "vdf"
-                            ]
-                        }
-                    }
-                ],
-                "externalDocs": {
-                    "url": "https://partner.steamgames.com/doc/webapi/IDOTA2Fantasy_205790#GetProPlayerList"
-                },
-                "tags": [
-                    "IDOTA2Fantasy"
-                ]
-            }
-        },
         "/IDOTA2MatchStats_205790/GetRealtimeStats/v1": {
             "get": {
                 "responses": {
@@ -1635,43 +1454,6 @@
                 ]
             }
         },
-        "/IDOTA2Match_205790/GetLeagueListing/v1": {
-            "get": {
-                "responses": {
-                    "200": {
-                        "description": "A successful request"
-                    },
-                    "400": {
-                        "description": "If the user fails to supply all required fields, or supplies invalid data"
-                    },
-                    "403": {
-                        "description": "If the user fails to supply a valid API key, or if the key does not allow access to this resource"
-                    }
-                },
-                "parameters": [
-                    {
-                        "name": "format",
-                        "in": "query",
-                        "description": "The format of the response. Defaults to json",
-                        "required": false,
-                        "schema": {
-                            "type": "string",
-                            "enum": [
-                                "json",
-                                "xml",
-                                "vdf"
-                            ]
-                        }
-                    }
-                ],
-                "externalDocs": {
-                    "url": "https://partner.steamgames.com/doc/webapi/IDOTA2Match_205790#GetLeagueListing"
-                },
-                "tags": [
-                    "IDOTA2Match"
-                ]
-            }
-        },
         "/IDOTA2Match_205790/GetLiveLeagueGames/v1": {
             "get": {
                 "responses": {
@@ -1704,6 +1486,15 @@
                         "schema": {
                             "type": "integer",
                             "format": "int64"
+                        }
+                    },
+                    {
+                        "name": "dpc",
+                        "in": "query",
+                        "description": "Only show matches that are part of the DPC",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean"
                         }
                     },
                     {
@@ -1751,6 +1542,15 @@
                         "schema": {
                             "type": "integer",
                             "format": "int64"
+                        }
+                    },
+                    {
+                        "name": "include_persona_names",
+                        "in": "query",
+                        "description": "Include persona names as part of the response",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean"
                         }
                     },
                     {
@@ -2212,16 +2012,6 @@
                         "schema": {
                             "type": "integer",
                             "format": "int64"
-                        }
-                    },
-                    {
-                        "name": "phase_id",
-                        "in": "query",
-                        "description": "",
-                        "required": false,
-                        "schema": {
-                            "type": "integer",
-                            "format": "int32"
                         }
                     },
                     {
@@ -3130,82 +2920,6 @@
                 ]
             }
         },
-        "/IDOTA2Ticket_205790/ClaimBadgeReward/v1": {
-            "get": {
-                "responses": {
-                    "200": {
-                        "description": "A successful request"
-                    },
-                    "400": {
-                        "description": "If the user fails to supply all required fields, or supplies invalid data"
-                    },
-                    "403": {
-                        "description": "If the user fails to supply a valid API key, or if the key does not allow access to this resource"
-                    }
-                },
-                "parameters": [
-                    {
-                        "name": "BadgeID",
-                        "in": "query",
-                        "description": "The Badge ID",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "ValidBadgeType1",
-                        "in": "query",
-                        "description": "Valid Badge Type 1",
-                        "required": true,
-                        "schema": {
-                            "type": "integer",
-                            "format": "int32"
-                        }
-                    },
-                    {
-                        "name": "ValidBadgeType2",
-                        "in": "query",
-                        "description": "Valid Badge Type 2",
-                        "required": true,
-                        "schema": {
-                            "type": "integer",
-                            "format": "int32"
-                        }
-                    },
-                    {
-                        "name": "ValidBadgeType3",
-                        "in": "query",
-                        "description": "Valid Badge Type 3",
-                        "required": true,
-                        "schema": {
-                            "type": "integer",
-                            "format": "int32"
-                        }
-                    },
-                    {
-                        "name": "format",
-                        "in": "query",
-                        "description": "The format of the response. Defaults to json",
-                        "required": false,
-                        "schema": {
-                            "type": "string",
-                            "enum": [
-                                "json",
-                                "xml",
-                                "vdf"
-                            ]
-                        }
-                    }
-                ],
-                "externalDocs": {
-                    "url": "https://partner.steamgames.com/doc/webapi/IDOTA2Ticket_205790#ClaimBadgeReward"
-                },
-                "tags": [
-                    "IDOTA2Ticket"
-                ]
-            }
-        },
         "/IDOTA2Ticket_205790/GetSteamIDForBadgeID/v1": {
             "get": {
                 "responses": {
@@ -3363,6 +3077,16 @@
                         "in": "query",
                         "description": "Valid Badge Type 3",
                         "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    },
+                    {
+                        "name": "ValidBadgeType4",
+                        "in": "query",
+                        "description": "Valid Badge Type 4",
+                        "required": false,
                         "schema": {
                             "type": "integer",
                             "format": "int32"
@@ -3603,7 +3327,7 @@
                     {
                         "name": "eventid",
                         "in": "query",
-                        "description": "The League ID of the compendium you're looking for.",
+                        "description": "The Event ID of the event you're looking for.",
                         "required": true,
                         "schema": {
                             "type": "integer",
@@ -3753,7 +3477,7 @@
                 ]
             }
         },
-        "/IEconDOTA2_205790/GetItemIconPath/v1": {
+        "/IEconDOTA2_205790/GetItemCreators/v1": {
             "get": {
                 "responses": {
                     "200": {
@@ -3768,19 +3492,10 @@
                 },
                 "parameters": [
                     {
-                        "name": "iconname",
+                        "name": "itemdef",
                         "in": "query",
-                        "description": "The item icon name to get the CDN path of",
+                        "description": "The item definition to get creator information for.",
                         "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "icontype",
-                        "in": "query",
-                        "description": "The type of image you want. 0 = normal, 1 = large, 2 = ingame",
-                        "required": false,
                         "schema": {
                             "type": "integer",
                             "format": "int32"
@@ -3802,7 +3517,54 @@
                     }
                 ],
                 "externalDocs": {
-                    "url": "https://partner.steamgames.com/doc/webapi/IEconDOTA2_205790#GetItemIconPath"
+                    "url": "https://partner.steamgames.com/doc/webapi/IEconDOTA2_205790#GetItemCreators"
+                },
+                "tags": [
+                    "IEconDOTA2"
+                ]
+            }
+        },
+        "/IEconDOTA2_205790/GetItemWorkshopPublishedFileIDs/v1": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "A successful request"
+                    },
+                    "400": {
+                        "description": "If the user fails to supply all required fields, or supplies invalid data"
+                    },
+                    "403": {
+                        "description": "If the user fails to supply a valid API key, or if the key does not allow access to this resource"
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "itemdef",
+                        "in": "query",
+                        "description": "The item definition to get published file ids for.",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "description": "The format of the response. Defaults to json",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "json",
+                                "xml",
+                                "vdf"
+                            ]
+                        }
+                    }
+                ],
+                "externalDocs": {
+                    "url": "https://partner.steamgames.com/doc/webapi/IEconDOTA2_205790#GetItemWorkshopPublishedFileIDs"
                 },
                 "tags": [
                     "IEconDOTA2"
@@ -4458,43 +4220,6 @@
                 ],
                 "externalDocs": {
                     "url": "https://partner.steamgames.com/doc/webapi/IEconItems_205790#GetPlayerItems"
-                },
-                "tags": [
-                    "IEconItems"
-                ]
-            }
-        },
-        "/IEconItems_205790/GetSchemaURL/v1": {
-            "get": {
-                "responses": {
-                    "200": {
-                        "description": "A successful request"
-                    },
-                    "400": {
-                        "description": "If the user fails to supply all required fields, or supplies invalid data"
-                    },
-                    "403": {
-                        "description": "If the user fails to supply a valid API key, or if the key does not allow access to this resource"
-                    }
-                },
-                "parameters": [
-                    {
-                        "name": "format",
-                        "in": "query",
-                        "description": "The format of the response. Defaults to json",
-                        "required": false,
-                        "schema": {
-                            "type": "string",
-                            "enum": [
-                                "json",
-                                "xml",
-                                "vdf"
-                            ]
-                        }
-                    }
-                ],
-                "externalDocs": {
-                    "url": "https://partner.steamgames.com/doc/webapi/IEconItems_205790#GetSchemaURL"
                 },
                 "tags": [
                     "IEconItems"
@@ -12132,125 +11857,6 @@
                 ]
             }
         },
-        "/ITFPromos_205790/GetItemID/v1": {
-            "get": {
-                "responses": {
-                    "200": {
-                        "description": "A successful request"
-                    },
-                    "400": {
-                        "description": "If the user fails to supply all required fields, or supplies invalid data"
-                    },
-                    "403": {
-                        "description": "If the user fails to supply a valid API key, or if the key does not allow access to this resource"
-                    }
-                },
-                "parameters": [
-                    {
-                        "name": "steamid",
-                        "in": "query",
-                        "description": "The Steam ID to fetch items for",
-                        "required": true,
-                        "schema": {
-                            "type": "integer",
-                            "format": "int64"
-                        }
-                    },
-                    {
-                        "name": "promoid",
-                        "in": "query",
-                        "description": "The promo ID to grant an item for",
-                        "required": true,
-                        "schema": {
-                            "type": "integer",
-                            "format": "int32"
-                        }
-                    },
-                    {
-                        "name": "format",
-                        "in": "query",
-                        "description": "The format of the response. Defaults to json",
-                        "required": false,
-                        "schema": {
-                            "type": "string",
-                            "enum": [
-                                "json",
-                                "xml",
-                                "vdf"
-                            ]
-                        }
-                    }
-                ],
-                "externalDocs": {
-                    "url": "https://partner.steamgames.com/doc/webapi/ITFPromos_205790#GetItemID"
-                },
-                "tags": [
-                    "ITFPromos"
-                ]
-            }
-        },
-        "/ITFPromos_205790/GrantItem/v1": {
-            "post": {
-                "responses": {
-                    "200": {
-                        "description": "A successful request"
-                    },
-                    "400": {
-                        "description": "If the user fails to supply all required fields, or supplies invalid data"
-                    },
-                    "403": {
-                        "description": "If the user fails to supply a valid API key, or if the key does not allow access to this resource"
-                    }
-                },
-                "parameters": [
-                    {
-                        "name": "format",
-                        "in": "query",
-                        "description": "The format of the response. Defaults to json",
-                        "required": false,
-                        "schema": {
-                            "type": "string",
-                            "enum": [
-                                "json",
-                                "xml",
-                                "vdf"
-                            ]
-                        }
-                    }
-                ],
-                "externalDocs": {
-                    "url": "https://partner.steamgames.com/doc/webapi/ITFPromos_205790#GrantItem"
-                },
-                "tags": [
-                    "ITFPromos"
-                ],
-                "requestBody": {
-                    "content": {
-                        "application/x-www-form-urlencoded": {
-                            "schema": {
-                                "type": "object",
-                                "properties": {
-                                    "steamid": {
-                                        "type": "integer",
-                                        "format": "int64",
-                                        "description": "The Steam ID to fetch items for"
-                                    },
-                                    "promoid": {
-                                        "type": "integer",
-                                        "format": "int32",
-                                        "description": "The promo ID to grant an item for"
-                                    }
-                                },
-                                "required": [
-                                    "steamid",
-                                    "promoid"
-                                ]
-                            }
-                        }
-                    }
-                }
-            }
-        },
         "/ITFPromos_440/GetItemID/v1": {
             "get": {
                 "responses": {
@@ -12569,9 +12175,6 @@
         },
         {
             "name": "IContentServerDirectoryService"
-        },
-        {
-            "name": "IDOTA2Fantasy"
         },
         {
             "name": "IDOTA2Match"
