@@ -9492,6 +9492,53 @@
                 ]
             }
         },
+        "/ISteamApps/GetSDRConfigLegacy/v1": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "A successful request"
+                    },
+                    "400": {
+                        "description": "If the user fails to supply all required fields, or supplies invalid data"
+                    },
+                    "403": {
+                        "description": "If the user fails to supply a valid API key, or if the key does not allow access to this resource"
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "appid",
+                        "in": "query",
+                        "description": "AppID of game",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "description": "The format of the response. Defaults to json",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "json",
+                                "xml",
+                                "vdf"
+                            ]
+                        }
+                    }
+                ],
+                "externalDocs": {
+                    "url": "https://partner.steamgames.com/doc/webapi/ISteamApps#GetSDRConfigLegacy"
+                },
+                "tags": [
+                    "ISteamApps"
+                ]
+            }
+        },
         "/ISteamApps/GetServersAtAddress/v1": {
             "get": {
                 "responses": {
