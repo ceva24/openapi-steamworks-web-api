@@ -36,10 +36,6 @@ You can freely [browse all of the available endpoints](https://ceva24.github.io/
 -   Many endpoints allow you to pass an [`input_json` parameter](https://partner.steamgames.com/doc/webapi_overview#3) - you'll need to [URL-encode this yourself](https://www.urlencoder.io/).
 -   Be aware that some endpoints will respond with `HTTP 200` whilst containing an error message in the response body 🤷
 
-## ☕ Disclaimer and thanks
+## 📌 Notices
 
 This project is not affiliated with Valve Software or the Steam platform in any way. All of the information provided is publicly available through Valve Software's own documentation and APIs.
-
-Found this project useful? Feel free to let me know by buying me a coffee!
-
-[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/R6R04T82W)
