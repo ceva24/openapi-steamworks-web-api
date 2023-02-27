@@ -19,6 +19,536 @@
         }
     ],
     "paths": {
+        "/IAuthenticationService/BeginAuthSessionViaCredentials/v1": {
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "A successful request"
+                    },
+                    "400": {
+                        "description": "If the user fails to supply all required fields, or supplies invalid data"
+                    },
+                    "403": {
+                        "description": "If the user fails to supply a valid API key, or if the key does not allow access to this resource"
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "input_json",
+                        "in": "query",
+                        "description": "An alternative to the request body; pass arguments as a URL-encoded JSON blob. The \"key\" and \"format\" fields should still be passed as separate parameters",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "description": "The format of the response. Defaults to json",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "json",
+                                "xml",
+                                "vdf"
+                            ]
+                        }
+                    }
+                ],
+                "externalDocs": {
+                    "url": "https://partner.steamgames.com/doc/webapi/IAuthenticationService#BeginAuthSessionViaCredentials"
+                },
+                "tags": [
+                    "IAuthenticationService"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "device_friendly_name": {
+                                        "type": "string",
+                                        "description": "(Required)"
+                                    },
+                                    "account_name": {
+                                        "type": "string",
+                                        "description": "(Required)"
+                                    },
+                                    "encrypted_password": {
+                                        "type": "string",
+                                        "description": "(Required) password, RSA encrypted client side"
+                                    },
+                                    "encryption_timestamp": {
+                                        "type": "integer",
+                                        "format": "int64",
+                                        "description": "(Required) timestamp to map to a key - STime"
+                                    },
+                                    "remember_login": {
+                                        "type": "boolean",
+                                        "description": "(Required) deprecated"
+                                    },
+                                    "platform_type": {
+                                        "type": "string",
+                                        "format": "{enum}",
+                                        "description": "(Required)"
+                                    },
+                                    "persistence": {
+                                        "type": "string",
+                                        "format": "{enum}",
+                                        "description": "whether we are requesting a persistent or an ephemeral session"
+                                    },
+                                    "website_id": {
+                                        "type": "string",
+                                        "description": "(EMachineAuthWebDomain) identifier of client requesting auth"
+                                    },
+                                    "device_details": {
+                                        "type": "string",
+                                        "format": "{message}",
+                                        "description": "(Required) User-supplied details about the device attempting to sign in"
+                                    },
+                                    "guard_data": {
+                                        "type": "string",
+                                        "description": "(Required) steam guard data for client login"
+                                    },
+                                    "language": {
+                                        "type": "integer",
+                                        "format": "int32",
+                                        "description": "(Required)"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/IAuthenticationService/BeginAuthSessionViaQR/v1": {
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "A successful request"
+                    },
+                    "400": {
+                        "description": "If the user fails to supply all required fields, or supplies invalid data"
+                    },
+                    "403": {
+                        "description": "If the user fails to supply a valid API key, or if the key does not allow access to this resource"
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "input_json",
+                        "in": "query",
+                        "description": "An alternative to the request body; pass arguments as a URL-encoded JSON blob. The \"key\" and \"format\" fields should still be passed as separate parameters",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "description": "The format of the response. Defaults to json",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "json",
+                                "xml",
+                                "vdf"
+                            ]
+                        }
+                    }
+                ],
+                "externalDocs": {
+                    "url": "https://partner.steamgames.com/doc/webapi/IAuthenticationService#BeginAuthSessionViaQR"
+                },
+                "tags": [
+                    "IAuthenticationService"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "device_friendly_name": {
+                                        "type": "string",
+                                        "description": "(Required)"
+                                    },
+                                    "platform_type": {
+                                        "type": "string",
+                                        "format": "{enum}",
+                                        "description": "(Required)"
+                                    },
+                                    "device_details": {
+                                        "type": "string",
+                                        "format": "{message}",
+                                        "description": "(Required) User-supplied details about the device attempting to sign in"
+                                    },
+                                    "website_id": {
+                                        "type": "string",
+                                        "description": "(EMachineAuthWebDomain) identifier of client requesting auth"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/IAuthenticationService/GetAuthSessionInfo/v1": {
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "A successful request"
+                    },
+                    "400": {
+                        "description": "If the user fails to supply all required fields, or supplies invalid data"
+                    },
+                    "403": {
+                        "description": "If the user fails to supply a valid API key, or if the key does not allow access to this resource"
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "input_json",
+                        "in": "query",
+                        "description": "An alternative to the request body; pass arguments as a URL-encoded JSON blob. The \"key\" and \"format\" fields should still be passed as separate parameters",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "description": "The format of the response. Defaults to json",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "json",
+                                "xml",
+                                "vdf"
+                            ]
+                        }
+                    }
+                ],
+                "externalDocs": {
+                    "url": "https://partner.steamgames.com/doc/webapi/IAuthenticationService#GetAuthSessionInfo"
+                },
+                "tags": [
+                    "IAuthenticationService"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "client_id": {
+                                        "type": "integer",
+                                        "format": "int64",
+                                        "description": "(Required) client ID from scanned QR Code, used for routing"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/IAuthenticationService/GetPasswordRSAPublicKey/v1": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "A successful request"
+                    },
+                    "400": {
+                        "description": "If the user fails to supply all required fields, or supplies invalid data"
+                    },
+                    "403": {
+                        "description": "If the user fails to supply a valid API key, or if the key does not allow access to this resource"
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "account_name",
+                        "in": "query",
+                        "description": "(Required) user-provided account name to get an RSA key for",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "input_json",
+                        "in": "query",
+                        "description": "An alternative to the query string parameters; pass arguments as a URL-encoded JSON blob. The \"key\" and \"format\" fields should still be passed as separate parameters",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "description": "The format of the response. Defaults to json",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "json",
+                                "xml",
+                                "vdf"
+                            ]
+                        }
+                    }
+                ],
+                "externalDocs": {
+                    "url": "https://partner.steamgames.com/doc/webapi/IAuthenticationService#GetPasswordRSAPublicKey"
+                },
+                "tags": [
+                    "IAuthenticationService"
+                ]
+            }
+        },
+        "/IAuthenticationService/PollAuthSessionStatus/v1": {
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "A successful request"
+                    },
+                    "400": {
+                        "description": "If the user fails to supply all required fields, or supplies invalid data"
+                    },
+                    "403": {
+                        "description": "If the user fails to supply a valid API key, or if the key does not allow access to this resource"
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "input_json",
+                        "in": "query",
+                        "description": "An alternative to the request body; pass arguments as a URL-encoded JSON blob. The \"key\" and \"format\" fields should still be passed as separate parameters",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "description": "The format of the response. Defaults to json",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "json",
+                                "xml",
+                                "vdf"
+                            ]
+                        }
+                    }
+                ],
+                "externalDocs": {
+                    "url": "https://partner.steamgames.com/doc/webapi/IAuthenticationService#PollAuthSessionStatus"
+                },
+                "tags": [
+                    "IAuthenticationService"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "client_id": {
+                                        "type": "integer",
+                                        "format": "int64",
+                                        "description": "(Required)"
+                                    },
+                                    "request_id": {
+                                        "type": "string",
+                                        "description": "(Required)"
+                                    },
+                                    "token_to_revoke": {
+                                        "type": "integer",
+                                        "format": "int64",
+                                        "description": "(Required) If this is set to a token owned by this user, that token will be retired"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/IAuthenticationService/UpdateAuthSessionWithMobileConfirmation/v1": {
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "A successful request"
+                    },
+                    "400": {
+                        "description": "If the user fails to supply all required fields, or supplies invalid data"
+                    },
+                    "403": {
+                        "description": "If the user fails to supply a valid API key, or if the key does not allow access to this resource"
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "input_json",
+                        "in": "query",
+                        "description": "An alternative to the request body; pass arguments as a URL-encoded JSON blob. The \"key\" and \"format\" fields should still be passed as separate parameters",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "description": "The format of the response. Defaults to json",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "json",
+                                "xml",
+                                "vdf"
+                            ]
+                        }
+                    }
+                ],
+                "externalDocs": {
+                    "url": "https://partner.steamgames.com/doc/webapi/IAuthenticationService#UpdateAuthSessionWithMobileConfirmation"
+                },
+                "tags": [
+                    "IAuthenticationService"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "version": {
+                                        "type": "integer",
+                                        "format": "int32",
+                                        "description": "(Required) version field"
+                                    },
+                                    "client_id": {
+                                        "type": "integer",
+                                        "format": "int64",
+                                        "description": "(Required) pending client ID, from scanned QR Code"
+                                    },
+                                    "steamid": {
+                                        "type": "integer",
+                                        "format": "int64",
+                                        "description": "(Required) user who wants to login"
+                                    },
+                                    "signature": {
+                                        "type": "string",
+                                        "description": "(Required) HMAC digest over {version,client_id,steamid} via user's private key"
+                                    },
+                                    "confirm": {
+                                        "type": "boolean",
+                                        "description": "Whether to confirm the login (true) or deny the login (false)"
+                                    },
+                                    "persistence": {
+                                        "type": "string",
+                                        "format": "{enum}",
+                                        "description": "whether we are requesting a persistent or an ephemeral session"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/IAuthenticationService/UpdateAuthSessionWithSteamGuardCode/v1": {
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "A successful request"
+                    },
+                    "400": {
+                        "description": "If the user fails to supply all required fields, or supplies invalid data"
+                    },
+                    "403": {
+                        "description": "If the user fails to supply a valid API key, or if the key does not allow access to this resource"
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "input_json",
+                        "in": "query",
+                        "description": "An alternative to the request body; pass arguments as a URL-encoded JSON blob. The \"key\" and \"format\" fields should still be passed as separate parameters",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "description": "The format of the response. Defaults to json",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "json",
+                                "xml",
+                                "vdf"
+                            ]
+                        }
+                    }
+                ],
+                "externalDocs": {
+                    "url": "https://partner.steamgames.com/doc/webapi/IAuthenticationService#UpdateAuthSessionWithSteamGuardCode"
+                },
+                "tags": [
+                    "IAuthenticationService"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "client_id": {
+                                        "type": "integer",
+                                        "format": "int64",
+                                        "description": "(Required) pending client ID, from initialized session"
+                                    },
+                                    "steamid": {
+                                        "type": "integer",
+                                        "format": "int64",
+                                        "description": "(Required) user who wants to login"
+                                    },
+                                    "code": {
+                                        "type": "string",
+                                        "description": "(Required) confirmation code"
+                                    },
+                                    "code_type": {
+                                        "type": "string",
+                                        "format": "{enum}",
+                                        "description": "(Required) type of confirmation code"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/IBroadcastService/PostGameDataFrameRTMP/v1": {
             "post": {
                 "responses": {
@@ -4675,63 +5205,6 @@
                 ],
                 "externalDocs": {
                     "url": "https://partner.steamgames.com/doc/webapi/IEconItems_440#GetStoreStatus"
-                },
-                "tags": [
-                    "IEconItems"
-                ]
-            }
-        },
-        "/IEconItems_570/GetEquippedPlayerItems/v1": {
-            "get": {
-                "responses": {
-                    "200": {
-                        "description": "A successful request"
-                    },
-                    "400": {
-                        "description": "If the user fails to supply all required fields, or supplies invalid data"
-                    },
-                    "403": {
-                        "description": "If the user fails to supply a valid API key, or if the key does not allow access to this resource"
-                    }
-                },
-                "parameters": [
-                    {
-                        "name": "steamid",
-                        "in": "query",
-                        "description": "The Steam ID to fetch items for",
-                        "required": true,
-                        "schema": {
-                            "type": "integer",
-                            "format": "int64"
-                        }
-                    },
-                    {
-                        "name": "class_id",
-                        "in": "query",
-                        "description": "Return items equipped for this class id",
-                        "required": true,
-                        "schema": {
-                            "type": "integer",
-                            "format": "int32"
-                        }
-                    },
-                    {
-                        "name": "format",
-                        "in": "query",
-                        "description": "The format of the response. Defaults to json",
-                        "required": false,
-                        "schema": {
-                            "type": "string",
-                            "enum": [
-                                "json",
-                                "xml",
-                                "vdf"
-                            ]
-                        }
-                    }
-                ],
-                "externalDocs": {
-                    "url": "https://partner.steamgames.com/doc/webapi/IEconItems_570#GetEquippedPlayerItems"
                 },
                 "tags": [
                     "IEconItems"
@@ -12199,6 +12672,9 @@
         }
     },
     "tags": [
+        {
+            "name": "IAuthenticationService"
+        },
         {
             "name": "IBroadcastService"
         },
