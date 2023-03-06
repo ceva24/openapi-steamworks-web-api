@@ -117,6 +117,11 @@
                                         "type": "integer",
                                         "format": "int32",
                                         "description": "(Required)"
+                                    },
+                                    "qos_level": {
+                                        "type": "integer",
+                                        "format": "int32",
+                                        "description": "[ENetQOSLevel] client-specified priority for this auth attempt"
                                     }
                                 }
                             }
