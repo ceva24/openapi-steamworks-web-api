@@ -1,102 +1,102 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`openapi spec creator creates the openapi spec 1`] = `
-Object {
-  "components": Object {
-    "securitySchemes": Object {
-      "key": Object {
+{
+  "components": {
+    "securitySchemes": {
+      "key": {
         "in": "query",
         "name": "key",
         "type": "apiKey",
       },
     },
   },
-  "externalDocs": Object {
+  "externalDocs": {
     "description": "Steamworks Web API Reference",
     "url": "https://partner.steamgames.com/doc/webapi",
   },
-  "info": Object {
-    "contact": Object {
+  "info": {
+    "contact": {
       "name": "Steam Support",
       "url": "https://help.steampowered.com/",
     },
-    "description": "This is an OpenAPI specification for the Steamworks Web API. For more details on how to use this tool, check out the <a href=\\"https://github.com/ceva24/openapi-steamworks-web-api/blob/main/README.md\\">README</a>.",
+    "description": "This is an OpenAPI specification for the Steamworks Web API. For more details on how to use this tool, check out the <a href="https://github.com/ceva24/openapi-steamworks-web-api/blob/main/README.md">README</a>.",
     "termsOfService": "https://steamcommunity.com/dev/apiterms",
     "title": "Steamworks Web API",
     "version": "1.0.0",
   },
   "openapi": "3.0.3",
-  "paths": Object {
-    "/IContentServerDirectoryService/GetServersForSteamPipe/v1": Object {
-      "get": Object {
-        "externalDocs": Object {
+  "paths": {
+    "/IContentServerDirectoryService/GetServersForSteamPipe/v1": {
+      "get": {
+        "externalDocs": {
           "url": "https://partner.steamgames.com/doc/webapi/IContentServerDirectoryService#GetServersForSteamPipe",
         },
-        "parameters": Array [
-          Object {
+        "parameters": [
+          {
             "description": "(Required) client Cell ID",
             "in": "query",
             "name": "cell_id",
             "required": false,
-            "schema": Object {
+            "schema": {
               "format": "int32",
               "type": "integer",
             },
           },
-          Object {
+          {
             "description": "max servers in response list",
             "in": "query",
             "name": "max_servers",
             "required": false,
-            "schema": Object {
+            "schema": {
               "format": "int32",
               "type": "integer",
             },
           },
-          Object {
+          {
             "description": "client IP address",
             "in": "query",
             "name": "ip_override",
             "required": false,
-            "schema": Object {
+            "schema": {
               "type": "string",
             },
           },
-          Object {
+          {
             "description": "launcher type",
             "in": "query",
             "name": "launcher_type",
             "required": false,
-            "schema": Object {
+            "schema": {
               "format": "int32",
               "type": "integer",
             },
           },
-          Object {
+          {
             "description": "client public ipv6 address if it knows it",
             "in": "query",
             "name": "ipv6_public",
             "required": false,
-            "schema": Object {
+            "schema": {
               "type": "string",
             },
           },
-          Object {
-            "description": "An alternative to the query string parameters; pass arguments as a URL-encoded JSON blob. The \\"key\\" and \\"format\\" fields should still be passed as separate parameters",
+          {
+            "description": "An alternative to the query string parameters; pass arguments as a URL-encoded JSON blob. The "key" and "format" fields should still be passed as separate parameters",
             "in": "query",
             "name": "input_json",
             "required": false,
-            "schema": Object {
+            "schema": {
               "type": "string",
             },
           },
-          Object {
+          {
             "description": "The format of the response. Defaults to json",
             "in": "query",
             "name": "format",
             "required": false,
-            "schema": Object {
-              "enum": Array [
+            "schema": {
+              "enum": [
                 "json",
                 "xml",
                 "vdf",
@@ -105,35 +105,35 @@ Object {
             },
           },
         ],
-        "responses": Object {
-          "200": Object {
+        "responses": {
+          "200": {
             "description": "A successful request",
           },
-          "400": Object {
+          "400": {
             "description": "If the user fails to supply all required fields, or supplies invalid data",
           },
-          "403": Object {
+          "403": {
             "description": "If the user fails to supply a valid API key, or if the key does not allow access to this resource",
           },
         },
-        "tags": Array [
+        "tags": [
           "IContentServerDirectoryService",
         ],
       },
     },
-    "/IGCVersion_1046930/GetClientVersion/v1": Object {
-      "get": Object {
-        "externalDocs": Object {
+    "/IGCVersion_1046930/GetClientVersion/v1": {
+      "get": {
+        "externalDocs": {
           "url": "https://partner.steamgames.com/doc/webapi/IGCVersion_1046930#GetClientVersion",
         },
-        "parameters": Array [
-          Object {
+        "parameters": [
+          {
             "description": "The format of the response. Defaults to json",
             "in": "query",
             "name": "format",
             "required": false,
-            "schema": Object {
-              "enum": Array [
+            "schema": {
+              "enum": [
                 "json",
                 "xml",
                 "vdf",
@@ -142,35 +142,35 @@ Object {
             },
           },
         ],
-        "responses": Object {
-          "200": Object {
+        "responses": {
+          "200": {
             "description": "A successful request",
           },
-          "400": Object {
+          "400": {
             "description": "If the user fails to supply all required fields, or supplies invalid data",
           },
-          "403": Object {
+          "403": {
             "description": "If the user fails to supply a valid API key, or if the key does not allow access to this resource",
           },
         },
-        "tags": Array [
+        "tags": [
           "IGCVersion",
         ],
       },
     },
-    "/IGCVersion_1046930/GetServerVersion/v1": Object {
-      "get": Object {
-        "externalDocs": Object {
+    "/IGCVersion_1046930/GetServerVersion/v1": {
+      "get": {
+        "externalDocs": {
           "url": "https://partner.steamgames.com/doc/webapi/IGCVersion_1046930#GetServerVersion",
         },
-        "parameters": Array [
-          Object {
+        "parameters": [
+          {
             "description": "The format of the response. Defaults to json",
             "in": "query",
             "name": "format",
             "required": false,
-            "schema": Object {
-              "enum": Array [
+            "schema": {
+              "enum": [
                 "json",
                 "xml",
                 "vdf",
@@ -179,35 +179,35 @@ Object {
             },
           },
         ],
-        "responses": Object {
-          "200": Object {
+        "responses": {
+          "200": {
             "description": "A successful request",
           },
-          "400": Object {
+          "400": {
             "description": "If the user fails to supply all required fields, or supplies invalid data",
           },
-          "403": Object {
+          "403": {
             "description": "If the user fails to supply a valid API key, or if the key does not allow access to this resource",
           },
         },
-        "tags": Array [
+        "tags": [
           "IGCVersion",
         ],
       },
     },
-    "/IGCVersion_1269260/GetClientVersion/v1": Object {
-      "get": Object {
-        "externalDocs": Object {
+    "/IGCVersion_1269260/GetClientVersion/v1": {
+      "get": {
+        "externalDocs": {
           "url": "https://partner.steamgames.com/doc/webapi/IGCVersion_1269260#GetClientVersion",
         },
-        "parameters": Array [
-          Object {
+        "parameters": [
+          {
             "description": "The format of the response. Defaults to json",
             "in": "query",
             "name": "format",
             "required": false,
-            "schema": Object {
-              "enum": Array [
+            "schema": {
+              "enum": [
                 "json",
                 "xml",
                 "vdf",
@@ -216,35 +216,35 @@ Object {
             },
           },
         ],
-        "responses": Object {
-          "200": Object {
+        "responses": {
+          "200": {
             "description": "A successful request",
           },
-          "400": Object {
+          "400": {
             "description": "If the user fails to supply all required fields, or supplies invalid data",
           },
-          "403": Object {
+          "403": {
             "description": "If the user fails to supply a valid API key, or if the key does not allow access to this resource",
           },
         },
-        "tags": Array [
+        "tags": [
           "IGCVersion",
         ],
       },
     },
-    "/IGCVersion_1269260/GetServerVersion/v1": Object {
-      "get": Object {
-        "externalDocs": Object {
+    "/IGCVersion_1269260/GetServerVersion/v1": {
+      "get": {
+        "externalDocs": {
           "url": "https://partner.steamgames.com/doc/webapi/IGCVersion_1269260#GetServerVersion",
         },
-        "parameters": Array [
-          Object {
+        "parameters": [
+          {
             "description": "The format of the response. Defaults to json",
             "in": "query",
             "name": "format",
             "required": false,
-            "schema": Object {
-              "enum": Array [
+            "schema": {
+              "enum": [
                 "json",
                 "xml",
                 "vdf",
@@ -253,44 +253,44 @@ Object {
             },
           },
         ],
-        "responses": Object {
-          "200": Object {
+        "responses": {
+          "200": {
             "description": "A successful request",
           },
-          "400": Object {
+          "400": {
             "description": "If the user fails to supply all required fields, or supplies invalid data",
           },
-          "403": Object {
+          "403": {
             "description": "If the user fails to supply a valid API key, or if the key does not allow access to this resource",
           },
         },
-        "tags": Array [
+        "tags": [
           "IGCVersion",
         ],
       },
     },
-    "/IGameNotificationsService/UserCreateSession/v1": Object {
-      "post": Object {
-        "externalDocs": Object {
+    "/IGameNotificationsService/UserCreateSession/v1": {
+      "post": {
+        "externalDocs": {
           "url": "https://partner.steamgames.com/doc/webapi/IGameNotificationsService#UserCreateSession",
         },
-        "parameters": Array [
-          Object {
-            "description": "An alternative to the request body; pass arguments as a URL-encoded JSON blob. The \\"key\\" and \\"format\\" fields should still be passed as separate parameters",
+        "parameters": [
+          {
+            "description": "An alternative to the request body; pass arguments as a URL-encoded JSON blob. The "key" and "format" fields should still be passed as separate parameters",
             "in": "query",
             "name": "input_json",
             "required": false,
-            "schema": Object {
+            "schema": {
               "type": "string",
             },
           },
-          Object {
+          {
             "description": "The format of the response. Defaults to json",
             "in": "query",
             "name": "format",
             "required": false,
-            "schema": Object {
-              "enum": Array [
+            "schema": {
+              "enum": [
                 "json",
                 "xml",
                 "vdf",
@@ -299,32 +299,32 @@ Object {
             },
           },
         ],
-        "requestBody": Object {
-          "content": Object {
-            "application/x-www-form-urlencoded": Object {
-              "schema": Object {
-                "properties": Object {
-                  "appid": Object {
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "properties": {
+                  "appid": {
                     "description": "(Required) The appid to create the session for.",
                     "format": "int32",
                     "type": "integer",
                   },
-                  "context": Object {
+                  "context": {
                     "description": "(Required) Game-specified context value the game can used to associate the session with some object on their backend.",
                     "format": "int64",
                     "type": "integer",
                   },
-                  "steamid": Object {
+                  "steamid": {
                     "description": "(Optional) steamid to make the request on behalf of -- if specified, the user must be in the session and all users being added to the session must be friends with the user.",
                     "format": "int64",
                     "type": "integer",
                   },
-                  "title": Object {
+                  "title": {
                     "description": "(Required) The title of the session to be displayed within each user's list of sessions.",
                     "format": "{message}",
                     "type": "string",
                   },
-                  "users": Object {
+                  "users": {
                     "description": "(Required) The initial state of all users in the session.",
                     "format": "{message}",
                     "type": "string",
@@ -335,44 +335,44 @@ Object {
             },
           },
         },
-        "responses": Object {
-          "200": Object {
+        "responses": {
+          "200": {
             "description": "A successful request",
           },
-          "400": Object {
+          "400": {
             "description": "If the user fails to supply all required fields, or supplies invalid data",
           },
-          "403": Object {
+          "403": {
             "description": "If the user fails to supply a valid API key, or if the key does not allow access to this resource",
           },
         },
-        "tags": Array [
+        "tags": [
           "IGameNotificationsService",
         ],
       },
     },
-    "/IPortal2Leaderboards_620/GetBucketizedData/v1": Object {
-      "get": Object {
-        "externalDocs": Object {
+    "/IPortal2Leaderboards_620/GetBucketizedData/v1": {
+      "get": {
+        "externalDocs": {
           "url": "https://partner.steamgames.com/doc/webapi/IPortal2Leaderboards_620#GetBucketizedData",
         },
-        "parameters": Array [
-          Object {
+        "parameters": [
+          {
             "description": "The leaderboard name to fetch data for.",
             "in": "query",
             "name": "leaderboardName",
             "required": true,
-            "schema": Object {
+            "schema": {
               "type": "string",
             },
           },
-          Object {
+          {
             "description": "The format of the response. Defaults to json",
             "in": "query",
             "name": "format",
             "required": false,
-            "schema": Object {
-              "enum": Array [
+            "schema": {
+              "enum": [
                 "json",
                 "xml",
                 "vdf",
@@ -381,47 +381,47 @@ Object {
             },
           },
         ],
-        "responses": Object {
-          "200": Object {
+        "responses": {
+          "200": {
             "description": "A successful request",
           },
-          "400": Object {
+          "400": {
             "description": "If the user fails to supply all required fields, or supplies invalid data",
           },
-          "403": Object {
+          "403": {
             "description": "If the user fails to supply a valid API key, or if the key does not allow access to this resource",
           },
         },
-        "tags": Array [
+        "tags": [
           "IPortal2Leaderboards",
         ],
       },
     },
   },
-  "security": Array [
-    Object {
-      "key": Array [],
+  "security": [
+    {
+      "key": [],
     },
   ],
-  "servers": Array [
-    Object {
+  "servers": [
+    {
       "url": "https://api.steampowered.com",
     },
-    Object {
+    {
       "url": "https://partner.steam-api.com",
     },
   ],
-  "tags": Array [
-    Object {
+  "tags": [
+    {
       "name": "IContentServerDirectoryService",
     },
-    Object {
+    {
       "name": "IGCVersion",
     },
-    Object {
+    {
       "name": "IGameNotificationsService",
     },
-    Object {
+    {
       "name": "IPortal2Leaderboards",
     },
   ],
