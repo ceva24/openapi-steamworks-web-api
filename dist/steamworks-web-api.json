@@ -4265,52 +4265,6 @@
                 ]
             }
         },
-        "/IEconDOTA2_570/GetGameItems/v1": {
-            "get": {
-                "responses": {
-                    "200": {
-                        "description": "A successful request"
-                    },
-                    "400": {
-                        "description": "If the user fails to supply all required fields, or supplies invalid data"
-                    },
-                    "403": {
-                        "description": "If the user fails to supply a valid API key, or if the key does not allow access to this resource"
-                    }
-                },
-                "parameters": [
-                    {
-                        "name": "language",
-                        "in": "query",
-                        "description": "The language to provide item names in.",
-                        "required": false,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "format",
-                        "in": "query",
-                        "description": "The format of the response. Defaults to json",
-                        "required": false,
-                        "schema": {
-                            "type": "string",
-                            "enum": [
-                                "json",
-                                "xml",
-                                "vdf"
-                            ]
-                        }
-                    }
-                ],
-                "externalDocs": {
-                    "url": "https://partner.steamgames.com/doc/webapi/IEconDOTA2_570#GetGameItems"
-                },
-                "tags": [
-                    "IEconDOTA2"
-                ]
-            }
-        },
         "/IEconDOTA2_570/GetHeroes/v1": {
             "get": {
                 "responses": {
@@ -8825,6 +8779,16 @@
                         }
                     },
                     {
+                        "name": "excluded_content_descriptors",
+                        "in": "query",
+                        "description": "(Optional) Filter out items that have these content descriptors.",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "format": "{enum}"
+                        }
+                    },
+                    {
                         "name": "totalonly",
                         "in": "query",
                         "description": "(Optional) If true, only return the total number of files that satisfy this query.",
@@ -9170,6 +9134,16 @@
                         "schema": {
                             "type": "string",
                             "format": "{message}"
+                        }
+                    },
+                    {
+                        "name": "excluded_content_descriptors",
+                        "in": "query",
+                        "description": "(Optional) Filter out items that have these content descriptors.",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "format": "{enum}"
                         }
                     },
                     {
@@ -9631,6 +9605,16 @@
                         "schema": {
                             "type": "string",
                             "format": "{message}"
+                        }
+                    },
+                    {
+                        "name": "excluded_content_descriptors",
+                        "in": "query",
+                        "description": "(Optional) Filter out items that have these content descriptors.",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "format": "{enum}"
                         }
                     },
                     {
