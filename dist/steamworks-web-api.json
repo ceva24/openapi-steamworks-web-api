@@ -2871,7 +2871,7 @@
                     {
                         "name": "matches_requested",
                         "in": "query",
-                        "description": "The number of requested matches to return",
+                        "description": "The number of requested matches to return (maximum 100)",
                         "required": false,
                         "schema": {
                             "type": "string"
@@ -11981,93 +11981,6 @@
                 ]
             }
         },
-        "/ISteamWebUserPresenceOAuth/PollStatus/v1": {
-            "post": {
-                "responses": {
-                    "200": {
-                        "description": "A successful request"
-                    },
-                    "400": {
-                        "description": "If the user fails to supply all required fields, or supplies invalid data"
-                    },
-                    "403": {
-                        "description": "If the user fails to supply a valid API key, or if the key does not allow access to this resource"
-                    }
-                },
-                "parameters": [
-                    {
-                        "name": "format",
-                        "in": "query",
-                        "description": "The format of the response. Defaults to json",
-                        "required": false,
-                        "schema": {
-                            "type": "string",
-                            "enum": [
-                                "json",
-                                "xml",
-                                "vdf"
-                            ]
-                        }
-                    }
-                ],
-                "externalDocs": {
-                    "url": "https://partner.steamgames.com/doc/webapi/ISteamWebUserPresenceOAuth#PollStatus"
-                },
-                "tags": [
-                    "ISteamWebUserPresenceOAuth"
-                ],
-                "requestBody": {
-                    "content": {
-                        "application/x-www-form-urlencoded": {
-                            "schema": {
-                                "type": "object",
-                                "properties": {
-                                    "steamid": {
-                                        "type": "string",
-                                        "description": "Steam ID of the user"
-                                    },
-                                    "umqid": {
-                                        "type": "integer",
-                                        "format": "int64",
-                                        "description": "UMQ Session ID"
-                                    },
-                                    "message": {
-                                        "type": "integer",
-                                        "format": "int32",
-                                        "description": "Message that was last known to the user"
-                                    },
-                                    "pollid": {
-                                        "type": "integer",
-                                        "format": "int32",
-                                        "description": "Caller-specific poll id"
-                                    },
-                                    "sectimeout": {
-                                        "type": "integer",
-                                        "format": "int32",
-                                        "description": "Long-poll timeout in seconds"
-                                    },
-                                    "secidletime": {
-                                        "type": "integer",
-                                        "format": "int32",
-                                        "description": "How many seconds is client considering itself idle, e.g. screen is off"
-                                    },
-                                    "use_accountids": {
-                                        "type": "integer",
-                                        "format": "int32",
-                                        "description": "Boolean, 0 (default): return steamid_from in output, 1: return accountid_from"
-                                    }
-                                },
-                                "required": [
-                                    "steamid",
-                                    "umqid",
-                                    "message"
-                                ]
-                            }
-                        }
-                    }
-                }
-            }
-        },
         "/IStoreService/GetAppList/v1": {
             "get": {
                 "responses": {
@@ -12674,9 +12587,6 @@
         },
         {
             "name": "ISteamWebAPIUtil"
-        },
-        {
-            "name": "ISteamWebUserPresenceOAuth"
         },
         {
             "name": "IStoreService"
