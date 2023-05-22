@@ -8644,6 +8644,16 @@
                         }
                     },
                     {
+                        "name": "shortcutid",
+                        "in": "query",
+                        "description": "(Optional) Shortcut Id to retrieve published files from.",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    },
+                    {
                         "name": "page",
                         "in": "query",
                         "description": "(Optional) Starting page for results.",
@@ -8995,6 +9005,16 @@
                         "name": "appid",
                         "in": "query",
                         "description": "(Required) App Id of the app that the files were published to.",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    },
+                    {
+                        "name": "shortcutid",
+                        "in": "query",
+                        "description": "(Optional) Shortcut Id to retrieve published files from.",
                         "required": false,
                         "schema": {
                             "type": "integer",
