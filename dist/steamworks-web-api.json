@@ -1864,6 +1864,16 @@
                         }
                     },
                     {
+                        "name": "current_connections",
+                        "in": "query",
+                        "description": "(Required) what sources is the client currently using",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "format": "{message}"
+                        }
+                    },
+                    {
                         "name": "input_json",
                         "in": "query",
                         "description": "An alternative to the query string parameters; pass arguments as a URL-encoded JSON blob. The \"key\" and \"format\" fields should still be passed as separate parameters",
