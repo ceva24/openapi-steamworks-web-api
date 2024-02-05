@@ -3451,53 +3451,6 @@
                 ]
             }
         },
-        "/IEconItems_221540/GetPlayerItems/v1": {
-            "get": {
-                "responses": {
-                    "200": {
-                        "description": "A successful request"
-                    },
-                    "400": {
-                        "description": "If the user fails to supply all required fields, or supplies invalid data"
-                    },
-                    "403": {
-                        "description": "If the user fails to supply a valid API key, or if the key does not allow access to this resource"
-                    }
-                },
-                "parameters": [
-                    {
-                        "name": "steamid",
-                        "in": "query",
-                        "description": "The Steam ID to fetch items for",
-                        "required": true,
-                        "schema": {
-                            "type": "integer",
-                            "format": "int64"
-                        }
-                    },
-                    {
-                        "name": "format",
-                        "in": "query",
-                        "description": "The format of the response. Defaults to json",
-                        "required": false,
-                        "schema": {
-                            "type": "string",
-                            "enum": [
-                                "json",
-                                "xml",
-                                "vdf"
-                            ]
-                        }
-                    }
-                ],
-                "externalDocs": {
-                    "url": "https://partner.steamgames.com/doc/webapi/IEconItems_221540#GetPlayerItems"
-                },
-                "tags": [
-                    "IEconItems"
-                ]
-            }
-        },
         "/IEconItems_238460/GetPlayerItems/v1": {
             "get": {
                 "responses": {
