@@ -7109,6 +7109,15 @@
                         }
                     },
                     {
+                        "name": "admin_query",
+                        "in": "query",
+                        "description": "(Required) Admin tool is doing a query, return hidden items",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    },
+                    {
                         "name": "input_json",
                         "in": "query",
                         "description": "An alternative to the query string parameters; pass arguments as a URL-encoded JSON blob. The \"key\" and \"format\" fields should still be passed as separate parameters",
@@ -7412,6 +7421,15 @@
                         "schema": {
                             "type": "string",
                             "format": "{enum}"
+                        }
+                    },
+                    {
+                        "name": "admin_query",
+                        "in": "query",
+                        "description": "(Required) Admin tool is doing a query, return hidden items",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean"
                         }
                     },
                     {
@@ -7780,6 +7798,15 @@
                         "schema": {
                             "type": "string",
                             "format": "{enum}"
+                        }
+                    },
+                    {
+                        "name": "admin_query",
+                        "in": "query",
+                        "description": "(Required) Admin tool is doing a query, return hidden items",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean"
                         }
                     },
                     {
@@ -8251,6 +8278,15 @@
                         "schema": {
                             "type": "string",
                             "format": "{enum}"
+                        }
+                    },
+                    {
+                        "name": "admin_query",
+                        "in": "query",
+                        "description": "(Required) Admin tool is doing a query, return hidden items",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean"
                         }
                     },
                     {
