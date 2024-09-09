@@ -9085,6 +9085,16 @@
                         }
                     },
                     {
+                        "name": "qoslevel",
+                        "in": "query",
+                        "description": "Desired connection priority",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    },
+                    {
                         "name": "format",
                         "in": "query",
                         "description": "The format of the response. Defaults to json",
