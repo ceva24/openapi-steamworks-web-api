@@ -267,6 +267,73 @@
                 }
             }
         },
+        "/IAuthenticationService/GetAuthSessionRiskInfo/v1": {
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "A successful request"
+                    },
+                    "400": {
+                        "description": "If the user fails to supply all required fields, or supplies invalid data"
+                    },
+                    "403": {
+                        "description": "If the user fails to supply a valid API key, or if the key does not allow access to this resource"
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "input_json",
+                        "in": "query",
+                        "description": "An alternative to the request body; pass arguments as a URL-encoded JSON blob. The \"key\" and \"format\" fields should still be passed as separate parameters",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "description": "The format of the response. Defaults to json",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "json",
+                                "xml",
+                                "vdf"
+                            ]
+                        }
+                    }
+                ],
+                "externalDocs": {
+                    "url": "https://partner.steamgames.com/doc/webapi/IAuthenticationService#GetAuthSessionRiskInfo"
+                },
+                "tags": [
+                    "IAuthenticationService"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "client_id": {
+                                        "type": "integer",
+                                        "format": "int64",
+                                        "description": "(Required) client ID from scanned QR Code, used for routing"
+                                    },
+                                    "language": {
+                                        "type": "integer",
+                                        "format": "int32",
+                                        "description": "(Required) language for optimistic localization of geoloc data"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/IAuthenticationService/GetPasswordRSAPublicKey/v1": {
             "get": {
                 "responses": {
@@ -320,6 +387,81 @@
                 "tags": [
                     "IAuthenticationService"
                 ]
+            }
+        },
+        "/IAuthenticationService/NotifyRiskQuizResults/v1": {
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "A successful request"
+                    },
+                    "400": {
+                        "description": "If the user fails to supply all required fields, or supplies invalid data"
+                    },
+                    "403": {
+                        "description": "If the user fails to supply a valid API key, or if the key does not allow access to this resource"
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "input_json",
+                        "in": "query",
+                        "description": "An alternative to the request body; pass arguments as a URL-encoded JSON blob. The \"key\" and \"format\" fields should still be passed as separate parameters",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "description": "The format of the response. Defaults to json",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "json",
+                                "xml",
+                                "vdf"
+                            ]
+                        }
+                    }
+                ],
+                "externalDocs": {
+                    "url": "https://partner.steamgames.com/doc/webapi/IAuthenticationService#NotifyRiskQuizResults"
+                },
+                "tags": [
+                    "IAuthenticationService"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "client_id": {
+                                        "type": "integer",
+                                        "format": "int64",
+                                        "description": "(Required) client ID for the auth session, used for routing"
+                                    },
+                                    "results": {
+                                        "type": "string",
+                                        "format": "{message}",
+                                        "description": "(Required) Whether or not the user correctly answered each risk quiz question"
+                                    },
+                                    "selected_action": {
+                                        "type": "string",
+                                        "description": "(Required) The action being taken selected by the user during the quiz"
+                                    },
+                                    "did_confirm_login": {
+                                        "type": "boolean",
+                                        "description": "(Required) Whether or not the user went on to confirm the login or not in the case of a passed quiz"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
             }
         },
         "/IAuthenticationService/PollAuthSessionStatus/v1": {
@@ -3445,53 +3587,6 @@
                 ],
                 "externalDocs": {
                     "url": "https://partner.steamgames.com/doc/webapi/IEconItems_1269260#GetEquippedPlayerItems"
-                },
-                "tags": [
-                    "IEconItems"
-                ]
-            }
-        },
-        "/IEconItems_221540/GetPlayerItems/v1": {
-            "get": {
-                "responses": {
-                    "200": {
-                        "description": "A successful request"
-                    },
-                    "400": {
-                        "description": "If the user fails to supply all required fields, or supplies invalid data"
-                    },
-                    "403": {
-                        "description": "If the user fails to supply a valid API key, or if the key does not allow access to this resource"
-                    }
-                },
-                "parameters": [
-                    {
-                        "name": "steamid",
-                        "in": "query",
-                        "description": "The Steam ID to fetch items for",
-                        "required": true,
-                        "schema": {
-                            "type": "integer",
-                            "format": "int64"
-                        }
-                    },
-                    {
-                        "name": "format",
-                        "in": "query",
-                        "description": "The format of the response. Defaults to json",
-                        "required": false,
-                        "schema": {
-                            "type": "string",
-                            "enum": [
-                                "json",
-                                "xml",
-                                "vdf"
-                            ]
-                        }
-                    }
-                ],
-                "externalDocs": {
-                    "url": "https://partner.steamgames.com/doc/webapi/IEconItems_221540#GetPlayerItems"
                 },
                 "tags": [
                     "IEconItems"
@@ -9078,6 +9173,16 @@
                         "name": "maxcount",
                         "in": "query",
                         "description": "Max number of servers to return",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    },
+                    {
+                        "name": "qoslevel",
+                        "in": "query",
+                        "description": "Desired connection priority",
                         "required": false,
                         "schema": {
                             "type": "integer",
