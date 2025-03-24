@@ -10894,6 +10894,89 @@
                 ]
             }
         },
+        "/IStoreService/GetRecommendedTagsForUser/v1": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "A successful request"
+                    },
+                    "400": {
+                        "description": "If the user fails to supply all required fields, or supplies invalid data"
+                    },
+                    "403": {
+                        "description": "If the user fails to supply a valid API key, or if the key does not allow access to this resource"
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "steamid",
+                        "in": "query",
+                        "description": "(Required) this is no longer used, we use the steamid in the header.  Here for compatibility with PHP until we can clean that up.",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    },
+                    {
+                        "name": "language",
+                        "in": "query",
+                        "description": "(Required)",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "country_code",
+                        "in": "query",
+                        "description": "(Required)",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "favor_rarer_tags",
+                        "in": "query",
+                        "description": "(Required) Biases tags towards tags that are less common. e.g. Favor Zombies over Action if the user plays the same number of games with both tags.",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    },
+                    {
+                        "name": "input_json",
+                        "in": "query",
+                        "description": "An alternative to the query string parameters; pass arguments as a URL-encoded JSON blob. The \"key\" and \"format\" fields should still be passed as separate parameters",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "description": "The format of the response. Defaults to json",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "json",
+                                "xml",
+                                "vdf"
+                            ]
+                        }
+                    }
+                ],
+                "externalDocs": {
+                    "url": "https://partner.steamgames.com/doc/webapi/IStoreService#GetRecommendedTagsForUser"
+                },
+                "tags": [
+                    "IStoreService"
+                ]
+            }
+        },
         "/ITFItems_440/GetGoldenWrenches/v1": {
             "get": {
                 "responses": {
