@@ -10909,16 +10909,6 @@
                 },
                 "parameters": [
                     {
-                        "name": "steamid",
-                        "in": "query",
-                        "description": "(Required) this is no longer used, we use the steamid in the header.  Here for compatibility with PHP until we can clean that up.",
-                        "required": false,
-                        "schema": {
-                            "type": "integer",
-                            "format": "int64"
-                        }
-                    },
-                    {
                         "name": "language",
                         "in": "query",
                         "description": "(Required)",
